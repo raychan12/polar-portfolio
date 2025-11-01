@@ -8,59 +8,25 @@ on:
       - '**'
 
 jobs:
-  setup:
+  checks:
+    name: ${{ matrix.name }}
     runs-on: ubuntu-slim
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: ./.github/actions/setup
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-  run_build:
-    runs-on: ubuntu-slim
-    needs: setup
     timeout-minutes: 10
+    strategy:
+      matrix:
+        include:
+          - name: Build project
+            script: build
+          - name: Run type check
+            script: typecheck
+          - name: Run lint script
+            script: lint:ci
+          - name: Run format check
+            script: format:ci
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - uses: ./.github/actions/setup
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Build project
-        run: pnpm build
-
-  run_typecheck:
-    runs-on: ubuntu-slim
-    needs: setup
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: ./.github/actions/setup
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Run type check
-        run: pnpm typecheck
-
-  run_lint_script:
-    runs-on: ubuntu-slim
-    needs: setup
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: ./.github/actions/setup
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Run lint script
-        run: pnpm lint:ci
-
-  run_format_check:
-    runs-on: ubuntu-slim
-    needs: setup
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: ./.github/actions/setup
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Run format check
-        run: pnpm format:ci
+      - name: ${{ matrix.name }}
+        run: pnpm ${{ matrix.script }}
