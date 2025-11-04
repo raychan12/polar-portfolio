@@ -1,0 +1,43 @@
+{
+	"name": "portfolio",
+	"version": "0.1.0",
+	"type": "module",
+	"packageManager": "pnpm@10.20.0",
+	"engines": {
+		"node": "24.11.0"
+	},
+	"scripts": {
+		"build": "astro build",
+		"dev": "astro dev",
+		"format": "prettier --write .",
+		"format:ci": "prettier --check .",
+		"lint": "eslint .",
+		"lint:ci": "eslint --max-warnings 0 .",
+		"lint:fix": "eslint --fix .",
+		"preview": "astro preview",
+		"typecheck": "tsc --noEmit && astro check"
+	},
+	"dependencies": {
+		"astro": "5.15.3"
+	},
+	"devDependencies": {
+		"@astrojs/check": "0.9.5",
+		"@prettier/plugin-oxc": "0.0.4",
+		"@typescript-eslint/parser": "8.46.2",
+		"astro-eslint-parser": "1.2.2",
+		"eslint": "9.38.0",
+		"eslint-config-flat-gitignore": "2.1.0",
+		"eslint-config-prettier": "10.1.8",
+		"eslint-import-resolver-typescript": "4.4.4",
+		"eslint-plugin-astro": "1.4.0",
+		"eslint-plugin-import-x": "4.16.1",
+		"eslint-plugin-jsx-a11y": "6.10.2",
+		"eslint-plugin-unused-imports": "4.3.0",
+		"globals": "16.4.0",
+		"prettier": "3.6.2",
+		"prettier-plugin-astro": "0.14.1",
+		"prettier-plugin-pkg": "0.21.2",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.46.2"
+	}
+}

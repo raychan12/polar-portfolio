@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+
+jobs:
+  checks:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        include:
+          - name: Build project
+            script: build
+          - name: Run type check
+            script: typecheck
+          - name: Run lint script
+            script: lint:ci
+          - name: Run format check
+            script: format:ci
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: ./.github/actions/setup
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: ${{ matrix.name }}
+        run: pnpm ${{ matrix.script }}
