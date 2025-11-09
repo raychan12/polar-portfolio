@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+
+const pageTitle = title ?? 'ljus - 涼夏 / raychan / 七夕の月光';
+const pageDescription = description ?? '涼夏 / raychan のポートフォリオサイトです。';
+
+const pageUrl = Astro.site?.origin ?? '/';
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{pageTitle}</title>
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<meta name="description" content={pageDescription} />
+		<link rel="canonical" href={pageUrl} />
+
+		<!--
+      {/* 参考: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs */ }
+		  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+		  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+		  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    -->
+
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:url" content={pageUrl} />
+		<meta name="og:type" content="website" />
+		<meta name="og:site_name" content="ljus" />
+		<meta name="og:image" content="https://ljus.art/figure/OGP.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content="https://ljus.art/figure/OGP.png" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
