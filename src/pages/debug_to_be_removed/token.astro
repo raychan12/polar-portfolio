@@ -1,0 +1,23 @@
+---
+import CommonLayout from '../../layout/CommonLayout.astro';
+import { textJpExamples, textEnExamples, colorExamples } from './token.css';
+
+// TODO: リリース前までに消す
+---
+
+<CommonLayout>
+	<h1>Text (jp)</h1>
+	<ul>
+		{textJpExamples.map(([token, className]) => <li class={className}>{token} - あいう 例文</li>)}
+	</ul>
+
+	<h1>Text (En)</h1>
+	<ul>
+		{textEnExamples.map(([token, className]) => <li class={className}>{token}</li>)}
+	</ul>
+
+	<h1>Colors</h1>
+	<ul>
+		{colorExamples.map(([token, className]) => <li class={className}>{token}</li>)}
+	</ul>
+</CommonLayout>
