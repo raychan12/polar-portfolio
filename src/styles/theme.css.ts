@@ -17,6 +17,19 @@ const font = {
 	full: "'Avenir', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
 } as const;
 
+/**
+ * typography の各値に `font[lang]` を付け加えて、`${typography} ${font}` の形のトークンを作ります。
+ * そのまま CSS `font` 指定に使える値になります。
+ *
+ * @example
+ * ```ts
+ * import { style } from "@vanilla-extract";
+ * import { theme } from "../styles/theme.css";
+ *
+ * // Hiragino Sans W7 が 1.875em で表示されるように指定されます
+ * const foo = style({ font: theme.text.ja.pageTitle });
+ * ```
+ */
 function createTypeConfig(lang: keyof typeof font): { [key in keyof typeof typography]: string } {
 	return Object.fromEntries(
 		Object.entries(typography).map(([typographyKey, typographyValue]) => [
