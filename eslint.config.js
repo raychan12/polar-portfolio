@@ -166,6 +166,11 @@ export default [
 		},
 		rules: {
 			...tseslint.configs.disableTypeChecked.rules,
+			'import-x/no-unresolved': [
+				'error',
+				// import-x が astro:assets 等を解決できなくてエラーを吐くのでこうしています
+				{ ignore: ['^astro:'] },
+			],
 		},
 	},
 	prettier,
