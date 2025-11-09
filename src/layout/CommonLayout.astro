@@ -1,6 +1,5 @@
 ---
-import '../styles/global.css';
-
+import { body } from './CommonLayout.css';
 interface Props {
 	title?: string;
 	description?: string;
@@ -26,11 +25,11 @@ const pageUrl = Astro.site?.origin ?? '/';
 		<link rel="canonical" href={pageUrl} />
 
 		<!--
-      {/* 参考: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs */ }
-		  <link rel="icon" href="/favicon.ico" sizes="32x32" />
-		  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-		  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    -->
+			{/* 参考: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs */ }
+			<link rel="icon" href="/favicon.ico" sizes="32x32" />
+			<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+			<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		-->
 
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
@@ -39,9 +38,9 @@ const pageUrl = Astro.site?.origin ?? '/';
 		<meta name="og:site_name" content="ljus" />
 		<meta name="og:image" content="https://ljus.art/figure/OGP.png" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:image" content="https://ljus.art/figure/OGP.png" />
+		<meta name="twitter:image" content="https://ljus.art/figurea/OGP.png" />
 	</head>
-	<body>
+	<body class={body}>
 		<slot />
 	</body>
 </html>
