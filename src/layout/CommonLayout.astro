@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 
 import { Font } from 'astro:assets';
 
@@ -49,5 +50,6 @@ const pageUrl = Astro.site?.origin ?? '/';
 	</head>
 	<body class={body}>
 		<slot />
+		<Footer />
 	</body>
 </html>
