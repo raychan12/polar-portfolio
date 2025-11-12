@@ -12,9 +12,9 @@ const typography = {
 } as const;
 
 const font = {
-	en: "'Avenir', Roboto",
+	en: "var(--font-avenir), 'Avenir', Roboto",
 	jp: "'Hiragino Sans', 'Hiragino Kaku Gothic ProN'",
-	full: "'Avenir', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, sans-serif, system-ui",
+	full: "var(--font-avenir), 'Avenir', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, sans-serif, system-ui",
 } as const;
 
 /**
