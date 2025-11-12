@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@vanilla-extract/css':
-        specifier: 1.17.4
-        version: 1.17.4
       astro:
         specifier: 5.15.3
         version: 5.15.3(@types/node@24.9.2)(rollup@4.52.5)(typescript@5.9.3)(yaml@2.8.1)
@@ -24,6 +21,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: 8.46.2
         version: 8.46.2(eslint@9.38.0)(typescript@5.9.3)
+      '@vanilla-extract/css':
+        specifier: 1.17.4
+        version: 1.17.4
       '@vanilla-extract/vite-plugin':
         specifier: 5.1.1
         version: 5.1.1(@types/node@24.9.2)(vite@6.4.1(@types/node@24.9.2)(yaml@2.8.1))(yaml@2.8.1)
