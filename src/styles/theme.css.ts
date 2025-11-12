@@ -1,4 +1,4 @@
-import { createGlobalTheme, globalStyle } from '@vanilla-extract/css';
+import { createGlobalTheme } from '@vanilla-extract/css';
 
 const typography = {
 	pageTitle: '700 1.875rem',
@@ -66,10 +66,4 @@ export const theme = createGlobalTheme(':root', {
 	lineHeight: {
 		default: '150%',
 	},
-});
-
-globalStyle('*', {
-	margin: 0,
-	padding: 0,
-	boxSizing: 'border-box',
 });
