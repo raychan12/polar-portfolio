@@ -30,15 +30,17 @@ const font = {
  * const foo = style({ font: theme.text.ja.pageTitle });
  * ```
  */
-const createTypeConfig = (lang: keyof typeof font): { [key in keyof typeof typography]: string } =>
+const createTypeConfig = <T extends keyof typeof font>(
+	lang: T,
+): { [key in keyof typeof typography]: `${(typeof typography)[key]} ${(typeof font)[T]}` } =>
 	Object.fromEntries(
 		Object.entries(typography).map(([typographyKey, typographyValue]) => [
 			typographyKey,
 			`${typographyValue} ${font[lang]}`,
 		]),
-	) as { [key in keyof typeof typography]: string };
+	) as { [key in keyof typeof typography]: `${(typeof typography)[key]} ${(typeof font)[T]}` };
 
-export const theme = createGlobalTheme(':root', {
+export const vars = createGlobalTheme(':root', {
 	color: {
 		brand: {
 			primary: '#3c6387',
@@ -66,4 +68,4 @@ export const theme = createGlobalTheme(':root', {
 	lineHeight: {
 		default: '150%',
 	},
-});
+} as const);
