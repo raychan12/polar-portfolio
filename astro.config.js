@@ -1,4 +1,3 @@
-// @ts-check
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import { defineConfig, fontProviders } from 'astro/config';
 import { loadEnv } from 'vite';
