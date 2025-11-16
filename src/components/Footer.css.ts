@@ -1,12 +1,12 @@
 import { style } from '@vanilla-extract/css';
 
-import { theme } from '../styles/theme.css';
+import { vars } from '../styles/theme.css';
 
 export const footer = style({
 	display: 'flex',
 	alignItems: 'end',
 	justifyContent: 'space-between',
-	background: theme.color.brand.primary,
+	background: vars.color.brand.primary,
 	padding: '60px 120px 48px',
 });
 
@@ -17,6 +17,6 @@ export const logos = style({
 });
 
 export const copyright = style({
-	font: theme.text.en.exception,
-	color: theme.color.text.tertiary,
+	font: vars.text.en.exception,
+	color: vars.color.text.tertiary,
 });
