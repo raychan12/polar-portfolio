@@ -1,0 +1,41 @@
+import { style } from '@vanilla-extract/css';
+
+export const root = style({
+	position: 'relative',
+	display: 'flex',
+	justifyContent: 'center',
+	overflow: 'hidden',
+});
+
+export const main = style({
+	position: 'relative',
+	height: '800px',
+});
+
+export const image = style({
+	aspectRatio: 'unset',
+	height: '800px',
+	objectPosition: 'left center',
+	objectFit: 'cover',
+});
+
+export const background = style({
+	position: 'absolute',
+	inset: '0px',
+	width: '100%',
+	height: '100%',
+	aspectRatio: 'unset',
+	scale: 1.5,
+	objectFit: 'cover',
+	filter: 'blur(32px)',
+	zIndex: -1,
+});
+
+export const phrase = style({
+	position: 'absolute',
+	right: '120px',
+	bottom: '120px',
+	display: 'flex',
+	alignItems: 'center',
+	gap: '20px',
+});

@@ -14,7 +14,7 @@ export default defineConfig({
 		plugins: [vanillaExtractPlugin()],
 	},
 	image: {
-		responsiveStyles: true
+		responsiveStyles: true,
 	},
 	experimental: {
 		fonts: [
