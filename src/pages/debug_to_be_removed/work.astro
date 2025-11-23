@@ -13,7 +13,7 @@ import WorkCard from '../../components/WorkCard.astro';
 		description="映画「数分間のエールを」合同誌"
 		logoAlt="数ページのエールを"
 		tags={['design', 'sosaku']}
-		date="2025.12.1"
+		date={[new Date('2025/12/1')]}
 		assigning="文章 / 表紙イラスト / デザイン / 編集"
 	/>
 	<WorkCard
@@ -23,7 +23,7 @@ import WorkCard from '../../components/WorkCard.astro';
 		description="映画「数分間のエールを」合同誌"
 		logoAlt="数ページのエールを"
 		tags={['design', 'sosaku']}
-		date="2024.06.24 - 12.29"
+		date={[new Date('2024/6/24'), new Date('2024/12/29')]}
 		assigning="企画・主宰・全体進行統括 / デザイン統括・表紙イラスト / 編集統括 / 広報 / 一部寄稿"
 	/>
 	<WorkCard
@@ -33,7 +33,7 @@ import WorkCard from '../../components/WorkCard.astro';
 		description="映画「数分間のエールを」合同誌"
 		logoAlt="数ページのエールを"
 		tags={Array.from({ length: 50 }).map((_, i) => `tag${i}`)}
-		date="2024.06.24 - 12.29"
+		date={[new Date('2024/6/24'), new Date('2025/12/29')]}
 		assigning={'あ'.repeat(300)}
 	/>
 </CommonLayout>

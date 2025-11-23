@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+import { format } from 'date-fns';
+
 import {
 	root,
 	visualImage,
@@ -21,13 +23,15 @@ interface Props {
 	logoUrl: string;
 	description: string;
 	logoAlt: string;
-	date: string;
+	date: [Date] | [Date, Date];
 	tags: string[];
 	assigning: string;
 	logoPosition: 'left' | 'inline';
 }
 
 const { visualImageUrl, logoUrl, description, logoAlt, date, tags, assigning, logoPosition } = Astro.props;
+
+const dateForMachine = date.map((date) => format(date, 'yyyy-MM-dd'));
 ---
 
 <article class={root}>
@@ -60,7 +64,19 @@ const { visualImageUrl, logoUrl, description, logoAlt, date, tags, assigning, lo
 					))
 				}
 			</nav>
-			<span class={dateText}>{date}</span>
+			<span class={dateText}>
+				<time datetime={dateForMachine[0]}>{format(date[0], 'yyyy.MM.dd')}</time>
+				{
+					date.length == 2 && (
+						<>
+							{' - '}
+							<time datetime={dateForMachine[1]}>
+								{format(date[1], date[0].getFullYear() === date[1].getFullYear() ? 'MM.dd' : 'yyyy.MM.dd')}
+							</time>
+						</>
+					)
+				}
+			</span>
 			<p class={assigningText}>{assigning}</p>
 		</div>
 	</div>
