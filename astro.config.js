@@ -38,6 +38,7 @@ export default defineConfig({
 						glyphs: { 'Hina Mincho': ['涼夏 / raychan'] },
 					},
 				}),
+				fallbacks: ['Hiragino Mincho', 'Yu Mincho', 'Noto Serif JP'],
 			},
 		],
 	},
