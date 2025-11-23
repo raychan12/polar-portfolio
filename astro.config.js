@@ -15,6 +15,7 @@ export default defineConfig({
 	},
 	image: {
 		responsiveStyles: true,
+		domains: ['picsum.photos'],
 	},
 	experimental: {
 		fonts: [
