@@ -1,15 +1,12 @@
 ---
 import { copyright, footer, logos } from './Footer.css';
 import { COPYRIGHT_YEAR } from '../constant';
-
-import Ljus from '../assets/ljus.svg';
-import Circle from '../assets/circle.svg';
 ---
 
 <footer class={footer}>
 	<div class={logos}>
-		<Ljus width={120} height={120} />
-		<Circle width={188.44} height={69.4} />
+		<img src="/ljus.svg" alt="ljus" width={120} height={120} />
+		<img src="/circle.svg" alt="七夕の月光" width={188.44} height={69.4} />
 	</div>
 	<p class={copyright}>{COPYRIGHT_YEAR} raychan All Rights Reserved.</p>
 </footer>
