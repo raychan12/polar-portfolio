@@ -7,8 +7,16 @@ export const root = style({
 	width: '100%',
 	minHeight: '320px',
 	maxWidth: '960px',
-	boxShadow: '0px 4px 32px 0px #3C638729',
+	boxShadow: '0px 4px 32px 0px rgba(60, 99, 135, 0.16)',
 	backgroundColor: vars.color.bg.primary,
+	transition: '300ms transform, 300ms box-shadow',
+	transform: 'scale(1.0)',
+	selectors: {
+		'&:is(:hover, :focus-visible)': {
+			boxShadow: '0px 4px 60px 0px rgba(60, 99, 135, 0.25)',
+			transform: 'scale(1.01)',
+		},
+	},
 });
 
 export const visualImageContainer = style({
