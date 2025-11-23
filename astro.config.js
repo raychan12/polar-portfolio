@@ -13,6 +13,9 @@ export default defineConfig({
 	vite: {
 		plugins: [vanillaExtractPlugin()],
 	},
+	image: {
+		responsiveStyles: true,
+	},
 	experimental: {
 		fonts: [
 			{

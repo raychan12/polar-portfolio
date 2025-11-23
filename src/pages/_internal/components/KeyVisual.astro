@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+
+import KeyVisualImage from '../../../assets/KV_sRGB.png';
+import Ljus from '../../../assets/ljus.svg';
+import KvPhrase from '../../../assets/kv-phrase.svg';
+
+import { root, main, image, background, phrase } from './KeyVisual.css';
+---
+
+<div class={root}>
+	<div class={main}>
+		<Image class={image} src={KeyVisualImage} alt="" layout="constrained" />
+		<div class={phrase}>
+			<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} />
+			<img
+				src={KvPhrase.src}
+				alt="Ditt liv är ljus. - Dear insages praying for the area out of capitalism. "
+				width={KvPhrase.width}
+				height={KvPhrase.height}
+			/>
+		</div>
+	</div>
+	<Image class={background} src={KeyVisualImage} alt="" layout="fixed" width={32} height={24} />
+</div>
