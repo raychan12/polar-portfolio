@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"build": "astro build",
-		"clean:cache": "rm -r .astro node_modules/.cache",
+		"clean:cache": "rm -r .astro node_modules/.cache || true",
 		"dev": "pnpm run clean:cache && astro dev",
 		"format": "prettier --write .",
 		"format:ci": "prettier --check .",
