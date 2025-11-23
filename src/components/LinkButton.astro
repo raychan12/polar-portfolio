@@ -11,6 +11,6 @@ interface Props extends HTMLAttributes<'a'> {
 const { class: className, href, ...props } = Astro.props;
 ---
 
-<a href={href} class={`${root} ${className ?? ''}`} {...props}>
+<a href={href} class:list={[root, className]} {...props}>
 	<slot />
 </a>
