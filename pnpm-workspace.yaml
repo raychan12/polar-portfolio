@@ -1,6 +1,6 @@
 onlyBuiltDependencies:
   - esbuild@0.25.4 || 0.25.11
-  - sharp@0.33.5 || 0.34.4
+  - sharp@0.33.5 || 0.34.5
   - unrs-resolver@1.11.1
   - workerd@1.20251118.0
 
