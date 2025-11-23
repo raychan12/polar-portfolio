@@ -9,15 +9,15 @@ export const root = style({
 
 export const main = style({
 	position: 'relative',
-	height: '800px',
+	height: '100dvh',
 });
 
 export const image = style({
-	aspectRatio: 'unset',
-	height: '800px',
 	objectPosition: 'left center',
 	objectFit: 'cover',
 	boxShadow: '0px 0px 32px 0px #00000029',
+	width: '100%',
+	height: '100%',
 });
 
 export const background = style({
