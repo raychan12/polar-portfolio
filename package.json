@@ -8,8 +8,8 @@
 	},
 	"scripts": {
 		"build": "astro build",
-		"dev": "pnpm run clean && astro dev",
 		"clean": "rm -rf .astro",
+		"dev": "pnpm run clean && astro dev",
 		"format": "prettier --write .",
 		"format:ci": "prettier --check .",
 		"lint": "eslint .",
