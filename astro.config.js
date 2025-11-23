@@ -29,6 +29,15 @@ export default defineConfig({
 				// Use system local font is Web Font is not available
 				fallbacks: ['Avenir'],
 			},
+			{
+				name: 'Hina Mincho',
+				cssVariable: '--font-hina-mincho',
+				provider: fontProviders.google({
+					experimental: {
+						glyphs: { 'Hina Mincho': ['涼夏 / raychan'] },
+					},
+				}),
+			},
 		],
 	},
 });
