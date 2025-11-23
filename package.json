@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"build": "astro build",
-		"clean:cache": "rm -r .astro node_modules/.cache || true",
+		"clean:cache": "rimraf .astro node_modules/.cache",
 		"dev": "pnpm run clean:cache && astro dev",
 		"format": "prettier --write .",
 		"format:ci": "prettier --check .",
@@ -42,6 +42,7 @@
 		"prettier": "3.6.2",
 		"prettier-plugin-astro": "0.14.1",
 		"prettier-plugin-pkg": "0.21.2",
+		"rimraf": "6.1.2",
 		"sharp": "0.34.5",
 		"typescript": "5.9.3",
 		"typescript-eslint": "8.46.2",
