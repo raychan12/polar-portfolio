@@ -17,6 +17,7 @@ export const image = style({
 	height: '800px',
 	objectPosition: 'left center',
 	objectFit: 'cover',
+	boxShadow: '0px 0px 32px 0px #00000029',
 });
 
 export const background = style({
