@@ -23,15 +23,23 @@ interface Props {
 	logoUrl: string;
 	description: string;
 	logoAlt: string;
-	date: [Date] | [Date, Date];
+	dateInstant?: Date;
+	datePeriod?: { from: Date; to: Date };
 	tags: string[];
 	assigning: string;
 	logoPosition: 'left' | 'inline';
 }
 
-const { visualImageUrl, logoUrl, description, logoAlt, date, tags, assigning, logoPosition } = Astro.props;
+const { visualImageUrl, logoUrl, description, logoAlt, dateInstant, datePeriod, tags, assigning, logoPosition } =
+	Astro.props;
 
-const dateForMachine = date.map((date) => format(date, 'yyyy-MM-dd'));
+if (dateInstant === undefined && datePeriod === undefined) {
+	throw new Error('Date must be specified by either of dateInstant or datePeriod');
+}
+
+if (dateInstant !== undefined && datePeriod !== undefined) {
+	throw new Error('Date cannot be specified by both of instant or period, must be either of them');
+}
 ---
 
 <article class={root}>
@@ -66,13 +74,17 @@ const dateForMachine = date.map((date) => format(date, 'yyyy-MM-dd'));
 				}
 			</nav>
 			<span class={dateText}>
-				<time datetime={dateForMachine[0]}>{format(date[0], 'yyyy.MM.dd')}</time>
+				{dateInstant && <time datetime={format(dateInstant, 'yyyy-MM-dd')}>{format(dateInstant, 'yyyy.MM.dd')}</time>}
 				{
-					date.length == 2 && (
+					datePeriod && (
 						<>
+							<time datetime={format(datePeriod.from, 'yyyy-MM-dd')}>{format(datePeriod.from, 'yyyy.MM.dd')}</time>
 							{' - '}
-							<time datetime={dateForMachine[1]}>
-								{format(date[1], date[0].getFullYear() === date[1].getFullYear() ? 'MM.dd' : 'yyyy.MM.dd')}
+							<time datetime={format(datePeriod.to, 'yyyy-MM-dd')}>
+								{format(
+									datePeriod.to,
+									datePeriod.from.getFullYear() === datePeriod.to.getFullYear() ? 'MM.dd' : 'yyyy.MM.dd',
+								)}
 							</time>
 						</>
 					)
