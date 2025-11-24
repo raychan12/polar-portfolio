@@ -45,7 +45,7 @@ export const shirokumaText = style({
 		borderRadius: '120px',
 		bottom: '50%',
 		opacity: '0%',
-		background: `url(/shirokuma.jpg)`,
+		background: `url(/shirokuma.webp)`,
 		backgroundSize: 'contain',
 		transition: 'opacity 2000ms, bottom 2000ms',
 	},
