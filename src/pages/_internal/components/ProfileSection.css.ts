@@ -32,21 +32,25 @@ export const bio = style({
 });
 
 export const shirokumaText = style({
-	position: 'relative',
-});
-
-export const shirokumaImage = style({
-	position: 'absolute',
-	width: '80px',
-	height: '80px',
-	maxWidth: 'none',
-	maxHeight: 'none',
-	borderRadius: '120px',
-	bottom: '50%',
-	opacity: '0%',
-	transition: 'opacity 2000ms, bottom 2000ms',
-	selectors: {
-		[`${shirokumaText}:hover > &`]: {
+	'display': 'inline-block',
+	'position': 'relative',
+	':after': {
+		content: '',
+		display: 'block',
+		position: 'absolute',
+		width: '80px',
+		height: '80px',
+		maxWidth: 'none',
+		maxHeight: 'none',
+		borderRadius: '120px',
+		bottom: '50%',
+		opacity: '0%',
+		background: `url(/shirokuma.jpg)`,
+		backgroundSize: 'contain',
+		transition: 'opacity 2000ms, bottom 2000ms',
+	},
+	'selectors': {
+		'&:hover:after': {
 			opacity: '100%',
 			bottom: '105%',
 		},

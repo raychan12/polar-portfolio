@@ -5,20 +5,8 @@ import Heading from './Heading.astro';
 import LinkButton from '../../../components/LinkButton.astro';
 
 import Avatar from '../../../assets/avatar.png';
-import Shirokuma from '../../../assets/shirokuma.jpg';
 
-import {
-	root,
-	content,
-	avatar,
-	name,
-	bio,
-	shirokumaText,
-	shirokumaImage,
-	linksList,
-	link,
-	linkIcon,
-} from './ProfileSection.css';
+import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkIcon } from './ProfileSection.css';
 ---
 
 <!-- TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る -->
@@ -32,7 +20,7 @@ import {
 				本業はUXデザイナー。その他グラフィック等のビジュアルデザイン、コンセプトデザイン等のライティング、イラスト、必要に応じてPdM・コーディング。<br
 				/>
 				趣味はイラスト、稀に文章、ピアノ。メイン装備はCLIP STUDIO PAINTとRoland RD-88。相棒は<span class={shirokumaText}
-					><Image src={Shirokuma} alt="" aria-hidden width={120} height={120} class={shirokumaImage} />しろくま</span
+					>しろくま</span
 				>。
 			</p>
 			<nav class={linksList}>
