@@ -4,11 +4,13 @@ import PageLayout from '../layout/PageLayout.astro';
 import KeyVisual from './_internal/components/KeyVisual.astro';
 import WorkSection from './_internal/components/WorkSection.astro';
 import ProfileSection from './_internal/components/ProfileSection.astro';
+
+import { content } from './index.css';
 ---
 
 <CommonLayout>
 	<KeyVisual />
-	<PageLayout>
+	<PageLayout class={content}>
 		<WorkSection />
 		<ProfileSection />
 	</PageLayout>
