@@ -51,7 +51,7 @@ export const shirokumaText = style({
 	},
 	'selectors': {
 		'&:hover:after': {
-			opacity: '100%',
+			opacity: '75%',
 			bottom: '105%',
 		},
 	},
