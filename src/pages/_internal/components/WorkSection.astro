@@ -1,0 +1,26 @@
+---
+import Heading from './Heading.astro';
+import LinkButton from '../../../components/LinkButton.astro';
+import WorkCard from '../../../features/work/components/WorkCard.astro';
+
+import { root, worksList, work, linkButton } from './WorkSection.css';
+
+import { particularWork, generateSampleWork } from '../../../features/work/sample';
+
+// TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る
+const works = [particularWork, generateSampleWork(0), generateSampleWork(1)];
+---
+
+<section class={root}>
+	<Heading>works</Heading>
+	<ul class={worksList}>
+		{
+			works.map((workData) => (
+				<li class={work}>
+					<WorkCard work={workData} />
+				</li>
+			))
+		}
+	</ul>
+	<LinkButton class={linkButton} href="/works">see all</LinkButton>
+</section>
