@@ -61,7 +61,7 @@ export const linksList = style({
 	display: 'flex',
 	flexWrap: 'wrap',
 	gap: '4px 32px',
-	marginTop: '8px',
+	marginTop: '16px',
 });
 
 export const link = style({
