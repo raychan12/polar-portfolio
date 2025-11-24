@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import { format } from 'date-fns';
+
+import {
+	root,
+	visualImage,
+	visualImageBackground,
+	visualImageContainer,
+	logoLeft,
+	logoInline,
+	workInfo,
+	workInfoSection,
+	descriptionText,
+	tagsList,
+	tagsLink,
+	dateText,
+	assigningText,
+} from './WorkCard.css';
+
+interface Props {
+	visualImageUrl: string;
+	logoUrl: string;
+	description: string;
+	logoAlt: string;
+	dateInstant?: Date;
+	datePeriod?: { from: Date; to: Date };
+	tags: string[];
+	assigning: string;
+	logoPosition: 'left' | 'inline';
+}
+
+const { visualImageUrl, logoUrl, description, logoAlt, dateInstant, datePeriod, tags, assigning, logoPosition } =
+	Astro.props;
+
+if (dateInstant === undefined && datePeriod === undefined) {
+	throw new Error('Date must be specified by either of dateInstant or datePeriod');
+}
+
+if (dateInstant !== undefined && datePeriod !== undefined) {
+	throw new Error('Date cannot be specified by both of instant or period, must be either of them');
+}
+---
+
+<article class={root}>
+	<div class={visualImageContainer}>
+		{/* TODO: alt 確認する */}
+		<Image class={visualImage} src={visualImageUrl} alt={''} width={227} height={320} />
+		<Image class={visualImageBackground} src={visualImageUrl} alt={''} width={23} height={32} />
+	</div>
+	{
+		logoPosition === 'left' && (
+			<Image class={logoLeft} src={logoUrl} alt={logoAlt} widths={[160, 320, 640]} sizes="160px" inferSize />
+		)
+	}
+	<div class={workInfo}>
+		<div class={workInfoSection}>
+			<h2 class={descriptionText}>{description}</h2>
+			{
+				logoPosition === 'inline' && (
+					<Image class={logoInline} src={logoUrl} alt={logoAlt} inferSize layout="constrained" />
+				)
+			}
+		</div>
+		<div class={workInfoSection}>
+			<nav class={tagsList}>
+				{/* TODO: リンク先があってるかを確認する */}
+				{
+					tags.map((tag) => (
+						<a class={tagsLink} href={`/works?tag=${tag}`}>
+							#{tag}
+						</a>
+					))
+				}
+			</nav>
+			<span class={dateText}>
+				{dateInstant && <time datetime={format(dateInstant, 'yyyy-MM-dd')}>{format(dateInstant, 'yyyy.MM.dd')}</time>}
+				{
+					datePeriod && (
+						<>
+							<time datetime={format(datePeriod.from, 'yyyy-MM-dd')}>{format(datePeriod.from, 'yyyy.MM.dd')}</time>
+							{' - '}
+							<time datetime={format(datePeriod.to, 'yyyy-MM-dd')}>
+								{format(
+									datePeriod.to,
+									datePeriod.from.getFullYear() === datePeriod.to.getFullYear() ? 'MM.dd' : 'yyyy.MM.dd',
+								)}
+							</time>
+						</>
+					)
+				}
+			</span>
+			<p class={assigningText}>{assigning}</p>
+		</div>
+	</div>
+</article>

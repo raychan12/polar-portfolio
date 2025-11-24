@@ -15,6 +15,9 @@ export default defineConfig({
 	},
 	image: {
 		responsiveStyles: true,
+		// /debug_to_be_removed/work で使用
+		// TODO: 消す
+		domains: ['picsum.photos'],
 	},
 	experimental: {
 		fonts: [
