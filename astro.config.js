@@ -31,6 +31,13 @@ export default defineConfig({
 				fallbacks: ['Avenir'],
 			},
 			{
+				name: 'Cormorant SC',
+				cssVariable: '--font-cormorant-sc',
+				provider: fontProviders.google(),
+				weights: [600, 700],
+				fallbacks: ['Times New Roman'],
+			},
+			{
 				name: 'Hina Mincho',
 				cssVariable: '--font-hina-mincho',
 				provider: fontProviders.google({
