@@ -6,6 +6,7 @@ export const root = style({
 	position: 'absolute',
 	right: '40px',
 	top: '40px',
+	display: 'flex',
 	color: 'white',
 });
 
