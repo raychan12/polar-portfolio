@@ -1,15 +1,32 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { links } from '../constant';
+import { links, type LinkTo } from '../constant';
 
-import { iconLink, link } from './Header.css';
+import { root, iconLink, link } from './Header.css';
+
+function isCurrentPage(linkTo: LinkTo) {
+	if (linkTo.pathname === undefined) {
+		return false;
+	}
+
+	if (linkTo.pathname === '/') {
+		return Astro.url.pathname === '/';
+	}
+
+	return Astro.url.pathname.startsWith(linkTo.pathname);
+}
 ---
 
 <header>
-	<nav>
+	<nav class={root}>
 		{
 			links.map(({ linkTo, icon, caption }) => (
-				<a class={link} href={linkTo.href ?? linkTo.pathname}>
+				<a
+					aria-current={isCurrentPage(linkTo) ? 'page' : undefined}
+					class={link}
+					href={linkTo.href ?? linkTo.pathname}
+					target={linkTo.href === undefined ? undefined : '_blank'}
+					rel={linkTo.href === undefined ? undefined : 'noreferrer noopener'}>
 					{icon ?
 						<Icon name={icon} width={24} height={24} title={caption} class={iconLink} />
 					:	caption}
