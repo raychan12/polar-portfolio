@@ -34,7 +34,7 @@ export const getStaticPaths = (() => {
 	const categoryOnly = workCategory.map(
 		(category) =>
 			({
-				params: { filter: `${category}` },
+				params: { filter: category },
 				props: { category, context: 'all' },
 			}) satisfies GetStaticPathsItem,
 	);
