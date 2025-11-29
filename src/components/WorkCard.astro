@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import { format } from 'date-fns';
 
+import type { Work } from '../features/work/type';
+
 import {
 	root,
 	visualImage,
@@ -19,19 +21,12 @@ import {
 } from './WorkCard.css';
 
 interface Props {
-	visualImageUrl: string;
-	logoUrl: string;
-	description: string;
-	logoAlt: string;
-	dateInstant?: Date;
-	datePeriod?: { from: Date; to: Date };
-	tags: string[];
-	assigning: string;
-	logoPosition: 'left' | 'inline';
+	work: Work;
 }
 
-const { visualImageUrl, logoUrl, description, logoAlt, dateInstant, datePeriod, tags, assigning, logoPosition } =
-	Astro.props;
+const {
+	work: { visualImageUrl, logoUrl, description, logoAlt, dateInstant, datePeriod, tags, assigning, logoPosition },
+} = Astro.props;
 
 if (dateInstant === undefined && datePeriod === undefined) {
 	throw new Error('Date must be specified by either of dateInstant or datePeriod');
