@@ -1,0 +1,21 @@
+---
+import type { GetStaticPaths } from "astro";
+import CommonLayout from '../../layout/CommonLayout.astro';
+import PageTitle from '../../components/PageTitle.astro';
+import PageLayout from '../../layout/PageLayout.astro';
+
+export const getStaticPaths = (() => {
+	// TODO: 全種類網羅する
+	return [
+		{ params: { filter: "" }},
+		{ params: { filter: "all" }},
+		{ params: { filter: "all/all" }},
+	];
+}) satisfies GetStaticPaths;
+
+---
+
+<CommonLayout>
+	<PageTitle title="works" />
+	<PageLayout smallerTopPadding />
+</CommonLayout>
