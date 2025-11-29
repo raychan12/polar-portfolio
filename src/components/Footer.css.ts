@@ -4,10 +4,32 @@ import { vars } from '../styles/theme.css';
 
 export const footer = style({
 	display: 'flex',
-	alignItems: 'end',
+	alignItems: 'stretch',
 	justifyContent: 'space-between',
 	background: vars.color.brand.primary,
-	padding: '60px 120px 48px',
+	padding: '40px 120px',
+	color: vars.color.text.tertiary,
+});
+
+export const linkList = style({
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	gap: '8px',
+	height: '100%',
+});
+
+export const link = style({
+	fontFamily: vars.font.en,
+	fontSize: '0.875em',
+	fontWeight: 300,
+});
+
+export const right = style({
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'end',
+	justifyContent: 'space-between',
 });
 
 export const logos = style({
@@ -18,5 +40,4 @@ export const logos = style({
 
 export const copyright = style({
 	font: vars.text.en.exception,
-	color: vars.color.text.tertiary,
 });
