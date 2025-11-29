@@ -1,18 +1,20 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { main } from './PageLayout.css';
+
+import { main, smallTopPadding } from './PageLayout.css';
 
 interface Props {
 	class?: string;
+	smallerTopPadding?: boolean;
 }
 
-const { class: className } = Astro.props;
+const { class: className, smallerTopPadding = false } = Astro.props;
 ---
 
 <Fragment>
 	<Header />
-	<main class:list={[main, className]}>
+	<main class:list={[main, smallerTopPadding && smallTopPadding, className]}>
 		<slot />
 	</main>
 	<Footer />
