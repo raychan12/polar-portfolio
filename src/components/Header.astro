@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+import { links } from '../constant';
+
+import { iconLink, link } from './Header.css';
+---
+
+<header>
+	<nav>
+		{
+			links.map(({ linkTo, icon, caption }) => (
+				<a class={link} href={linkTo.href ?? linkTo.pathname}>
+					{icon ?
+						<Icon name={icon} width={24} height={24} title={caption} class={iconLink} />
+					:	caption}
+				</a>
+			))
+		}
+	</nav>
+</header>
