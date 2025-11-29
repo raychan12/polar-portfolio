@@ -4,7 +4,7 @@ import { headerLinks, type LinkTo } from '../constant';
 
 import { root, iconLink, link } from './Header.css';
 
-function isCurrentPage(linkTo: LinkTo) {
+const isCurrentPage = (linkTo: LinkTo): boolean => {
 	if (linkTo.pathname === undefined) {
 		return false;
 	}
@@ -14,7 +14,7 @@ function isCurrentPage(linkTo: LinkTo) {
 	}
 
 	return Astro.url.pathname.startsWith(linkTo.pathname);
-}
+};
 ---
 
 <header>
