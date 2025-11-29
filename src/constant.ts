@@ -3,12 +3,12 @@ export const COPYRIGHT_YEAR = 2025;
 export const CONTACT_FORM = 'https://forms.gle/vQ4eYDe7j1N4vt4H8';
 export const TWITTER = 'https://x.com/__ljus';
 
-interface Link {
+export interface Link {
 	caption: string;
 	icon?: string;
 	linkTo: LinkTo;
 }
-type LinkTo = { pathname: string; href?: undefined } | { pathname?: undefined; href: string };
+export type LinkTo = { pathname: string; href?: undefined } | { pathname?: undefined; href: string };
 
 export const links: Link[] = [
 	{ caption: 'home', linkTo: { pathname: '/' } },
