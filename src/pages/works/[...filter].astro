@@ -6,10 +6,12 @@ import PageLayout from '../../layout/PageLayout.astro';
 import WorkCard from '../../features/work/components/WorkCard.astro';
 import Filter from './_components/Filter.astro';
 
+import LeftArrow from '../../assets/left-arrow.svg';
+
 import { workCategory, workContext, type WorkCategory, type WorkContext } from '../../features/work/type';
 import { generateSampleWork } from '../../features/work/sample';
 
-import { filters, worksList } from './works.css';
+import { filters, worksList, backLink } from './works.css';
 
 interface Props {
 	category: WorkCategory;
@@ -78,5 +80,9 @@ const { category, context } = Astro.props;
 				))
 			}
 		</ul>
+		<a href="/" class={backLink}>
+			<img src={LeftArrow.src} width={LeftArrow.width} height={LeftArrow.height} alt="" aria-hidden />
+			back
+		</a>
 	</PageLayout>
 </CommonLayout>
