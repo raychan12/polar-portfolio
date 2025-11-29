@@ -1,5 +1,5 @@
 ---
-import { copyright, linkList, link, footer, right, logos } from './Footer.css';
+import { copyright, container, linkList, link, footer, right, logos } from './Footer.css';
 import { CONTACT_FORM, COPYRIGHT_YEAR } from '../constant';
 
 export type LinkTo = { pathname: string; href?: undefined } | { pathname?: undefined; href: string };
@@ -21,28 +21,30 @@ import Circle from '../assets/circle.svg';
 ---
 
 <footer class={footer}>
-	<nav>
-		<ul class={linkList}>
-			{
-				footerLink.map(({ linkTo, caption }) => (
-					<li>
-						<a
-							class={link}
-							href={linkTo.href ?? linkTo.pathname}
-							target={linkTo.href === undefined ? undefined : '_blank'}
-							rel={linkTo.href === undefined ? undefined : 'noreferrer noopener'}>
-							{caption}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</nav>
-	<div class={right}>
-		<div class={logos}>
-			<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} />
-			<img src={Circle.src} alt="七夕の月光" width={Circle.width} height={Circle.height} />
+	<div class={container}>
+		<nav>
+			<ul class={linkList}>
+				{
+					footerLink.map(({ linkTo, caption }) => (
+						<li>
+							<a
+								class={link}
+								href={linkTo.href ?? linkTo.pathname}
+								target={linkTo.href === undefined ? undefined : '_blank'}
+								rel={linkTo.href === undefined ? undefined : 'noreferrer noopener'}>
+								{caption}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+		<div class={right}>
+			<div class={logos}>
+				<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} />
+				<img src={Circle.src} alt="七夕の月光" width={Circle.width} height={Circle.height} />
+			</div>
+			<p class={copyright}>{COPYRIGHT_YEAR} raychan All Rights Reserved.</p>
 		</div>
-		<p class={copyright}>{COPYRIGHT_YEAR} raychan All Rights Reserved.</p>
 	</div>
 </footer>
