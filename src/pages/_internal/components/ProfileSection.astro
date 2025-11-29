@@ -4,6 +4,8 @@ import { Icon } from 'astro-icon/components';
 import Heading from './Heading.astro';
 import LinkButton from '../../../components/LinkButton.astro';
 
+import { CONTACT_FORM, TWITTER } from '../../../constant';
+
 import Avatar from '../../../assets/avatar.png';
 
 import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkIcon } from './ProfileSection.css';
@@ -24,7 +26,7 @@ import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkI
 				>。
 			</p>
 			<nav class={linksList}>
-				<a class={link} href="https://x.com/__ljus" target="_blank" rel="noopener">
+				<a class={link} href={TWITTER} target="_blank" rel="noopener">
 					<Icon name="twitter" aria-hidden width={24} height={24} class={linkIcon} />
 					Twitter
 				</a>
@@ -35,7 +37,7 @@ import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkI
 			</nav>
 		</div>
 	</div>
-	<LinkButton href="https://forms.gle/vQ4eYDe7j1N4vt4H8" target="_blank" rel="noopener">
+	<LinkButton href={CONTACT_FORM} target="_blank" rel="noopener">
 		<Icon name="chat" aria-hidden width={24} height={24} class={linkIcon} />
 		contact
 	</LinkButton>
