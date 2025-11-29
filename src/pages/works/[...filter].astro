@@ -1,21 +1,51 @@
 ---
-import type { GetStaticPaths } from "astro";
+import type { GetStaticPaths, GetStaticPathsItem } from 'astro';
 import CommonLayout from '../../layout/CommonLayout.astro';
 import PageTitle from '../../components/PageTitle.astro';
 import PageLayout from '../../layout/PageLayout.astro';
 
+import { workCategory, workContext, type WorkCategory, type WorkContext } from '../../features/work/type';
+
+interface Props {
+	category: WorkCategory;
+	context: WorkContext;
+}
+
 export const getStaticPaths = (() => {
-	// TODO: 全種類網羅する
+	/* /works/(category)/(context) */
+	const possiblePaths = ['all', ...workCategory].flatMap((category) =>
+		['all', ...workContext].map(
+			(context) =>
+				({
+					params: { filter: `${category}/${context}` },
+					props: { category, context },
+				}) satisfies GetStaticPathsItem,
+		),
+	);
+
+	/* /works/(category) */
+	const categoryOnly = ['all', ...workCategory].map(
+		(category) =>
+			({
+				params: { filter: `${category}` },
+				props: { category, context: 'all' },
+			}) satisfies GetStaticPathsItem,
+	);
+
 	return [
-		{ params: { filter: "" }},
-		{ params: { filter: "all" }},
-		{ params: { filter: "all/all" }},
+		/* /works */
+		{ params: { filter: undefined }, props: { category: 'all', context: 'all' } },
+		...categoryOnly,
+		...possiblePaths,
 	];
 }) satisfies GetStaticPaths;
 
+const { category, context } = Astro.props;
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
-	<PageLayout smallerTopPadding />
+	<PageLayout smallerTopPadding>
+		{category} / {context}
+	</PageLayout>
 </CommonLayout>

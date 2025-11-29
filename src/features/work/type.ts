@@ -9,3 +9,9 @@ export interface Work {
 	assigning: string;
 	logoPosition: 'left' | 'inline';
 }
+
+export const workCategory = ['all', 'uiux', 'graphic', 'sosaku'] as const;
+export type WorkCategory = (typeof workCategory)[number];
+
+export const workContext = ['all', 'commission', 'collaboration', 'corporate', 'personal'] as const;
+export type WorkContext = (typeof workContext)[number];
