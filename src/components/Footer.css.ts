@@ -30,7 +30,7 @@ export const link = style({
 	fontWeight: 300,
 });
 
-export const right = style({
+export const identify = style({
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'end',

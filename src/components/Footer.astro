@@ -1,5 +1,5 @@
 ---
-import { copyright, container, linkList, link, footer, right, logos } from './Footer.css';
+import { copyright, container, linkList, link, footer, identify, logos } from './Footer.css';
 import { CONTACT_FORM, COPYRIGHT_YEAR } from '../constant';
 
 export type LinkTo = { pathname: string; href?: undefined } | { pathname?: undefined; href: string };
@@ -39,7 +39,7 @@ import Circle from '../assets/circle.svg';
 				}
 			</ul>
 		</nav>
-		<div class={right}>
+		<div class={identify}>
 			<div class={logos}>
 				<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} />
 				<img src={Circle.src} alt="七夕の月光" width={Circle.width} height={Circle.height} />
