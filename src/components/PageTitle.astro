@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+
+import FvVertical from '../assets/fv-vert.png';
+
+import { root, backgroundImage, titleText } from './PageTitle.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class={root}>
+	<Image src={FvVertical} alt="" aria-hidden height={200} layout="full-width" class={backgroundImage} />
+	<h1 class={titleText}>{title}</h1>
+</div>
