@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { links, type LinkTo } from '../constant';
+import { headerLinks, type LinkTo } from '../constant';
 
 import { root, iconLink, link } from './Header.css';
 
@@ -21,7 +21,7 @@ function isCurrentPage(linkTo: LinkTo) {
 	<nav>
 		<ul class={root}>
 			{
-				links.map(({ linkTo, icon, caption }) => (
+				headerLinks.map(({ linkTo, icon, caption }) => (
 					<li>
 						<a
 							aria-current={isCurrentPage(linkTo) ? 'page' : undefined}
