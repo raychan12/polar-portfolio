@@ -3,9 +3,12 @@ export interface Work {
 	logoUrl: string;
 	description: string;
 	logoAlt: string;
-	dateInstant?: Date;
-	datePeriod?: { from: Date; to: Date };
+	date: WorkDate;
 	tags: string[];
 	assigning: string;
 	logoPosition: 'left' | 'inline';
 }
+
+export type WorkDate =
+	| { instant: Date; period?: undefined }
+	| { instant?: undefined; period: { from: Date; to: Date } };
