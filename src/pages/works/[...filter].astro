@@ -3,8 +3,11 @@ import type { GetStaticPaths, GetStaticPathsItem } from 'astro';
 import CommonLayout from '../../layout/CommonLayout.astro';
 import PageTitle from '../../components/PageTitle.astro';
 import PageLayout from '../../layout/PageLayout.astro';
+import Filter from './_components/Filter.astro';
 
 import { workCategory, workContext, type WorkCategory, type WorkContext } from '../../features/work/type';
+
+import { filters } from './works.css';
 
 interface Props {
 	category: WorkCategory;
@@ -13,8 +16,8 @@ interface Props {
 
 export const getStaticPaths = (() => {
 	/* /works/(category)/(context) */
-	const possiblePaths = ['all', ...workCategory].flatMap((category) =>
-		['all', ...workContext].map(
+	const possiblePaths = workCategory.flatMap((category) =>
+		workContext.map(
 			(context) =>
 				({
 					params: { filter: `${category}/${context}` },
@@ -24,7 +27,7 @@ export const getStaticPaths = (() => {
 	);
 
 	/* /works/(category) */
-	const categoryOnly = ['all', ...workCategory].map(
+	const categoryOnly = workCategory.map(
 		(category) =>
 			({
 				params: { filter: `${category}` },
@@ -46,6 +49,23 @@ const { category, context } = Astro.props;
 <CommonLayout>
 	<PageTitle title="works" />
 	<PageLayout smallerTopPadding>
-		{category} / {context}
+		<div class={filters}>
+			<Filter
+				aria-label="内容"
+				candidates={workCategory.map((newCategory) => ({
+					tag: newCategory,
+					pathname: `/works/${newCategory}/${context}`,
+				}))}
+				currentTag={category}
+			/>
+			<Filter
+				aria-label="創作の形態"
+				candidates={workContext.map((newContext) => ({
+					tag: newContext,
+					pathname: `/works/${category}/${newContext}`,
+				}))}
+				currentTag={context}
+			/>
+		</div>
 	</PageLayout>
 </CommonLayout>

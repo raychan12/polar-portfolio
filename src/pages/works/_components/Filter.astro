@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+import { list, tagText } from './Filter.css';
+
+interface Props extends HTMLAttributes<'nav'> {
+	candidates: { tag: string; pathname: string }[];
+	currentTag: string;
+}
+
+const { candidates, currentTag, ...rest } = Astro.props;
+---
+
+<nav {...rest}>
+	<ul class={list}>
+		{
+			candidates.map(({ tag, pathname }) => (
+				<li>
+					<a href={pathname} class={tagText} aria-current={tag === currentTag ? 'page' : undefined}>
+						#{tag}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>
