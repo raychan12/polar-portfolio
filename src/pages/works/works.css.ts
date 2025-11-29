@@ -2,6 +2,11 @@ import { style } from '@vanilla-extract/css';
 
 import { vars } from '../../styles/theme.css';
 
+export const page = style({
+	maxWidth: '960px',
+	marginInline: 'auto',
+});
+
 export const filters = style({
 	display: 'flex',
 	flexDirection: 'column',
