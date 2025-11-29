@@ -16,7 +16,7 @@ export const container = style({
 	marginInline: 'auto',
 });
 
-export const linkList = style({
+export const linksList = style({
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',

@@ -1,5 +1,5 @@
 ---
-import { copyright, container, linkList, link, footer, identify, logos } from './Footer.css';
+import { copyright, container, linksList, link, footer, identify, logos } from './Footer.css';
 import { CONTACT_FORM, COPYRIGHT_YEAR } from '../constant';
 
 export type LinkTo = { pathname: string; href?: undefined } | { pathname?: undefined; href: string };
@@ -8,7 +8,7 @@ interface FooterLink {
 	caption: string;
 	linkTo: LinkTo;
 }
-const footerLink: FooterLink[] = [
+const footerLinks: FooterLink[] = [
 	{ caption: 'top', linkTo: { pathname: '/' } },
 	{ caption: 'works', linkTo: { pathname: '/works' } },
 	// { caption: "blog", link: { pathname: "/blog" }},
@@ -23,9 +23,9 @@ import Circle from '../assets/circle.svg';
 <footer class={footer}>
 	<div class={container}>
 		<nav>
-			<ul class={linkList}>
+			<ul class={linksList}>
 				{
-					footerLink.map(({ linkTo, caption }) => (
+					footerLinks.map(({ linkTo, caption }) => (
 						<li>
 							<a
 								class={link}
