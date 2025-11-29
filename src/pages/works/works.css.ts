@@ -5,3 +5,10 @@ export const filters = style({
 	flexDirection: 'column',
 	gap: '16px',
 });
+
+export const worksList = style({
+	marginTop: '40px',
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '40px',
+});

@@ -3,11 +3,13 @@ import type { GetStaticPaths, GetStaticPathsItem } from 'astro';
 import CommonLayout from '../../layout/CommonLayout.astro';
 import PageTitle from '../../components/PageTitle.astro';
 import PageLayout from '../../layout/PageLayout.astro';
+import WorkCard from '../../features/work/components/WorkCard.astro';
 import Filter from './_components/Filter.astro';
 
 import { workCategory, workContext, type WorkCategory, type WorkContext } from '../../features/work/type';
+import { generateSampleWork } from '../../features/work/sample';
 
-import { filters } from './works.css';
+import { filters, worksList } from './works.css';
 
 interface Props {
 	category: WorkCategory;
@@ -67,5 +69,14 @@ const { category, context } = Astro.props;
 				currentTag={context}
 			/>
 		</div>
+		<ul class={worksList}>
+			{
+				Array.from({ length: 25 }).map((_, i) => (
+					<li>
+						<WorkCard work={generateSampleWork(i)} />
+					</li>
+				))
+			}
+		</ul>
 	</PageLayout>
 </CommonLayout>
