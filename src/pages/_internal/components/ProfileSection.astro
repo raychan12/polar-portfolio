@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import Heading from './Heading.astro';
+import LinkButton from '../../../components/LinkButton.astro';
+
+import Avatar from '../../../assets/avatar.png';
+
+import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkIcon } from './ProfileSection.css';
+---
+
+<!-- TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る -->
+<section class={root}>
+	<Heading>profile</Heading>
+	<div class={content}>
+		<Image src={Avatar} alt="涼夏 / raychan" width={120} height={120} class={avatar} />
+		<div>
+			<h2 class={name}>涼夏 / raychan</h2>
+			<p class={bio}>
+				本業はUXデザイナー。その他グラフィック等のビジュアルデザイン、コンセプトデザイン等のライティング、イラスト、必要に応じてPdM・コーディング。<br
+				/>
+				趣味はイラスト、稀に文章、ピアノ。メイン装備はCLIP STUDIO PAINTとRoland RD-88。相棒は<span class={shirokumaText}
+					>しろくま</span
+				>。
+			</p>
+			<nav class={linksList}>
+				<a class={link} href="https://x.com/__ljus" target="_blank" rel="noopener">
+					<Icon name="twitter" aria-hidden width={24} height={24} class={linkIcon} />
+					Twitter
+				</a>
+				<a class={link} href="https://ljus.booth.pm/" target="_blank" rel="noopener">
+					<Icon name="store" aria-hidden width={24} height={24} class={linkIcon} />
+					booth
+				</a>
+			</nav>
+		</div>
+	</div>
+	<LinkButton href="https://forms.gle/vQ4eYDe7j1N4vt4H8" target="_blank" rel="noopener">
+		<Icon name="chat" aria-hidden width={24} height={24} class={linkIcon} />
+		contact
+	</LinkButton>
+</section>

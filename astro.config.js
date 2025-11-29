@@ -1,5 +1,6 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import { defineConfig, fontProviders } from 'astro/config';
+import icon from 'astro-icon';
 import { loadEnv } from 'vite';
 
 const { ADOBE_PROJECT_ID } = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), '');
@@ -29,6 +30,17 @@ export default defineConfig({
 				// Use system local font is Web Font is not available
 				fallbacks: ['Avenir'],
 			},
+			{
+				name: 'Hina Mincho',
+				cssVariable: '--font-hina-mincho',
+				provider: fontProviders.google({
+					experimental: {
+						glyphs: { 'Hina Mincho': ['涼夏 / raychan'] },
+					},
+				}),
+				fallbacks: ['Hiragino Mincho', 'Yu Mincho', 'Noto Serif JP'],
+			},
 		],
 	},
+	integrations: [icon()],
 });
