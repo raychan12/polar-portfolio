@@ -57,7 +57,7 @@ export default [
 		},
 	},
 	{
-		files: ['**/*.{js,ts,tsx}'],
+		files: ['**/*.{js,ts,tsx}', '**/*.astro/*.ts'],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
@@ -149,6 +149,11 @@ export default [
 				},
 			],
 			'@typescript-eslint/consistent-type-imports': 'error',
+			'@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+			'@typescript-eslint/strict-boolean-expressions': [
+				'error',
+				{ allowNullableObject: false, allowNumber: false, allowString: false },
+			],
 			'@typescript-eslint/no-import-type-side-effects': 'error',
 			'@typescript-eslint/prefer-readonly': 'error',
 			'@typescript-eslint/promise-function-async': 'error',
