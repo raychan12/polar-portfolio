@@ -17,6 +17,6 @@ const baseSampleWork: Work = {
 /**
  * landscape, logo at left, instant date
  */
-export const createSampleWork = (original: Partial<Work>): Work => {
+export const createSampleWork = (original: Partial<Work> = {}): Work => {
 	return { ...baseSampleWork, ...original };
 };
