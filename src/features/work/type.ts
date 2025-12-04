@@ -1,4 +1,4 @@
-export interface Work {
+export type Work = {
 	visualImageUrl: string;
 	logoUrl: string;
 	description: string;
@@ -7,7 +7,7 @@ export interface Work {
 	tags: string[];
 	assigning: string;
 	logoPosition: 'left' | 'inline';
-}
+};
 
 export type WorkDate =
 	| { instant: Date; period?: undefined }
