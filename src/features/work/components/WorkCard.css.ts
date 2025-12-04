@@ -89,10 +89,12 @@ export const tagsList = style({
 });
 
 export const tagsLink = style({
-	'color': vars.color.accent.beta,
-	'textDecoration': 'underline',
-	':visited': {
-		color: vars.color.accent.alpha,
+	color: vars.color.accent.beta,
+	textDecoration: 'underline',
+	selectors: {
+		'&:visited': {
+			color: vars.color.accent.alpha,
+		},
 	},
 });
 
