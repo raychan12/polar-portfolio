@@ -1,6 +1,3 @@
-// Debug only
-// TODO: リリース時に消すか、デバッグ時にしか出せないような形にする
-
 import type { Work } from './types';
 
 const baseSampleWork: Work = {
