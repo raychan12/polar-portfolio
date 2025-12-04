@@ -1,39 +1,26 @@
 ---
 import CommonLayout from '../../layout/CommonLayout.astro';
-import WorkCard from '../../components/WorkCard.astro';
+import WorkCard from '../../features/work/components/WorkCard.astro';
+
+import {
+	createWorkWithInlineLogoFixture,
+	createWorkWithPeriodFixture,
+	createWorkWithPortraitFixture,
+	createWorkWithLongTextFixture,
+} from '../../context/work/fixtures';
+import { createSampleWork } from '../../context/work/factories';
+
+const works = [
+	createSampleWork(),
+	createWorkWithPortraitFixture(),
+	createWorkWithInlineLogoFixture(),
+	createWorkWithPeriodFixture(),
+	createWorkWithLongTextFixture(),
+];
 ---
 
 <CommonLayout>
 	<h1>Work cards</h1>
 	<hr />
-	<WorkCard
-		visualImageUrl="https://picsum.photos/id/1/226/320"
-		logoUrl="https://picsum.photos/id/1/1920/1080"
-		logoPosition="left"
-		description="映画「数分間のエールを」合同誌"
-		logoAlt="数ページのエールを"
-		tags={['design', 'sosaku']}
-		dateInstant={new Date('2025/12/1')}
-		assigning="文章 / 表紙イラスト / デザイン / 編集"
-	/>
-	<WorkCard
-		visualImageUrl="https://picsum.photos/id/1/1920/1080"
-		logoUrl="https://picsum.photos/id/1/320/80"
-		logoPosition="inline"
-		description="映画「数分間のエールを」合同誌"
-		logoAlt="数ページのエールを"
-		tags={['design', 'sosaku']}
-		datePeriod={{ from: new Date('2024/6/24'), to: new Date('2024/12/29') }}
-		assigning="企画・主宰・全体進行統括 / デザイン統括・表紙イラスト / 編集統括 / 広報 / 一部寄稿"
-	/>
-	<WorkCard
-		visualImageUrl="https://picsum.photos/id/1/1920/1080"
-		logoUrl="https://picsum.photos/id/1/320/80"
-		logoPosition="inline"
-		description="映画「数分間のエールを」合同誌"
-		logoAlt="数ページのエールを"
-		tags={Array.from({ length: 50 }).map((_, i) => `tag${i}`)}
-		datePeriod={{ from: new Date('2024/6/24'), to: new Date('2025/12/29') }}
-		assigning={'あ'.repeat(300)}
-	/>
+	{works.map((work) => <WorkCard {work} />)}
 </CommonLayout>

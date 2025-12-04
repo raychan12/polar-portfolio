@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import { format } from 'date-fns';
 
+import type { Work } from '../../../context/work/types';
+
 import {
 	root,
 	visualImage,
@@ -19,27 +21,12 @@ import {
 } from './WorkCard.css';
 
 interface Props {
-	visualImageUrl: string;
-	logoUrl: string;
-	description: string;
-	logoAlt: string;
-	dateInstant?: Date;
-	datePeriod?: { from: Date; to: Date };
-	tags: string[];
-	assigning: string;
-	logoPosition: 'left' | 'inline';
+	work: Work;
 }
 
-const { visualImageUrl, logoUrl, description, logoAlt, dateInstant, datePeriod, tags, assigning, logoPosition } =
-	Astro.props;
-
-if (dateInstant === undefined && datePeriod === undefined) {
-	throw new Error('Date must be specified by either of dateInstant or datePeriod');
-}
-
-if (dateInstant !== undefined && datePeriod !== undefined) {
-	throw new Error('Date cannot be specified by both of instant or period, must be either of them');
-}
+const {
+	work: { visualImageUrl, logoUrl, description, logoAlt, date, tags, assigning, logoPosition },
+} = Astro.props;
 ---
 
 <article class={root}>
@@ -74,16 +61,20 @@ if (dateInstant !== undefined && datePeriod !== undefined) {
 				}
 			</nav>
 			<span class={dateText}>
-				{dateInstant && <time datetime={format(dateInstant, 'yyyy-MM-dd')}>{format(dateInstant, 'yyyy.MM.dd')}</time>}
 				{
-					datePeriod && (
+					date.instant && (
+						<time datetime={format(date.instant, 'yyyy-MM-dd')}>{format(date.instant, 'yyyy.MM.dd')}</time>
+					)
+				}
+				{
+					date.period && (
 						<>
-							<time datetime={format(datePeriod.from, 'yyyy-MM-dd')}>{format(datePeriod.from, 'yyyy.MM.dd')}</time>
+							<time datetime={format(date.period.from, 'yyyy-MM-dd')}>{format(date.period.from, 'yyyy.MM.dd')}</time>
 							{' - '}
-							<time datetime={format(datePeriod.to, 'yyyy-MM-dd')}>
+							<time datetime={format(date.period.to, 'yyyy-MM-dd')}>
 								{format(
-									datePeriod.to,
-									datePeriod.from.getFullYear() === datePeriod.to.getFullYear() ? 'MM.dd' : 'yyyy.MM.dd',
+									date.period.to,
+									date.period.from.getFullYear() === date.period.to.getFullYear() ? 'MM.dd' : 'yyyy.MM.dd',
 								)}
 							</time>
 						</>
