@@ -2,11 +2,25 @@
 import CommonLayout from '../../layout/CommonLayout.astro';
 import WorkCard from '../../features/work/components/WorkCard.astro';
 
-import { generateSampleWork } from '../../context/works/sample';
+import {
+	createWorkWithInlineLogoFixture,
+	createWorkWithPeriodFixture,
+	createWorkWithPortraitFixture,
+	createWorkWithLongTextFixture,
+} from '../../context/works/fixtures';
+import { createSampleWork } from '../../context/works/factories';
+
+const works = [
+	createSampleWork({}),
+	createWorkWithPortraitFixture(),
+	createWorkWithInlineLogoFixture(),
+	createWorkWithPeriodFixture(),
+	createWorkWithLongTextFixture(),
+];
 ---
 
 <CommonLayout>
 	<h1>Work cards</h1>
 	<hr />
-	{Array.from({ length: 10 }).map((_, i) => <WorkCard work={generateSampleWork(i)} />)}
+	{works.map((work) => <WorkCard {work} />)}
 </CommonLayout>
