@@ -5,10 +5,22 @@ import WorkCard from '../../../features/work/components/WorkCard.astro';
 
 import { root, worksList, work, linkButton } from './WorkSection.css';
 
-import { particularWork, generateSampleWork } from '../../../features/work/sample';
+import {
+	createWorkWithInlineLogoFixture,
+	createWorkWithPeriodFixture,
+	createWorkWithPortraitFixture,
+	createWorkWithLongTextFixture,
+} from '../../../context/work/fixtures';
+import { createSampleWork } from '../../../context/work/factories';
 
 // TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る
-const works = [particularWork, generateSampleWork(0), generateSampleWork(1)];
+const works = [
+	createSampleWork({}),
+	createWorkWithPortraitFixture(),
+	createWorkWithInlineLogoFixture(),
+	createWorkWithPeriodFixture(),
+	createWorkWithLongTextFixture(),
+];
 ---
 
 <section class={root}>
