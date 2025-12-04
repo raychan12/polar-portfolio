@@ -3,7 +3,7 @@
 
 import { add } from 'date-fns';
 
-import type { Work } from './type';
+import type { Work } from './types';
 
 export const particularWork: Work = {
 	visualImageUrl: 'https://picsum.photos/id/1/226/320',
