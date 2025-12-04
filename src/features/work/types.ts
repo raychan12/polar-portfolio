@@ -9,6 +9,4 @@ export type Work = {
 	logoPosition: 'left' | 'inline';
 };
 
-export type WorkDate =
-	| { instant: Date; period?: undefined }
-	| { instant?: undefined; period: { from: Date; to: Date } };
+export type WorkDate = { instant: Date; period?: never } | { instant?: never; period: { from: Date; to: Date } };
