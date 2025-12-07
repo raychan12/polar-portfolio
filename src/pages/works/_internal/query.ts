@@ -5,6 +5,13 @@ export type FilterQuery = {
 	types: WorkType[];
 };
 
+export const filterQueryToSearchParam = (query: FilterQuery): URLSearchParams => {
+	return new URLSearchParams({
+		context: query.context ?? '',
+		types: query.types.length > 0 ? query.types.join(' ') : '',
+	});
+};
+
 export const parseFilterQuery = (params: URLSearchParams): FilterQuery => {
 	return {
 		context: parseContext(params.get('context')),
