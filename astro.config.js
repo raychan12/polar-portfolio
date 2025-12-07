@@ -1,5 +1,5 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, envField, fontProviders } from 'astro/config';
 import icon from 'astro-icon';
 import { loadEnv } from 'vite';
 
@@ -50,4 +50,18 @@ export default defineConfig({
 		],
 	},
 	integrations: [icon()],
+	env: {
+		schema: {
+			NOTION_TOKEN: envField.string({
+				context: 'server',
+				access: 'secret',
+				required: true,
+			}),
+			NOTION_WORKS_DATABASE_ID: envField.string({
+				context: 'server',
+				access: 'secret',
+				required: true,
+			}),
+		},
+	},
 });
