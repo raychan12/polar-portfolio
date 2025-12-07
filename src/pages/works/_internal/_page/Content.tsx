@@ -5,15 +5,15 @@ import { Actual } from './Actual';
 import { Skeleton } from './Skeleton';
 
 export const Content: FunctionComponent = () => {
-	const [searchParams, setSearchParams] = useState<URLSearchParams | undefined>(undefined);
+	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
-		setSearchParams(new URLSearchParams(window.location.search));
+		setLoaded(true);
 	}, []);
 
-	if (searchParams === undefined) {
+	if (!loaded) {
 		return <Skeleton />;
 	}
 
-	return <Actual searchParams={searchParams} />;
+	return <Actual />;
 };
