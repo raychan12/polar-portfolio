@@ -4,7 +4,8 @@ export type Work = {
 	description: string;
 	logoAlt: string;
 	date: WorkDate;
-	tags: string[];
+	type: WorkType[];
+	context: WorkContext;
 	assigning: string;
 	logoPosition: 'left' | 'inline';
 };

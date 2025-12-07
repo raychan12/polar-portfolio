@@ -6,7 +6,8 @@ const baseSampleWork: Work = {
 	logoPosition: 'left',
 	description: '映画「数分間のエールを」合同誌',
 	logoAlt: '数ページのエールを',
-	tags: ['design', 'sosaku'],
+	type: ['graphic', 'sosaku'],
+	context: 'commission',
 	date: { instant: new Date('2025/12/1') },
 	assigning: '文章 / 表紙イラスト / デザイン / 編集',
 };
