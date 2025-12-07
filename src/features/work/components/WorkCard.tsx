@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
+import { workTypeColorsCSS } from '../../../context/work/styles';
 import type { Work } from '../../../context/work/types';
 
 import {
@@ -24,7 +25,7 @@ export type WorkCardProps = {
 };
 
 export const WorkCard: FunctionComponent<WorkCardProps> = ({ work }) => {
-	const { visualImageUrl, logoUrl, description, logoAlt, date, tags, assigning, logoPosition } = work;
+	const { visualImageUrl, logoUrl, description, logoAlt, date, context, type, assigning, logoPosition } = work;
 
 	return (
 		<article className={root}>
@@ -58,12 +59,18 @@ export const WorkCard: FunctionComponent<WorkCardProps> = ({ work }) => {
 
 				<div className={workInfoSection}>
 					<nav className={tagsList}>
-						{/* TODO: リンク先があってるかを確認する */}
-						{tags.map((tag) => (
-							<a key={tag} className={tagsLink} href={`/works?tag=${encodeURIComponent(tag)}`}>
+						{type.map((tag) => (
+							<a
+								key={tag}
+								className={tagsLink}
+								href={`/works?type=${encodeURIComponent(tag)}`}
+								style={{ color: workTypeColorsCSS[tag] }}>
 								#{tag}
 							</a>
 						))}
+						<a className={tagsLink} href={`/works?context=${encodeURIComponent(context)}`}>
+							#{context}
+						</a>
 					</nav>
 
 					<span className={dateText}>
