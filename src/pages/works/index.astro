@@ -1,10 +1,14 @@
 ---
-import CommonLayout from '../layout/CommonLayout.astro';
-import PageTitle from '../components/PageTitle.astro';
-import PageLayout from '../layout/PageLayout.astro';
+import CommonLayout from '../../layout/CommonLayout.astro';
+import PageTitle from '../../components/PageTitle.astro';
+import PageLayout from '../../layout/PageLayout.astro';
+
+import { Content } from './_internal/_page/Content';
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
-	<PageLayout smallerTopPadding />
+	<PageLayout>
+		<Content client:load />
+	</PageLayout>
 </CommonLayout>
