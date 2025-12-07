@@ -1,3 +1,4 @@
+import preact from '@astrojs/preact';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import { defineConfig, envField, fontProviders } from 'astro/config';
 import icon from 'astro-icon';
@@ -56,7 +57,7 @@ export default defineConfig({
 			},
 		],
 	},
-	integrations: [icon()],
+	integrations: [icon(), preact()],
 	env: {
 		schema: {
 			NOTION_TOKEN: envField.string({
