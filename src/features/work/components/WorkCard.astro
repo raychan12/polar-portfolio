@@ -4,6 +4,8 @@ import { format } from 'date-fns';
 
 import type { Work } from '../../../context/work/types';
 
+import { workTypeColorsCSS } from '../../../context/work/styles';
+
 import {
 	root,
 	visualImage,
@@ -25,7 +27,7 @@ interface Props {
 }
 
 const {
-	work: { visualImageUrl, logoUrl, description, logoAlt, date, tags, assigning, logoPosition },
+	work: { visualImageUrl, logoUrl, description, logoAlt, date, context, types, assigning, logoPosition },
 } = Astro.props;
 ---
 
@@ -51,14 +53,16 @@ const {
 		</div>
 		<div class={workInfoSection}>
 			<nav class={tagsList}>
-				{/* TODO: リンク先があってるかを確認する */}
 				{
-					tags.map((tag) => (
-						<a class={tagsLink} href={`/works?tag=${tag}`}>
-							#{tag}
+					types.map((type) => (
+						<a class={tagsLink} href={`/works?types=${type}`} style={{ color: workTypeColorsCSS[type] }}>
+							#{type}
 						</a>
 					))
 				}
+				<a class={tagsLink} href={`/works?context=${context}`}>
+					#{context}
+				</a>
 			</nav>
 			<span class={dateText}>
 				{
