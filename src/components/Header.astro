@@ -22,20 +22,23 @@ const isCurrentPage = (linkTo: LinkTo): boolean => {
 	<nav>
 		<ul class={root}>
 			{
-				headerLinks.map(({ linkTo, icon, caption }) => (
-					<li>
-						<a
-							aria-current={isCurrentPage(linkTo) ? 'page' : undefined}
-							class={link}
-							href={linkTo.href ?? linkTo.pathname}
-							target={linkTo.href === undefined ? undefined : '_blank'}
-							rel={linkTo.href === undefined ? undefined : 'noreferrer noopener'}>
-							{icon ?
-								<Icon name={icon} width={24} height={24} title={caption} class={iconLink} />
-							:	caption}
-						</a>
-					</li>
-				))
+				headerLinks.map(({ linkTo, icon, caption }) => {
+					const outgoingLink = linkTo.href != null;
+					return (
+						<li>
+							<a
+								aria-current={isCurrentPage(linkTo) ? 'page' : undefined}
+								class={link}
+								href={outgoingLink ? linkTo.href : linkTo.pathname}
+								target={outgoingLink ? '_blank' : undefined}
+								rel={outgoingLink ? 'noreferrer noopener' : undefined}>
+								{icon ?
+									<Icon name={icon} width={24} height={24} title={caption} class={iconLink} />
+								:	caption}
+							</a>
+						</li>
+					);
+				})
 			}
 		</ul>
 	</nav>
