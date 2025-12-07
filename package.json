@@ -19,6 +19,7 @@
 		"typecheck": "tsc --noEmit && astro check"
 	},
 	"dependencies": {
+		"@chlorinec-pkgs/notion-astro-loader": "1.1.2",
 		"astro": "5.15.3"
 	},
 	"devDependencies": {
