@@ -2,7 +2,7 @@ import { workContext, workType, type WorkContext, type WorkType } from '../../..
 
 export type FilterQuery = {
 	context: WorkContext | undefined;
-	types: WorkType[] | undefined;
+	types: WorkType[];
 };
 
 export const parseFilterQuery = (params: URLSearchParams): FilterQuery => {
@@ -24,19 +24,15 @@ const parseContext = (contextQuery: string | null): WorkContext | undefined => {
 	return undefined;
 };
 
-const parseTypes = (typesQuery: string | null): WorkType[] | undefined => {
+const parseTypes = (typesQuery: string | null): WorkType[] => {
 	if (typesQuery == null) {
-		return undefined;
+		return [];
 	}
 
 	const typesList = typesQuery
 		.split(' ')
 		.map((type) => type.trim())
 		.filter((type) => workType.includes(type as WorkType)) as WorkType[];
-
-	if (typesList.length === 0) {
-		return undefined;
-	}
 
 	return typesList;
 };
