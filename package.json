@@ -16,6 +16,7 @@
 		"lint:ci": "eslint --max-warnings 0 .",
 		"lint:fix": "eslint --fix .",
 		"preview": "astro preview",
+		"sync": "astro sync",
 		"typecheck": "tsc --noEmit && astro check"
 	},
 	"dependencies": {
