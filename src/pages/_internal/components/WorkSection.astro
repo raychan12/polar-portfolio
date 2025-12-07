@@ -1,0 +1,38 @@
+---
+import Heading from './Heading.astro';
+import LinkButton from '../../../components/LinkButton.astro';
+import WorkCard from '../../../features/work/components/WorkCard.astro';
+
+import { root, worksList, work, linkButton } from './WorkSection.css';
+
+import {
+	createWorkWithInlineLogoFixture,
+	createWorkWithPeriodFixture,
+	createWorkWithPortraitFixture,
+	createWorkWithLongTextFixture,
+} from '../../../context/work/fixtures';
+import { createSampleWork } from '../../../context/work/factories';
+
+// TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る
+const works = [
+	createSampleWork({}),
+	createWorkWithPortraitFixture(),
+	createWorkWithInlineLogoFixture(),
+	createWorkWithPeriodFixture(),
+	createWorkWithLongTextFixture(),
+];
+---
+
+<section class={root}>
+	<Heading>works</Heading>
+	<ul class={worksList}>
+		{
+			works.map((workData) => (
+				<li class={work}>
+					<WorkCard work={workData} />
+				</li>
+			))
+		}
+	</ul>
+	<LinkButton class={linkButton} href="/works">see all</LinkButton>
+</section>
