@@ -13,6 +13,7 @@ const typography = {
 
 const font = {
 	en: "var(--font-avenir), 'Avenir', Roboto",
+	enSerif: 'var(--font-cormorant-sc), serif, system-ui',
 	jp: "'Hiragino Sans', 'Hiragino Kaku Gothic ProN'",
 	jpMincho: 'var(--font-hina-mincho), serif, system-ui',
 	full: "var(--font-avenir), 'Avenir', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, sans-serif, system-ui",

@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import { CONTACT_FORM, TWITTER } from '../constant';
+
+import { root, iconLink, link } from './Header.css';
+
+type HeaderLink = {
+	caption: string;
+	icon?: string;
+	linkTo: LinkTo;
+};
+type LinkTo = { pathname: string; href?: never } | { pathname?: never; href: string };
+
+const headerLinks: HeaderLink[] = [
+	{ caption: 'home', linkTo: { pathname: '/' } },
+	{ caption: 'works', linkTo: { pathname: '/works' } },
+	// { caption: "blog", link: { pathname: "/blog" }},
+	// { caption: "fee", link: { pathname: "/fee" }},
+	{ caption: 'contact', linkTo: { href: CONTACT_FORM } },
+	{ caption: 'Twitter', icon: 'twitter-outline', linkTo: { href: TWITTER } },
+];
+
+const isCurrentPage = (linkTo: LinkTo): boolean => {
+	if (linkTo.pathname == null) {
+		return false;
+	}
+
+	if (linkTo.pathname === '/') {
+		return Astro.url.pathname === '/';
+	}
+
+	return Astro.url.pathname.startsWith(linkTo.pathname);
+};
+---
+
+<header>
+	<nav>
+		<ul class={root}>
+			{
+				headerLinks.map(({ linkTo, icon, caption }) => {
+					const outgoingLink = linkTo.href != null;
+					return (
+						<li>
+							<a
+								aria-current={isCurrentPage(linkTo) ? 'page' : undefined}
+								class={link}
+								href={outgoingLink ? linkTo.href : linkTo.pathname}
+								target={outgoingLink ? '_blank' : undefined}
+								rel={outgoingLink ? 'noreferrer noopener' : undefined}>
+								{icon ?
+									<Icon name={icon} width={24} height={24} title={caption} class={iconLink} />
+								:	caption}
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</nav>
+</header>
