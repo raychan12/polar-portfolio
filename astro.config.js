@@ -5,7 +5,7 @@ import { loadEnv } from 'vite';
 
 const { ADOBE_PROJECT_ID } = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), '');
 
-if (ADOBE_PROJECT_ID === undefined) {
+if (ADOBE_PROJECT_ID == null) {
 	console.warn('ADOBE_PROJECT_ID is not set - English font (Avenir) will not work');
 }
 
