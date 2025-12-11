@@ -57,7 +57,7 @@ export default [
 		},
 	},
 	{
-		files: ['**/*.{js,ts,tsx}', '**/*.astro/*.ts'],
+		files: ['**/*.{js,ts,tsx,astro}', '**/*.astro/*.ts'],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
