@@ -16,11 +16,11 @@ type Props = {
 export const ContextFilter: FunctionComponent<Props> = ({ currentContext, onContextUpdate }) => {
 	const getToggledContexts = (selectedContext: ContextFilterButtons): ContextFilterQuery => {
 		if (selectedContext === 'all') {
-			return undefined;
+			return;
 		}
 
 		if (selectedContext === currentContext) {
-			return undefined;
+			return;
 		}
 
 		return selectedContext;
