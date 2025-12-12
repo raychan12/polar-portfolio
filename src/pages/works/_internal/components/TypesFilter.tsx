@@ -40,11 +40,11 @@ export const TypesFilter: FunctionComponent<Props> = ({ currentTypes, onTypesUpd
 
 	const isCurrentTypes = useCallback(
 		(type: TypeFilterButtons) => {
-			if (currentTypes.length === 0) {
-				return type === 'all';
+			if (type === 'all') {
+				return currentTypes.length === 0;
 			}
 
-			return (currentTypes as string[]).includes(type);
+			return currentTypes.includes(type);
 		},
 		[currentTypes],
 	);
