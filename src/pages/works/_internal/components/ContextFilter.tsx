@@ -5,8 +5,8 @@ import type { FilterQuery } from '../query';
 
 import { list, button } from './Filter.css';
 
-const contextFilterButtons = ['all', ...workContext] as const;
-type ContextFilterButtons = (typeof contextFilterButtons)[number];
+const ContextFilterButtons = ['all', ...workContext] as const;
+type ContextFilterButtons = (typeof ContextFilterButtons)[number];
 
 type Props = {
 	currentContext: FilterQuery['context'];
@@ -41,7 +41,7 @@ export const ContextFilter: FunctionComponent<Props> = ({ currentContext, onCont
 	return (
 		<nav aria-label="作品形態">
 			<ul class={list}>
-				{contextFilterButtons.map((context) => (
+				{ContextFilterButtons.map((context) => (
 					<li>
 						<button
 							class={button}
