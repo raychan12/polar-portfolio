@@ -30,8 +30,8 @@ import Circle from '../assets/circle.svg';
 							<a
 								class={link}
 								href={linkTo.href ?? linkTo.pathname}
-								target={linkTo.href === undefined ? undefined : '_blank'}
-								rel={linkTo.href === undefined ? undefined : 'noreferrer noopener'}>
+								target={linkTo.href == null ? undefined : '_blank'}
+								rel={linkTo.href == null ? undefined : 'noreferrer noopener'}>
 								{caption}
 							</a>
 						</li>
