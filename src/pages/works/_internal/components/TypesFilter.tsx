@@ -1,4 +1,5 @@
 import type { FunctionComponent } from 'preact';
+import { useCallback } from 'preact/hooks';
 
 import { workTypeColorsCSS } from '../../../../context/work/styles';
 import { workType } from '../../../../context/work/types';
@@ -15,29 +16,38 @@ type Props = {
 };
 
 export const TypesFilter: FunctionComponent<Props> = ({ currentTypes, onTypesUpdate }) => {
-	const getToggledTypes = (selectedType: TypeFilterButtons): TypesFilterQuery => {
-		if (selectedType === 'all') {
-			return [];
-		}
+	const getToggledTypes = useCallback(
+		(selectedType: TypeFilterButtons): TypesFilterQuery => {
+			if (selectedType === 'all') {
+				return [];
+			}
 
-		if (currentTypes.includes(selectedType)) {
-			return currentTypes.filter((type) => type !== selectedType);
-		}
+			if (currentTypes.includes(selectedType)) {
+				return currentTypes.filter((type) => type !== selectedType);
+			}
 
-		return [...currentTypes, selectedType];
-	};
+			return [...currentTypes, selectedType];
+		},
+		[currentTypes],
+	);
 
-	const handleClick = (type: TypeFilterButtons) => () => {
-		onTypesUpdate(getToggledTypes(type));
-	};
+	const handleClick = useCallback(
+		(type: TypeFilterButtons) => () => {
+			onTypesUpdate(getToggledTypes(type));
+		},
+		[getToggledTypes, onTypesUpdate],
+	);
 
-	const isCurrentTypes = (type: TypeFilterButtons) => {
-		if (currentTypes.length === 0) {
-			return type === 'all';
-		}
+	const isCurrentTypes = useCallback(
+		(type: TypeFilterButtons) => {
+			if (currentTypes.length === 0) {
+				return type === 'all';
+			}
 
-		return (currentTypes as string[]).includes(type);
-	};
+			return (currentTypes as string[]).includes(type);
+		},
+		[currentTypes],
+	);
 
 	return (
 		<nav aria-label="作品タイプ">

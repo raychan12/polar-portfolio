@@ -1,4 +1,5 @@
 import type { FunctionComponent } from 'preact';
+import { useCallback } from 'preact/hooks';
 
 import { workContext } from '../../../../context/work/types';
 import type { ContextFilterQuery } from '../query';
@@ -14,29 +15,38 @@ type Props = {
 };
 
 export const ContextFilter: FunctionComponent<Props> = ({ currentContext, onContextUpdate }) => {
-	const getToggledContexts = (selectedContext: ContextFilterButtons): ContextFilterQuery => {
-		if (selectedContext === 'all') {
-			return;
-		}
+	const getToggledContexts = useCallback(
+		(selectedContext: ContextFilterButtons): ContextFilterQuery => {
+			if (selectedContext === 'all') {
+				return;
+			}
 
-		if (selectedContext === currentContext) {
-			return;
-		}
+			if (selectedContext === currentContext) {
+				return;
+			}
 
-		return selectedContext;
-	};
+			return selectedContext;
+		},
+		[currentContext],
+	);
 
-	const handleClick = (context: ContextFilterButtons) => () => {
-		onContextUpdate(getToggledContexts(context));
-	};
+	const handleClick = useCallback(
+		(context: ContextFilterButtons) => () => {
+			onContextUpdate(getToggledContexts(context));
+		},
+		[getToggledContexts, onContextUpdate],
+	);
 
-	const isCurrentContext = (context: ContextFilterButtons) => {
-		if (currentContext === undefined) {
-			return context === 'all';
-		}
+	const isCurrentContext = useCallback(
+		(context: ContextFilterButtons) => {
+			if (currentContext === undefined) {
+				return context === 'all';
+			}
 
-		return currentContext === context;
-	};
+			return currentContext === context;
+		},
+		[currentContext],
+	);
 
 	return (
 		<nav aria-label="作品形態">

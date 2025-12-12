@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'preact';
-import { useState } from 'preact/hooks';
+import { useCallback, useState } from 'preact/hooks';
 
 import { ContextFilter } from '../components/ContextFilter';
 import { TypesFilter } from '../components/TypesFilter';
@@ -21,13 +21,19 @@ export const Actual: FunctionComponent = () => {
 		history.replaceState(undefined, '', `/works/?${filterQueryToSearchParam(query).toString()}`);
 	};
 
-	const handleTypesQueryUpdate = (types: TypesFilterQuery) => {
-		handleQueryUpdate({ ...query, types });
-	};
+	const handleTypesQueryUpdate = useCallback(
+		(types: TypesFilterQuery) => {
+			handleQueryUpdate({ ...query, types });
+		},
+		[query],
+	);
 
-	const handleContextQueryUpdate = (context: ContextFilterQuery) => {
-		handleQueryUpdate({ ...query, context });
-	};
+	const handleContextQueryUpdate = useCallback(
+		(context: ContextFilterQuery) => {
+			handleQueryUpdate({ ...query, context });
+		},
+		[query],
+	);
 
 	return (
 		<div className={root}>
