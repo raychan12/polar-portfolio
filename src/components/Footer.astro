@@ -25,17 +25,20 @@ import Circle from '../assets/circle.svg';
 		<nav>
 			<ul class={linksList}>
 				{
-					footerLinks.map(({ linkTo, caption }) => (
-						<li>
-							<a
-								class={link}
-								href={linkTo.href ?? linkTo.pathname}
-								target={linkTo.href == null ? undefined : '_blank'}
-								rel={linkTo.href == null ? undefined : 'noreferrer noopener'}>
-								{caption}
-							</a>
-						</li>
-					))
+					footerLinks.map(({ linkTo, caption }) => {
+						const outgoingLink = linkTo.href != null;
+						return (
+							<li>
+								<a
+									class={link}
+									href={outgoingLink ? linkTo.href : linkTo.pathname}
+									target={outgoingLink ? '_blank' : undefined}
+									rel={outgoingLink ? 'noreferrer noopener' : undefined}>
+									{caption}
+								</a>
+							</li>
+						);
+					})
 				}
 			</ul>
 		</nav>
