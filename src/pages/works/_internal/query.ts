@@ -14,14 +14,12 @@ export const parseFilterQuery = (params: URLSearchParams): FilterQuery => {
 
 const parseContext = (contextQuery: string | null): WorkContext | undefined => {
 	if (contextQuery == null) {
-		return undefined;
+		return;
 	}
 
 	if (WorkContext.includes(contextQuery as WorkContext)) {
 		return contextQuery as WorkContext;
 	}
-
-	return undefined;
 };
 
 const parseTypes = (typesQuery: string | null): WorkType[] => {
