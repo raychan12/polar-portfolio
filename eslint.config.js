@@ -5,6 +5,7 @@ import gitignore from 'eslint-config-flat-gitignore';
 import prettier from 'eslint-config-prettier/flat';
 import * as astro from 'eslint-plugin-astro';
 import { importX } from 'eslint-plugin-import-x';
+import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import * as tseslint from 'typescript-eslint';
 
@@ -161,6 +162,10 @@ export default [
 			'@typescript-eslint/return-await': ['error', 'always'],
 			'@typescript-eslint/no-unnecessary-condition': ['error', { allowConstantLoopConditions: true }],
 		},
+	},
+	{
+		files: ['**/*.tsx'],
+		...reactHooks.configs.flat.recommended,
 	},
 	{
 		files: ['**/*.{js,ts,tsx,astro}'],
