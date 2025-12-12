@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 
 import FvVertical from '../assets/fv-vert.png';
 
-import { root, backgroundImage, titleText } from './PageTitle.css';
+import { root, main, image, titleText, background } from './PageTitle.css';
 
 interface Props {
 	title: string;
@@ -13,6 +13,9 @@ const { title } = Astro.props;
 ---
 
 <div class={root}>
-	<Image src={FvVertical} alt="" height={200} layout="full-width" class={backgroundImage} />
-	<h1 class={titleText}>{title}</h1>
+	<div class={main}>
+		<Image class={image} src={FvVertical} alt="" layout="constrained" />
+		<h1 class={titleText}>{title}</h1>
+	</div>
+	<Image class={background} src={FvVertical} alt="" layout="fixed" width={32} height={24} />
 </div>
