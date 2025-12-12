@@ -3,7 +3,13 @@ import { useState } from 'preact/hooks';
 
 import { ContextFilter } from '../components/ContextFilter';
 import { TypesFilter } from '../components/TypesFilter';
-import { filterQueryToSearchParam, parseFilterQuery, type FilterQuery } from '../query';
+import {
+	filterQueryToSearchParam,
+	parseFilterQuery,
+	type ContextFilterQuery,
+	type FilterQuery,
+	type TypesFilterQuery,
+} from '../query';
 
 import { filter, root } from './Actual.css';
 
@@ -15,11 +21,11 @@ export const Actual: FunctionComponent = () => {
 		history.replaceState(undefined, '', `/works/?${filterQueryToSearchParam(query).toString()}`);
 	};
 
-	const handleTypesQueryUpdate = (types: FilterQuery['types']) => {
+	const handleTypesQueryUpdate = (types: TypesFilterQuery) => {
 		handleQueryUpdate({ ...query, types });
 	};
 
-	const handleContextQueryUpdate = (context: FilterQuery['context']) => {
+	const handleContextQueryUpdate = (context: ContextFilterQuery) => {
 		handleQueryUpdate({ ...query, context });
 	};
 

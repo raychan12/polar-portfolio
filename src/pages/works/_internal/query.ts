@@ -1,8 +1,11 @@
 import { WorkContext, WorkType } from '../../../context/work/types';
 
+export type ContextFilterQuery = WorkContext | null;
+export type TypesFilterQuery = WorkType[];
+
 export type FilterQuery = {
-	context: WorkContext | null;
-	types: WorkType[];
+	context: ContextFilterQuery;
+	types: TypesFilterQuery;
 };
 
 export const filterQueryToSearchParam = (query: FilterQuery): URLSearchParams => {
