@@ -1,4 +1,4 @@
-import { workContext, workType, type WorkContext, type WorkType } from '../../../context/work/types';
+import { WorkContext, WorkType } from '../../../context/work/types';
 
 export type FilterQuery = {
 	context: WorkContext | undefined;
@@ -17,7 +17,7 @@ const parseContext = (contextQuery: string | null): WorkContext | undefined => {
 		return undefined;
 	}
 
-	if (workContext.includes(contextQuery as WorkContext)) {
+	if (WorkContext.includes(contextQuery as WorkContext)) {
 		return contextQuery as WorkContext;
 	}
 
@@ -32,7 +32,7 @@ const parseTypes = (typesQuery: string | null): WorkType[] => {
 	const typesList = typesQuery
 		.split(' ')
 		.map((type) => type.trim())
-		.filter((type) => workType.includes(type as WorkType)) as WorkType[];
+		.filter((type) => WorkType.includes(type as WorkType)) as WorkType[];
 
 	return typesList;
 };
