@@ -1,12 +1,12 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback } from 'preact/hooks';
 
-import { workContext } from '../../../../context/work/types';
+import { WorkContext } from '../../../../context/work/types';
 import type { ContextFilterQuery } from '../query';
 
 import { list, button } from './Filter.css';
 
-const ContextFilterButtons = ['all', ...workContext] as const;
+const ContextFilterButtons = ['all', ...WorkContext] as const;
 type ContextFilterButtons = (typeof ContextFilterButtons)[number];
 
 type Props = {
