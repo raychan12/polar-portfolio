@@ -28,5 +28,15 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Sync types
+        run: pnpm sync
+        env:
+          ADOBE_PROJECT_ID: ${{ secrets.ADOBE_PROJECT_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_WORKS_DATABASE_ID: ${{ secrets.NOTION_WORKS_DATABASE_ID }}
       - name: ${{ matrix.name }}
         run: pnpm ${{ matrix.script }}
+        env:
+          ADOBE_PROJECT_ID: ${{ secrets.ADOBE_PROJECT_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_WORKS_DATABASE_ID: ${{ secrets.NOTION_WORKS_DATABASE_ID }}

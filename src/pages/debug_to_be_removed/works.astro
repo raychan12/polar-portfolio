@@ -1,0 +1,10 @@
+---
+import CommonLayout from '../../layout/CommonLayout.astro';
+import { getCollection } from 'astro:content';
+
+const works = await getCollection('works');
+---
+
+<CommonLayout>
+	{works.map((work) => <div>{JSON.stringify(work)}</div>)}
+</CommonLayout>

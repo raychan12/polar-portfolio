@@ -163,7 +163,7 @@ export default [
 		},
 	},
 	{
-		files: ['**/*.astro'],
+		files: ['**/*.{js,ts,tsx,astro}'],
 		languageOptions: {
 			parserOptions: {
 				projectService: false,

@@ -1,6 +1,7 @@
 dist/
 .astro/
 node_modules/
+src/assets/notion/
 
 .env*
 !.env.example

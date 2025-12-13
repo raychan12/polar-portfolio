@@ -16,10 +16,12 @@
 		"lint:ci": "eslint --max-warnings 0 .",
 		"lint:fix": "eslint --fix .",
 		"preview": "astro preview",
+		"sync": "astro sync",
 		"typecheck": "tsc --noEmit && astro check"
 	},
 	"dependencies": {
-		"astro": "5.15.3"
+		"@chlorinec-pkgs/notion-astro-loader": "1.1.2",
+		"astro": "5.9.4"
 	},
 	"devDependencies": {
 		"@astrojs/check": "0.9.5",

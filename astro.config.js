@@ -1,5 +1,5 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, envField, fontProviders } from 'astro/config';
 import icon from 'astro-icon';
 import { loadEnv } from 'vite';
 
@@ -19,6 +19,13 @@ export default defineConfig({
 		// /debug_to_be_removed/work で使用
 		// TODO: 消す
 		domains: ['picsum.photos'],
+		remotePatterns: [
+			// Notionの画像を利用できるようにする
+			{
+				protocol: 'https',
+				hostname: '**.amazonaws.com',
+			},
+		],
 	},
 	experimental: {
 		fonts: [
@@ -50,4 +57,18 @@ export default defineConfig({
 		],
 	},
 	integrations: [icon()],
+	env: {
+		schema: {
+			NOTION_TOKEN: envField.string({
+				context: 'server',
+				access: 'secret',
+				required: true,
+			}),
+			NOTION_WORKS_DATABASE_ID: envField.string({
+				context: 'server',
+				access: 'secret',
+				required: true,
+			}),
+		},
+	},
 });
