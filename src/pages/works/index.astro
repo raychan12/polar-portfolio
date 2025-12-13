@@ -15,11 +15,11 @@ import { createSampleWork } from '../../context/work/factories';
 
 const works = [
 	createSampleWork(),
-	createSampleWork({ types: ['uiux'], context: 'collaboration' }),
-	createWorkWithPortraitFixture(),
-	createWorkWithInlineLogoFixture(),
-	createWorkWithPeriodFixture(),
-	createWorkWithLongTextFixture(),
+	createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
+	{ ...createWorkWithPortraitFixture(), id: 'work-2' },
+	{ ...createWorkWithInlineLogoFixture(), id: 'work-3' },
+	{ ...createWorkWithPeriodFixture(), id: 'work-4' },
+	{ ...createWorkWithLongTextFixture(), id: 'work-5' },
 ];
 ---
 

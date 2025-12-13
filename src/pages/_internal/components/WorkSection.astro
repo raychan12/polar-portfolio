@@ -15,11 +15,11 @@ import { createSampleWork } from '../../../context/work/factories';
 
 // TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る
 const works = [
-	createSampleWork({}),
-	createWorkWithPortraitFixture(),
-	createWorkWithInlineLogoFixture(),
-	createWorkWithPeriodFixture(),
-	createWorkWithLongTextFixture(),
+	createSampleWork(),
+	{ ...createWorkWithPortraitFixture(), id: 'work-1' },
+	{ ...createWorkWithInlineLogoFixture(), id: 'work-2' },
+	{ ...createWorkWithPeriodFixture(), id: 'work-3' },
+	{ ...createWorkWithLongTextFixture(), id: 'work-4' },
 ];
 ---
 
@@ -29,7 +29,7 @@ const works = [
 		{
 			works.map((workData) => (
 				<li class={work}>
-					<WorkCard work={workData} />
+					<WorkCard key={workData.id} work={workData} />
 				</li>
 			))
 		}
