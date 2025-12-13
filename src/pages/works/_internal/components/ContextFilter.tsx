@@ -18,11 +18,11 @@ export const ContextFilter: FunctionComponent<Props> = ({ currentContext, onCont
 	const getToggledContexts = useCallback(
 		(selectedContext: ContextFilterButtons): ContextFilterQuery => {
 			if (selectedContext === 'all') {
-				return;
+				return null;
 			}
 
 			if (selectedContext === currentContext) {
-				return;
+				return null;
 			}
 
 			return selectedContext;
