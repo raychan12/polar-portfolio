@@ -4,11 +4,28 @@ import PageTitle from '../../components/PageTitle.astro';
 import PageLayout from '../../layout/PageLayout.astro';
 
 import { Content } from './_internal/page/Content';
+
+import {
+	createWorkWithInlineLogoFixture,
+	createWorkWithPeriodFixture,
+	createWorkWithPortraitFixture,
+	createWorkWithLongTextFixture,
+} from '../../context/work/fixtures';
+import { createSampleWork } from '../../context/work/factories';
+
+const works = [
+	createSampleWork(),
+	createSampleWork({ types: ['uiux'], context: 'collaboration' }),
+	createWorkWithPortraitFixture(),
+	createWorkWithInlineLogoFixture(),
+	createWorkWithPeriodFixture(),
+	createWorkWithLongTextFixture(),
+];
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
 	<PageLayout>
-		<Content client:load />
+		<Content client:load {works} />
 	</PageLayout>
 </CommonLayout>

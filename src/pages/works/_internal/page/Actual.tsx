@@ -1,6 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 
+import type { Work } from '../../../../context/work/types';
 import { ContextFilter } from '../components/ContextFilter';
 import { TypesFilter } from '../components/TypesFilter';
 import {
@@ -13,7 +14,11 @@ import {
 
 import { filter, root } from './Actual.css';
 
-export const Actual: FunctionComponent = () => {
+type Props = {
+	works: Work[];
+};
+
+export const Actual: FunctionComponent<Props> = ({ works }) => {
 	const [query, setQuery] = useState(parseFilterQuery(new URLSearchParams(window.location.search)));
 
 	const handleQueryUpdate = (query: FilterQuery) => {

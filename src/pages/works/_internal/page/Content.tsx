@@ -1,10 +1,16 @@
 import type { FunctionComponent } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
+import type { Work } from '../../../../context/work/types';
+
 import { Actual } from './Actual';
 import { Skeleton } from './Skeleton';
 
-export const Content: FunctionComponent = () => {
+type Props = {
+	works: Work[];
+};
+
+export const Content: FunctionComponent<Props> = ({ works }) => {
 	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
@@ -15,5 +21,5 @@ export const Content: FunctionComponent = () => {
 		return <Skeleton />;
 	}
 
-	return <Actual />;
+	return <Actual works={works} />;
 };
