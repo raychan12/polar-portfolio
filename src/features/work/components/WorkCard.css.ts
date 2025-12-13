@@ -89,13 +89,8 @@ export const tagsList = style({
 });
 
 export const tagsLink = style({
-	color: vars.color.accent.beta,
+	color: vars.color.text.secondary,
 	textDecoration: 'underline',
-	selectors: {
-		'&:visited': {
-			color: vars.color.accent.alpha,
-		},
-	},
 });
 
 export const dateText = style({
