@@ -1,7 +1,7 @@
 import { WorkContext, WorkType } from '../../../context/work/types';
 
 export type FilterQuery = {
-	context: WorkContext | undefined;
+	context: WorkContext | null;
 	types: WorkType[];
 };
 
@@ -12,14 +12,16 @@ export const parseFilterQuery = (params: URLSearchParams): FilterQuery => {
 	};
 };
 
-const parseContext = (contextQuery: string | null): WorkContext | undefined => {
+const parseContext = (contextQuery: string | null): WorkContext | null => {
 	if (contextQuery == null) {
-		return;
+		return null;
 	}
 
 	if (WorkContext.includes(contextQuery as WorkContext)) {
 		return contextQuery as WorkContext;
 	}
+
+	return null;
 };
 
 const parseTypes = (typesQuery: string | null): WorkType[] => {
