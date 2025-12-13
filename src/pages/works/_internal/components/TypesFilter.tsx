@@ -7,8 +7,8 @@ import type { TypesFilterQuery } from '../query';
 
 import { list, button } from './Filter.css';
 
-const typeFilterButtons = ['all', ...WorkType] as const;
-type TypeFilterButtons = (typeof typeFilterButtons)[number];
+const TypeFilterButtons = ['all', ...WorkType] as const;
+type TypeFilterButtons = (typeof TypeFilterButtons)[number];
 
 type Props = {
 	currentTypes: TypesFilterQuery;
@@ -52,7 +52,7 @@ export const TypesFilter: FunctionComponent<Props> = ({ currentTypes, onTypesUpd
 	return (
 		<nav aria-label="作品タイプ">
 			<ul class={list}>
-				{typeFilterButtons.map((type) => (
+				{TypeFilterButtons.map((type) => (
 					<li>
 						<button
 							class={button}
