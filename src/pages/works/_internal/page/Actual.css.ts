@@ -11,3 +11,9 @@ export const filter = style({
 	flexDirection: 'column',
 	gap: '16px',
 });
+
+export const workList = style({
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '40px',
+});
