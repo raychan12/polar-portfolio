@@ -5,6 +5,8 @@ import CommonLayout from '../../../layout/CommonLayout.astro';
 import PageLayout from '../../../layout/PageLayout.astro';
 import PageTitle from '../../../components/PageTitle.astro';
 
+import { ThumbnailGallery } from './_internal/components/ThumbnailGallery';
+
 import type { Work } from '../../../context/work/types';
 import {
 	createWorkWithInlineLogoFixture,
@@ -13,6 +15,8 @@ import {
 	createWorkWithLongTextFixture,
 } from '../../../context/work/fixtures';
 import { createSampleWork } from '../../../context/work/factories';
+
+import { root } from './index.css';
 
 // TODO: Notion からとってくる
 export const works = [
@@ -40,7 +44,8 @@ const { work } = Astro.props;
 
 <CommonLayout>
 	<PageTitle title="works" />
-	<PageLayout>
+	<PageLayout class={root}>
+		<ThumbnailGallery client:load {work} />
 		<pre>
 			{("\n" + JSON.stringify(work, undefined, 2))}
 		</pre>
