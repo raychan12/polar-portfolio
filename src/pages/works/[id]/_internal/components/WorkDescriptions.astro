@@ -38,7 +38,10 @@ const {
 		<nav class={tagsList}>
 			{
 				type.map((tag) => (
-					<a class={tagsLink} href={`/works?type=${encodeURIComponent(tag)}`} style={{ color: workTypeColorsCSS[tag] }}>
+					<a
+						class={tagsLink}
+						href={`/works?types=${encodeURIComponent(tag)}`}
+						style={{ color: workTypeColorsCSS[tag] }}>
 						#{tag}
 					</a>
 				))
