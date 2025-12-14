@@ -44,8 +44,8 @@ export const WorkCard: FunctionComponent<Props> = ({ work }) => {
 			<a href={`/works/${id}`} className={grid}>
 				<div className={visualImageContainer}>
 					{/* TODO: alt 確認する */}
-					<img className={visualImage} src={visualImageUrl} alt="" width={227} height={320} />
-					<img className={visualImageBackground} src={visualImageUrl} alt="" width={23} height={32} />
+					<img className={visualImage} src={visualImageUrl[0]} alt="" width={227} height={320} />
+					<img className={visualImageBackground} src={visualImageUrl[0]} alt="" width={23} height={32} />
 				</div>
 
 				{logoPosition === 'left' && <img className={logoLeft} src={logoUrl} alt={logoAlt} />}
