@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import { Icon } from 'astro-icon/components';
 
 import CommonLayout from '../../../layout/CommonLayout.astro';
 import PageLayout from '../../../layout/PageLayout.astro';
@@ -17,7 +18,7 @@ import {
 } from '../../../context/work/fixtures';
 import { createSampleWork } from '../../../context/work/factories';
 
-import { root } from './_index.css';
+import { root, backButton } from './_index.css';
 
 // TODO: Notion からとってくる
 export const works = [
@@ -52,5 +53,9 @@ const { work } = Astro.props;
 	<PageLayout class={root}>
 		<ThumbnailGallery client:load {work} />
 		<WorkDescriptions {work} />
+		<a href="/works" class={backButton}>
+			<Icon name="back-arrow" width={32} height={6} />
+			<span>back</span>
+		</a>
 	</PageLayout>
 </CommonLayout>
