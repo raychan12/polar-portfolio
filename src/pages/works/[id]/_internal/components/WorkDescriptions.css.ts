@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 import { vars } from '../../../../../styles/theme.css';
 
@@ -94,3 +94,68 @@ export const detailSectionTitle = style({
 	font: vars.text.en.sectionTitle,
 	color: vars.color.brand.primary,
 });
+
+export const renderedContent = style({
+	fontFamily: vars.font.jp,
+	lineHeight: '200%',
+});
+
+globalStyle(`${renderedContent} h1`, {
+	fontSize: '1.75em',
+	lineHeight: '200%',
+	marginBlock: '1em 0.5em',
+});
+
+globalStyle(`${renderedContent} h2`, {
+	fontSize: '1.5em',
+	lineHeight: '200%',
+	marginBlock: '1em 0.5em',
+});
+
+globalStyle(`${renderedContent} h3`, {
+	fontSize: '1.3em',
+	lineHeight: '200%',
+	marginBlock: '1em 0.5em',
+});
+
+globalStyle(`${renderedContent} b`, {
+	fontWeight: 600,
+});
+
+globalStyle(`${renderedContent} i`, {
+	fontStyle: 'italic',
+});
+
+globalStyle(`${renderedContent} u`, {
+	textDecoration: 'underline',
+});
+
+globalStyle(`${renderedContent} s`, {
+	textDecoration: 'line-through',
+});
+
+globalStyle(`${renderedContent} code`, {
+	fontFamily: 'monospace',
+});
+
+globalStyle(`${renderedContent} a`, {
+	textDecoration: 'underline',
+	color: vars.color.accent.alpha,
+});
+
+globalStyle(`${renderedContent} ul`, {
+	marginLeft: '1.5em',
+	listStyle: 'disc',
+});
+
+globalStyle(`${renderedContent} ol`, {
+	marginLeft: '1.5em',
+	listStyle: 'decimal',
+});
+
+globalStyle(`${renderedContent} li`, {
+	paddingLeft: '0.5em',
+});
+
+// color-red, blue, green, yellow, orange, purple, pink, gray, brown
+// color-*_background
