@@ -5,22 +5,12 @@ import { WorkCard } from '../../../features/work/components/WorkCard.tsx';
 
 import { root, worksList, work, linkButton } from './WorkSection.css';
 
-import {
-	createWorkWithInlineLogoFixture,
-	createWorkWithPeriodFixture,
-	createWorkWithPortraitFixture,
-	createWorkWithLongTextFixture,
-} from '../../../context/work/fixtures';
-import { createSampleWork } from '../../../context/work/factories';
+import { getCollection } from 'astro:content';
+import { collectionToWork } from '../../../context/work/collection';
 
-// TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る
-const works = [
-	createSampleWork(),
-	{ ...createWorkWithPortraitFixture(), id: 'work-1' },
-	{ ...createWorkWithInlineLogoFixture(), id: 'work-2' },
-	{ ...createWorkWithPeriodFixture(), id: 'work-3' },
-	{ ...createWorkWithLongTextFixture(), id: 'work-4' },
-];
+const works = await Promise.all(
+	(await getCollection('works')).filter((work) => work.data.properties.pickUp).map((work) => collectionToWork(work)),
+);
 ---
 
 <section class={root}>
