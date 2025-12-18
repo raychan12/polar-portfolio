@@ -21,7 +21,7 @@ export const tagsList = style({
 });
 
 export const tagsLink = style({
-	font: vars.text.en.caption,
+	font: vars.text.en.description,
 	color: vars.color.text.secondary,
 	textDecoration: 'underline',
 });
