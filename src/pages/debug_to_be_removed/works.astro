@@ -2,9 +2,23 @@
 import CommonLayout from '../../layout/CommonLayout.astro';
 import { getCollection } from 'astro:content';
 
+import { collectionToWork } from '../../context/work/collection';
+
 const works = await getCollection('works');
+
+const processedWorks = works.map((work) => [work, collectionToWork(work)]);
 ---
 
 <CommonLayout>
-	{works.map((work) => <div>{JSON.stringify(work)}</div>)}
+	{
+		processedWorks.map(([rawWork, work]) => (
+			<>
+				<h2>Raw work</h2>
+				<pre>{JSON.stringify(structuredClone(rawWork), undefined, 2)}</pre>
+				<h2>Work</h2>
+				<pre>{JSON.stringify(structuredClone(work), undefined, 2)}</pre>
+				<hr />
+			</>
+		))
+	}
 </CommonLayout>

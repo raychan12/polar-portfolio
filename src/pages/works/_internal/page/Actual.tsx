@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
 
-import type { Work } from '../../../../context/work/types';
-import { WorkCard } from '../../../../features/work/components/WorkCard';
+import { WorkCard } from '../../../../features/work/components/WorkCard/WorkCard';
+import type { WorkCardProps } from '../../../../features/work/components/WorkCard/WorkCard';
 import { ContextFilter } from '../components/ContextFilter';
 import { TypesFilter } from '../components/TypesFilter';
 import {
@@ -17,10 +17,10 @@ import {
 import { filter, root, workList } from './Actual.css';
 
 type Props = {
-	works: Work[];
+	workCardProps: WorkCardProps[];
 };
 
-export const Actual: FunctionComponent<Props> = ({ works }) => {
+export const Actual: FunctionComponent<Props> = ({ workCardProps }) => {
 	const [query, setQuery] = useState(parseFilterQuery(new URLSearchParams(window.location.search)));
 
 	const handleQueryUpdate = (query: FilterQuery) => {
@@ -42,7 +42,10 @@ export const Actual: FunctionComponent<Props> = ({ works }) => {
 		[query],
 	);
 
-	const filteredWork = useMemo(() => works.filter((work) => checkWorkMatch(work, query)), [query, works]);
+	const filteredWork = useMemo(
+		() => workCardProps.filter((work) => checkWorkMatch(work.work, query)),
+		[query, workCardProps],
+	);
 
 	return (
 		<div className={root}>
@@ -53,7 +56,7 @@ export const Actual: FunctionComponent<Props> = ({ works }) => {
 			<ul className={workList}>
 				{filteredWork.map((work) => (
 					<li>
-						<WorkCard key={work.id} work={work} />
+						<WorkCard key={work.work.id} {...work} />
 					</li>
 				))}
 			</ul>

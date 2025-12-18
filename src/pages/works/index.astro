@@ -5,27 +5,20 @@ import PageLayout from '../../layout/PageLayout.astro';
 
 import { Content } from './_internal/page/Content';
 
-import {
-	createWorkWithInlineLogoFixture,
-	createWorkWithPeriodFixture,
-	createWorkWithPortraitFixture,
-	createWorkWithLongTextFixture,
-} from '../../context/work/fixtures';
-import { createSampleWork } from '../../context/work/factories';
+import { collectionToWork } from '../../context/work/collection';
+import { getCollection } from 'astro:content';
+import type { WorkCardProps } from '../../features/work/components/WorkCard/WorkCard';
+import { processImageForWorkCard } from '../../features/work/components/WorkCard/image';
 
-const works = [
-	createSampleWork(),
-	createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
-	{ ...createWorkWithPortraitFixture(), id: 'work-2' },
-	{ ...createWorkWithInlineLogoFixture(), id: 'work-3' },
-	{ ...createWorkWithPeriodFixture(), id: 'work-4' },
-	{ ...createWorkWithLongTextFixture(), id: 'work-5' },
-];
+const worksCollectionEntries = await getCollection('works');
+const works = worksCollectionEntries.map((work) => collectionToWork(work));
+
+const workCardProps: WorkCardProps[] = await Promise.all(works.map((work) => processImageForWorkCard(work)));
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
 	<PageLayout>
-		<Content client:load {works} />
+		<Content client:load {workCardProps} />
 	</PageLayout>
 </CommonLayout>

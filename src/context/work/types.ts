@@ -1,6 +1,6 @@
 export type Work = {
 	id: string;
-	visualImageUrl: [string, ...string[]];
+	visualImageUrl: string[];
 	logoUrl: string;
 	description: string;
 	logoAlt: string;
@@ -9,7 +9,8 @@ export type Work = {
 	context: WorkContext;
 	assigning: string;
 	logoPosition: 'left' | 'inline';
-	links: URL[];
+	links: string[];
+	pickUp: boolean;
 };
 
 export type WorkDate = { instant: Date; period?: never } | { instant?: never; period: { from: Date; to: Date } };

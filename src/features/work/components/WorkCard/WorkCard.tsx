@@ -1,8 +1,9 @@
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
-import { workTypeColorsCSS } from '../../../context/work/styles';
-import type { Work } from '../../../context/work/types';
+import { workTypeColorsCSS } from '../../../../context/work/styles';
+import type { Work } from '../../../../context/work/types';
+import type { ImgTagAttributes } from '../../../../lib/image';
 
 import {
 	root,
@@ -21,38 +22,29 @@ import {
 	grid,
 } from './WorkCard.css';
 
-type Props = {
+export type WorkCardProps = {
 	work: Work;
+	visualImageAttrs: ImgTagAttributes;
+	logoImageAttrs: ImgTagAttributes;
 };
 
-export const WorkCard: FunctionComponent<Props> = ({ work }) => {
-	const {
-		id,
-		visualImageUrl,
-		logoUrl,
-		description,
-		logoAlt,
-		date,
-		context,
-		types: type,
-		assigning,
-		logoPosition,
-	} = work;
+export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAttrs, logoImageAttrs }) => {
+	const { id, description, logoAlt, date, context, types: type, assigning, logoPosition } = work;
 
 	return (
 		<article className={root}>
 			<a href={`/works/${id}`} className={grid}>
 				<div className={visualImageContainer}>
 					{/* TODO: alt 確認する */}
-					<img className={visualImage} src={visualImageUrl[0]} alt="" width={227} height={320} />
-					<img className={visualImageBackground} src={visualImageUrl[0]} alt="" width={23} height={32} />
+					<img className={visualImage} {...visualImageAttrs} alt="" />
+					<img className={visualImageBackground} {...visualImageAttrs} alt="" />
 				</div>
 
-				{logoPosition === 'left' && <img className={logoLeft} src={logoUrl} alt={logoAlt} />}
+				{logoPosition === 'left' && <img className={logoLeft} {...logoImageAttrs} alt={logoAlt} />}
 
 				<div className={titleSection}>
 					<h2 className={descriptionText}>{description}</h2>
-					{logoPosition === 'inline' && <img className={logoInline} src={logoUrl} alt={logoAlt} />}
+					{logoPosition === 'inline' && <img className={logoInline} {...logoImageAttrs} alt={logoAlt} />}
 				</div>
 
 				<div className={metaSection}>
