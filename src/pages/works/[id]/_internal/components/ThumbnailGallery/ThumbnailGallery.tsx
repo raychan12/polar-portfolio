@@ -1,7 +1,8 @@
 import type { FunctionComponent, MouseEventHandler } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 
-import type { Work } from '../../../../../context/work/types';
+import type { Work } from '../../../../../../context/work/types';
+import type { ImgTagAttributes } from '../../../../../../lib/image';
 
 import {
 	currentImage,
@@ -12,11 +13,17 @@ import {
 	selectorList,
 } from './ThumbnailGallery.css';
 
-type Props = {
+export type ThumbnailGalleryProps = {
 	work: Work;
+	visualImageAttrs: VisualImageAttrs[];
 };
 
-export const ThumbnailGallery: FunctionComponent<Props> = ({ work }) => {
+export type VisualImageAttrs = {
+	mainImage: ImgTagAttributes;
+	selectorImage: ImgTagAttributes;
+};
+
+export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ work, visualImageAttrs }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback((e) => {
@@ -39,24 +46,20 @@ export const ThumbnailGallery: FunctionComponent<Props> = ({ work }) => {
 		<div className={root}>
 			<img
 				className={mainImage}
-				src={work.visualImageUrl[currentIndex]}
+				{...visualImageAttrs[currentIndex].mainImage}
 				alt={`「${work.logoAlt}」の${currentIndex + 1}枚目の画像`}
-				width={320}
-				height={320}
 			/>
 			<ul className={selectorList}>
-				{work.visualImageUrl.map((src, i) => {
+				{visualImageAttrs.map((image, i) => {
 					const current = i === currentIndex;
 
 					return (
-						<li className={selectorListElement} key={src}>
+						<li className={selectorListElement} key={image.selectorImage.src}>
 							<button onClick={handleClick} data-index={i} aria-selected={current}>
 								<img
 									className={`${selectorImage} ${current ? currentImage : ''}`}
-									src={src}
+									{...image.selectorImage}
 									alt={`${i + 1}枚目`}
-									width={80}
-									height={80}
 								/>
 							</button>
 						</li>

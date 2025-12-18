@@ -17,7 +17,8 @@ const baseSampleWork: Work = {
 	context: 'commission',
 	date: { instant: new Date('2025/12/1') },
 	assigning: '文章 / 表紙イラスト / デザイン / 編集',
-	links: [new URL('https://twitter.com/2ji_yellmovie/'), new URL('https://example.com/')],
+	links: ['https://twitter.com/2ji_yellmovie/', 'https://example.com/'],
+	pickUp: false,
 };
 
 /**

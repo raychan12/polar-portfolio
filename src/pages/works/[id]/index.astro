@@ -6,7 +6,7 @@ import CommonLayout from '../../../layout/CommonLayout.astro';
 import PageLayout from '../../../layout/PageLayout.astro';
 import PageTitle from '../../../components/PageTitle.astro';
 
-import { ThumbnailGallery } from './_internal/components/ThumbnailGallery';
+import { ThumbnailGallery } from './_internal/components/ThumbnailGallery/ThumbnailGallery';
 import WorkDescriptions from './_internal/components/WorkDescriptions.astro';
 
 import type { Work } from '../../../context/work/types';
@@ -14,6 +14,7 @@ import type { Work } from '../../../context/work/types';
 import { root, backButton } from './_index.css';
 import { getCollection } from 'astro:content';
 import { collectionToWork } from '../../../context/work/collection';
+import { processImageForThumbnailGallery } from './_internal/components/ThumbnailGallery/image';
 
 export const getStaticPaths = (async () => {
 	const worksCollectionEntries = await getCollection('works');
@@ -31,12 +32,14 @@ interface Props {
 }
 
 const { work } = Astro.props;
+
+const galleryProps = await processImageForThumbnailGallery(work);
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
 	<PageLayout class={root}>
-		<ThumbnailGallery client:load {work} />
+		<ThumbnailGallery client:load {...galleryProps} />
 		<WorkDescriptions {work} />
 		<a href="/works" class={backButton}>
 			<Icon name="back-arrow" width={32} height={6} />
