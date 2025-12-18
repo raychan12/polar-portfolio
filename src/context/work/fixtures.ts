@@ -4,18 +4,22 @@ import type { Work } from './types';
 export const createWorkWithPortraitFixture = (): Work =>
 	createSampleWork({
 		visualImageUrl: [
-			`https://picsum.photos/id/100/480/640`,
-			`https://picsum.photos/id/101/480/640`,
-			`https://picsum.photos/id/102/480/640`,
-			`https://picsum.photos/id/103/480/640`,
-			`https://picsum.photos/id/104/480/640`,
+			{ src: 'https://picsum.photos/id/101/480/640', width: 480, height: 640 },
+			{ src: 'https://picsum.photos/id/102/480/640', width: 480, height: 640 },
+			{ src: 'https://picsum.photos/id/103/480/640', width: 480, height: 640 },
+			{ src: 'https://picsum.photos/id/104/480/640', width: 480, height: 640 },
+			{ src: 'https://picsum.photos/id/105/480/640', width: 480, height: 640 },
 		],
 	});
 
 export const createWorkWithInlineLogoFixture = (): Work =>
 	createSampleWork({
 		logoPosition: 'inline',
-		logoUrl: `https://picsum.photos/id/100/320/80`,
+		logoUrl: {
+			src: `https://picsum.photos/id/100/320/80`,
+			width: 320,
+			height: 80,
+		},
 	});
 
 export const createWorkWithPeriodFixture = (): Work =>
