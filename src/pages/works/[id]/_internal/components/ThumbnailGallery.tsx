@@ -39,10 +39,11 @@ export const ThumbnailGallery: FunctionComponent<Props> = ({ work }) => {
 		<div className={root}>
 			<img
 				className={mainImage}
-				src={work.visualImageUrl[currentIndex]}
+				{...work.visualImageUrl[currentIndex]}
 				alt={`「${work.logoAlt}」の${currentIndex + 1}枚目の画像`}
 				width={320}
 				height={320}
+				sizes="320px, 640px, 960px"
 			/>
 			<ul className={selectorList}>
 				{work.visualImageUrl.map((src, i) => {
@@ -53,10 +54,11 @@ export const ThumbnailGallery: FunctionComponent<Props> = ({ work }) => {
 							<button onClick={handleClick} data-index={i} aria-selected={current}>
 								<img
 									className={`${selectorImage} ${current ? currentImage : ''}`}
-									src={src}
+									{...src}
 									alt={`${i + 1}枚目`}
 									width={80}
 									height={80}
+									sizes="80px, 160px, 240px"
 								/>
 							</button>
 						</li>

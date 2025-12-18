@@ -44,15 +44,15 @@ export const WorkCard: FunctionComponent<Props> = ({ work }) => {
 			<a href={`/works/${id}`} className={grid}>
 				<div className={visualImageContainer}>
 					{/* TODO: alt 確認する */}
-					<img className={visualImage} src={visualImageUrl[0]} alt="" width={227} height={320} />
-					<img className={visualImageBackground} src={visualImageUrl[0]} alt="" width={23} height={32} />
+					<img className={visualImage} {...visualImageUrl[0]} alt="" width={227} height={320} sizes="227px, 454px" />
+					<img className={visualImageBackground} {...visualImageUrl[0]} alt="" width={23} height={32} />
 				</div>
 
-				{logoPosition === 'left' && <img className={logoLeft} src={logoUrl} alt={logoAlt} />}
+				{logoPosition === 'left' && <img className={logoLeft} {...logoUrl} alt={logoAlt} />}
 
 				<div className={titleSection}>
 					<h2 className={descriptionText}>{description}</h2>
-					{logoPosition === 'inline' && <img className={logoInline} src={logoUrl} alt={logoAlt} />}
+					{logoPosition === 'inline' && <img className={logoInline} {...logoUrl} alt={logoAlt} />}
 				</div>
 
 				<div className={metaSection}>
