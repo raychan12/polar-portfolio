@@ -1,7 +1,9 @@
+import type { ImgTagAttributes } from '../../infra/notion';
+
 export type Work = {
 	id: string;
-	visualImageUrl: [string, ...string[]];
-	logoUrl: string;
+	visualImageUrl: ImgTagAttributes[];
+	logoUrl: ImgTagAttributes;
 	description: string;
 	logoAlt: string;
 	date: WorkDate;
@@ -9,7 +11,7 @@ export type Work = {
 	context: WorkContext;
 	assigning: string;
 	logoPosition: 'left' | 'inline';
-	links: URL[];
+	links: string[];
 };
 
 export type WorkDate = { instant: Date; period?: never } | { instant?: never; period: { from: Date; to: Date } };
