@@ -12,29 +12,28 @@ const works = defineCollection({
 	}),
 	schema: notionPageSchema({
 		properties: z.object({
-			slug: transformedPropertySchema.rich_text,
-			title: transformedPropertySchema.title,
-			type: transformedPropertySchema.multi_select.pipe(z.array(z.enum(WorkType))),
-			engagement: transformedPropertySchema.select.pipe(z.enum(WorkContext)),
-			thumbnail: propertySchema.files.refine((file) => file.files.length > 0, {
+			Slug: transformedPropertySchema.rich_text,
+			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(WorkType))),
+			制作形態: transformedPropertySchema.select.pipe(z.enum(WorkContext)),
+			サムネイル画像: propertySchema.files.refine((file) => file.files.length > 0, {
 				message: 'サムネイル画像は 1 枚以上設定する必要があります',
 			}),
-			logo: propertySchema.files,
-			logoAlt: transformedPropertySchema.rich_text,
-			date: transformedPropertySchema.date.transform((date, ctx) => {
+			ロゴ画像: propertySchema.files,
+			ロゴタイトル: transformedPropertySchema.rich_text,
+			日付: transformedPropertySchema.date.transform((date, ctx) => {
 				if (date == null) {
 					ctx.addIssue({ code: 'custom', message: '日付が設定されていません' });
 					return z.NEVER;
 				}
 				return date;
 			}),
-			description: transformedPropertySchema.rich_text,
-			assigning: transformedPropertySchema.rich_text,
-			logoPosition: transformedPropertySchema.select.pipe(z.enum(['inline', 'left'])),
-			links: transformedPropertySchema.rich_text
+			概要: transformedPropertySchema.rich_text,
+			担当部分: transformedPropertySchema.rich_text,
+			ロゴ配置: transformedPropertySchema.select.pipe(z.enum(['inline', 'left'])),
+			リンク: transformedPropertySchema.rich_text
 				.transform((linkText) => linkText.split('\n'))
 				.pipe(z.array(z.string().url())),
-			pickUp: transformedPropertySchema.checkbox,
+			トップページで表示: transformedPropertySchema.checkbox,
 		}),
 	}),
 });
