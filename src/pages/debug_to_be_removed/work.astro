@@ -1,6 +1,6 @@
 ---
 import CommonLayout from '../../layout/CommonLayout.astro';
-import WorkCard from '../../features/work/components/WorkCard.astro';
+import { WorkCard } from '../../features/work/components/WorkCard';
 
 import {
 	createWorkWithInlineLogoFixture,
@@ -12,15 +12,15 @@ import { createSampleWork } from '../../context/work/factories';
 
 const works = [
 	createSampleWork(),
-	createWorkWithPortraitFixture(),
-	createWorkWithInlineLogoFixture(),
-	createWorkWithPeriodFixture(),
-	createWorkWithLongTextFixture(),
+	{ ...createWorkWithPortraitFixture(), id: 'work-1' },
+	{ ...createWorkWithInlineLogoFixture(), id: 'work-2' },
+	{ ...createWorkWithPeriodFixture(), id: 'work-3' },
+	{ ...createWorkWithLongTextFixture(), id: 'work-4' },
 ];
 ---
 
 <CommonLayout>
 	<h1>Work cards</h1>
 	<hr />
-	{works.map((work) => <WorkCard {work} />)}
+	{works.map((work) => <WorkCard key={work.id} {work} />)}
 </CommonLayout>

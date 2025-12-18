@@ -1,6 +1,7 @@
 import type { Work } from './types';
 
 const baseSampleWork: Work = {
+	id: 'work',
 	visualImageUrl: 'https://picsum.photos/id/1/226/320',
 	logoUrl: 'https://picsum.photos/id/1/320/320',
 	logoPosition: 'left',

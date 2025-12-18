@@ -1,4 +1,4 @@
-import { WorkContext, WorkType } from '../../../context/work/types';
+import { WorkContext, WorkType, type Work } from '../../../context/work/types';
 
 export type ContextFilterQuery = WorkContext | null;
 export type TypesFilterQuery = WorkType[];
@@ -20,6 +20,13 @@ export const parseFilterQuery = (params: URLSearchParams): FilterQuery => {
 		context: parseContext(params.get('context')),
 		types: parseTypes(params.get('types')),
 	};
+};
+
+export const checkWorkMatch = (work: Work, query: FilterQuery) => {
+	return (
+		(query.context == null || query.context === work.context) &&
+		(query.types.length === 0 || query.types.some((type) => work.types.includes(type)))
+	);
 };
 
 const parseContext = (contextQuery: string | null): WorkContext | null => {
