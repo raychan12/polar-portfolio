@@ -29,7 +29,7 @@ interface Props {
 }
 
 const {
-	work: { logoUrl, description, logoAlt, date, context, types: type, assigning, links: linksText },
+	work: { logoImage, description, logoAlt, date, context, types: type, assigning, links: linksText },
 } = Astro.props;
 
 const links = linksText.map((link) => new URL(link));
@@ -51,7 +51,7 @@ const links = linksText.map((link) => new URL(link));
 		</nav>
 		<div class={subSection}>
 			<h1 class={descriptionText}>{description}</h1>
-			<img class={logoInline} {...logoUrl} alt={logoAlt} sizes="600px, 1200px" />
+			<img class={logoInline} {...logoImage} alt={logoAlt} sizes="600px, 1200px" />
 		</div>
 
 		<span class={dateText}>

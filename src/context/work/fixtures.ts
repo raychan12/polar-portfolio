@@ -3,7 +3,7 @@ import type { Work } from './types';
 
 export const createWorkWithPortraitFixture = (): Work =>
 	createSampleWork({
-		visualImageUrl: [
+		visualImage: [
 			{ src: 'https://picsum.photos/id/101/480/640', width: 480, height: 640 },
 			{ src: 'https://picsum.photos/id/102/480/640', width: 480, height: 640 },
 			{ src: 'https://picsum.photos/id/103/480/640', width: 480, height: 640 },
@@ -15,7 +15,7 @@ export const createWorkWithPortraitFixture = (): Work =>
 export const createWorkWithInlineLogoFixture = (): Work =>
 	createSampleWork({
 		logoPosition: 'inline',
-		logoUrl: {
+		logoImage: {
 			src: `https://picsum.photos/id/100/320/80`,
 			width: 320,
 			height: 80,

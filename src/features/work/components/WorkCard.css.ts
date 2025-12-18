@@ -61,7 +61,7 @@ export const visualImageContainer = style({
 	marginRight: '80px',
 });
 
-export const visualImage = style({
+export const visualImageForeground = style({
 	position: 'absolute',
 	inset: 0,
 	width: '100%',

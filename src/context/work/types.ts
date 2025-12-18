@@ -2,8 +2,8 @@ import type { ImgTagAttributes } from '../../infra/notion';
 
 export type Work = {
 	id: string;
-	visualImageUrl: ImgTagAttributes[];
-	logoUrl: ImgTagAttributes;
+	visualImage: ImgTagAttributes[];
+	logoImage: ImgTagAttributes;
 	description: string;
 	logoAlt: string;
 	date: WorkDate;
