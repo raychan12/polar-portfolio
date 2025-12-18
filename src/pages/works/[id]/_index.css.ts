@@ -4,7 +4,7 @@ import { vars } from '../../../styles/theme.css';
 
 export const root = style({
 	display: 'grid',
-	gridTemplateColumns: '320px 1fr',
+	gridTemplateColumns: '320px minmax(0, 1fr)',
 	gridTemplateRows: 'auto auto',
 	gap: '108px',
 });
