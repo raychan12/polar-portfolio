@@ -92,7 +92,7 @@ const {
 					<ul class={externalLinkList}>
 						{links.map((link) => (
 							<li class={externalLink}>
-								<a href={link.toString()}>{link.hostname}</a>
+								<a href={link.toString()}>{new URL(link).hostname}</a>
 							</li>
 						))}
 					</ul>
