@@ -4,8 +4,10 @@ import { Image } from 'astro:assets';
 import KeyVisualImage from '../../../assets/KV_sRGB.png';
 import Ljus from '../../../assets/ljus.svg';
 import KvPhrase from '../../../assets/kv-phrase.svg';
+import KvPhraseSm from '../../../assets/kv-phrase-sm.svg';
+import Scroll from '../../../assets/scroll.svg';
 
-import { root, main, image, background, phrase } from './KeyVisual.css';
+import { root, main, image, background, phrase, scroll, scrollText, phraseImage, phraseImageSm } from './KeyVisual.css';
 ---
 
 <div class={root}>
@@ -18,8 +20,20 @@ import { root, main, image, background, phrase } from './KeyVisual.css';
 				alt="Ditt liv är ljus. - Dear insages praying for the area out of capitalism. "
 				width={KvPhrase.width}
 				height={KvPhrase.height}
+				class={phraseImage}
+			/>
+			<img
+				src={KvPhraseSm.src}
+				alt="Ditt liv är ljus. - Dear insages praying for the area out of capitalism. "
+				width={KvPhraseSm.width}
+				height={KvPhraseSm.height}
+				class={phraseImageSm}
 			/>
 		</div>
+	</div>
+	<div class={scroll}>
+		<span class={scrollText}>SCROLL</span>
+		<Scroll />
 	</div>
 	<Image class={background} src={KeyVisualImage} alt="" layout="fixed" width={32} height={24} />
 </div>

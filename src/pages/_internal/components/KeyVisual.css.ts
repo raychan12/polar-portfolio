@@ -1,5 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
+import { breakPoints, vars } from '../../../styles/theme.css';
+
 export const root = style({
 	position: 'relative',
 	display: 'flex',
@@ -10,14 +12,24 @@ export const root = style({
 export const main = style({
 	position: 'relative',
 	height: '100dvh',
+	'@media': {
+		[breakPoints.md]: {
+			height: '800px',
+		},
+	},
 });
 
 export const image = style({
-	objectPosition: 'left center',
+	objectPosition: '20% center',
 	objectFit: 'cover',
 	boxShadow: '0px 0px 32px 0px #00000029',
 	width: '100%',
 	height: '100%',
+	'@media': {
+		[breakPoints.md]: {
+			objectPosition: 'left center',
+		},
+	},
 });
 
 export const background = style({
@@ -34,9 +46,55 @@ export const background = style({
 
 export const phrase = style({
 	position: 'absolute',
-	right: '120px',
+	right: '32px',
 	bottom: '120px',
 	display: 'flex',
-	alignItems: 'center',
-	gap: '20px',
+	flexDirection: 'column',
+	alignItems: 'end',
+	'@media': {
+		[breakPoints.md]: {
+			gap: '20px',
+			right: '120px',
+			alignItems: 'center',
+			flexDirection: 'row',
+		},
+	},
+});
+
+export const phraseImage = style({
+	display: 'none',
+	'@media': {
+		[breakPoints.md]: {
+			display: 'block',
+		},
+	},
+});
+
+export const phraseImageSm = style({
+	display: 'block',
+	'@media': {
+		[breakPoints.md]: {
+			display: 'none',
+		},
+	},
+});
+
+export const scroll = style({
+	position: 'absolute',
+	bottom: '24px',
+	right: '32px',
+	display: 'flex',
+	alignItems: 'end',
+	gap: '8px',
+	color: 'white',
+	'@media': {
+		[breakPoints.md]: {
+			display: 'none',
+		},
+	},
+});
+
+export const scrollText = style({
+	fontFamily: vars.font.enSerif,
+	fontSize: '20px',
 });
