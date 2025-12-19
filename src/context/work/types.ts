@@ -1,6 +1,6 @@
 export type Work = {
 	id: string;
-	visualImageUrl: [string, ...string[]];
+	visualImageUrl: string[];
 	logoUrl: string;
 	description: string;
 	logoAlt: string;
