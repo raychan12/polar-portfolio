@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
 import { workTypeColorsCSS } from '../../../context/work/styles';
-import type { Work } from '../../../context/work/types';
+import { getTopThumbnailUrl, type Work } from '../../../context/work/types';
 
 import {
 	root,
@@ -26,26 +26,17 @@ type Props = {
 };
 
 export const WorkCard: FunctionComponent<Props> = ({ work }) => {
-	const {
-		id,
-		visualImageUrl,
-		logoUrl,
-		description,
-		logoAlt,
-		date,
-		context,
-		types: type,
-		assigning,
-		logoPosition,
-	} = work;
+	const { id, logoUrl, description, logoAlt, date, context, types: type, assigning, logoPosition } = work;
+
+	const visualImageUrl = getTopThumbnailUrl(work);
 
 	return (
 		<article className={root}>
 			<a href={`/works/${id}`} className={grid}>
 				<div className={visualImageContainer}>
 					{/* TODO: alt 確認する */}
-					<img className={visualImage} src={visualImageUrl[0]} alt="" width={227} height={320} />
-					<img className={visualImageBackground} src={visualImageUrl[0]} alt="" width={23} height={32} />
+					<img className={visualImage} src={visualImageUrl} alt="" width={227} height={320} />
+					<img className={visualImageBackground} src={visualImageUrl} alt="" width={23} height={32} />
 				</div>
 
 				{logoPosition === 'left' && <img className={logoLeft} src={logoUrl} alt={logoAlt} />}
