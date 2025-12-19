@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../../../../styles/theme.css';
+import { breakPoints, vars } from '../../../../styles/theme.css';
 
 // <a> タグの中に <a> はネストできないので、nav.tagsList の取り扱いに関して
 // この記事を参考にしています:
@@ -9,7 +9,7 @@ import { vars } from '../../../../styles/theme.css';
 export const root = style({
 	display: 'grid',
 	gridTemplateRows: '1fr repeat(3, max-content) 1fr',
-	gridTemplateColumns: 'max-content max-content 1fr',
+	gridTemplateColumns: 'max-content 1fr minmax(0, 1fr)',
 	gridTemplateAreas: `
 		". . ."
 		". . ."
@@ -20,9 +20,9 @@ export const root = style({
 	rowGap: '8px',
 	alignContent: 'center',
 	width: '100%',
-	minHeight: '320px',
+	minHeight: '180px',
 	maxWidth: '960px',
-	paddingRight: '80px',
+	paddingRight: '40px',
 	boxShadow: '0px 4px 32px 0px rgba(60, 99, 135, 0.16)',
 	backgroundColor: vars.color.bg.primary,
 	transition: '300ms transform, 300ms box-shadow',
@@ -31,6 +31,12 @@ export const root = style({
 		'&:is(:hover, :focus-visible)': {
 			boxShadow: '0px 4px 60px 0px rgba(60, 99, 135, 0.25)',
 			transform: 'scale(1.01)',
+		},
+	},
+	'@media': {
+		[breakPoints.sm]: {
+			gridTemplateColumns: 'max-content max-content minmax(0, 1fr)',
+			minHeight: '320px',
 		},
 	},
 });
@@ -43,12 +49,23 @@ export const grid = style({
 	gridTemplateRows: 'subgrid',
 	gridTemplateColumns: 'subgrid',
 	gridTemplateAreas: `
-		"img logo ."
-		"img logo title"
-		"img logo tags"
-		"img logo meta"
-		"img logo ."
+		"img logo logo"
+		"img logo logo"
+		"img logo logo"
+		"img logo logo"
+		"img logo logo"
 	`,
+	'@media': {
+		[breakPoints.sm]: {
+			gridTemplateAreas: `
+				"img logo ."
+				"img logo title"
+				"img logo tags"
+				"img logo meta"
+				"img logo ."
+			`,
+		},
+	},
 });
 
 export const visualImageContainer = style({
@@ -56,9 +73,18 @@ export const visualImageContainer = style({
 	flexShrink: 0,
 	position: 'relative',
 	overflow: 'hidden',
-	width: '227px',
+	width: '128px',
 	transform: 'translate(0)',
-	marginRight: '80px',
+	marginRight: '32px',
+	'@media': {
+		[breakPoints.sm]: {
+			width: '227px',
+			marginRight: '40px',
+		},
+		[breakPoints.md]: {
+			marginRight: '80px',
+		},
+	},
 });
 
 export const visualImage = style({
@@ -90,16 +116,40 @@ export const logoLeft = style({
 
 export const logoInline = style({
 	width: '100%',
+	height: '100%',
 	objectFit: 'contain',
 	objectPosition: 'left',
 	maxHeight: '100px',
 });
 
+export const smLogoSection = style({
+	gridArea: 'logo',
+	display: 'block',
+	width: '100%',
+	height: '100%',
+	'@media': {
+		[breakPoints.sm]: {
+			display: 'none',
+		},
+	},
+});
+
+export const smLogo = style({
+	width: '100%',
+	height: '100%',
+	objectFit: 'contain',
+});
+
 export const titleSection = style({
 	gridArea: 'title',
-	display: 'flex',
-	flexDirection: 'column',
-	gap: '8px',
+	display: 'none',
+	'@media': {
+		[breakPoints.sm]: {
+			display: 'flex',
+			flexDirection: 'column',
+			gap: '8px',
+		},
+	},
 });
 
 export const descriptionText = style({
@@ -107,12 +157,17 @@ export const descriptionText = style({
 });
 
 export const tagsList = style({
-	pointerEvents: 'none',
 	gridArea: 'tags',
-	display: 'flex',
-	flexWrap: 'wrap',
-	gap: '8px 20px',
+	pointerEvents: 'none',
+	display: 'none',
 	font: vars.text.en.caption,
+	'@media': {
+		[breakPoints.sm]: {
+			display: 'flex',
+			flexWrap: 'wrap',
+			gap: '8px 20px',
+		},
+	},
 });
 
 export const tagsLink = style({
@@ -122,10 +177,15 @@ export const tagsLink = style({
 });
 
 export const metaSection = style({
+	display: 'none',
 	gridArea: 'meta',
-	display: 'flex',
-	flexDirection: 'column',
-	gap: '8px',
+	'@media': {
+		[breakPoints.sm]: {
+			display: 'flex',
+			flexDirection: 'column',
+			gap: '8px',
+		},
+	},
 });
 
 export const dateText = style({
