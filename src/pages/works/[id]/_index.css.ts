@@ -1,12 +1,19 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../../../styles/theme.css';
+import { breakPoints, vars } from '../../../styles/theme.css';
 
 export const root = style({
-	display: 'grid',
-	gridTemplateColumns: '320px minmax(0, 1fr)',
-	gridTemplateRows: 'auto auto',
-	gap: '108px',
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '48px',
+	'@media': {
+		[breakPoints.md]: {
+			display: 'grid',
+			gridTemplateColumns: '320px minmax(0, 1fr)',
+			gridTemplateRows: 'auto auto',
+			gap: '108px',
+		},
+	},
 });
 
 export const backButton = style({
