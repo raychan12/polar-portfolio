@@ -2,6 +2,7 @@ import type { UnresolvedImageTransform } from 'astro';
 import { getImage } from 'astro:assets';
 
 import type { Work } from '../../../../context/work/types';
+import { getImageToImgAttrs } from '../../../../lib/image';
 
 import type { WorkCardProps } from './WorkCard';
 
@@ -16,16 +17,8 @@ export const processImageForWorkCard = async (work: Work): Promise<WorkCardProps
 
 	return {
 		work,
-		visualImageAttrs: {
-			src: visualImage.src,
-			srcset: visualImage.srcSet.attribute,
-			...visualImage.attributes,
-		},
-		logoImageAttrs: {
-			src: logoImage.src,
-			srcset: logoImage.srcSet.attribute,
-			...logoImage.attributes,
-		},
+		visualImageAttrs: getImageToImgAttrs(visualImage),
+		logoImageAttrs: getImageToImgAttrs(logoImage),
 	};
 };
 
