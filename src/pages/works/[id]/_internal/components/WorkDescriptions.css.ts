@@ -157,5 +157,5 @@ globalStyle(`${renderedContent} li`, {
 	paddingLeft: '0.5em',
 });
 
-// color-red, blue, green, yellow, orange, purple, pink, gray, brown
-// color-*_background
+// TODO: 他にも Notion コンテンツからパースされている
+//       スタイルはいろいろあるので、必要に応じてスタイルを追加
