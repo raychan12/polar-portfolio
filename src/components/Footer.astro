@@ -1,5 +1,5 @@
 ---
-import { copyright, container, linksList, link, footer, identify, logos } from './Footer.css';
+import { copyright, linksList, link, footer, identify, logos, ljusLogo, circleLogo } from './Footer.css';
 import { CONTACT_FORM, COPYRIGHT_YEAR } from '../constant';
 
 type LinkTo = { pathname: string; href?: never } | { pathname?: never; href: string };
@@ -21,33 +21,31 @@ import Circle from '../assets/circle.svg';
 ---
 
 <footer class={footer}>
-	<div class={container}>
-		<nav>
-			<ul class={linksList}>
-				{
-					footerLinks.map(({ linkTo, caption }) => {
-						const outgoingLink = linkTo.href != null;
-						return (
-							<li>
-								<a
-									class={link}
-									href={outgoingLink ? linkTo.href : linkTo.pathname}
-									target={outgoingLink ? '_blank' : undefined}
-									rel={outgoingLink ? 'noreferrer noopener' : undefined}>
-									{caption}
-								</a>
-							</li>
-						);
-					})
-				}
-			</ul>
-		</nav>
-		<div class={identify}>
-			<div class={logos}>
-				<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} />
-				<img src={Circle.src} alt="七夕の月光" width={Circle.width} height={Circle.height} />
-			</div>
-			<p class={copyright}>{COPYRIGHT_YEAR} raychan All Rights Reserved.</p>
+	<nav>
+		<ul class={linksList}>
+			{
+				footerLinks.map(({ linkTo, caption }) => {
+					const outgoingLink = linkTo.href != null;
+					return (
+						<li>
+							<a
+								class={link}
+								href={outgoingLink ? linkTo.href : linkTo.pathname}
+								target={outgoingLink ? '_blank' : undefined}
+								rel={outgoingLink ? 'noreferrer noopener' : undefined}>
+								{caption}
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</nav>
+	<div class={identify}>
+		<div class={logos}>
+			<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} class={ljusLogo} />
+			<img src={Circle.src} alt="七夕の月光" width={Circle.width} height={Circle.height} class={circleLogo} />
 		</div>
 	</div>
+	<p class={copyright}>{COPYRIGHT_YEAR} raychan All Rights Reserved.</p>
 </footer>
