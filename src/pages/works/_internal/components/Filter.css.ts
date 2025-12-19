@@ -4,7 +4,8 @@ import { vars } from '../../../../styles/theme.css';
 
 export const list = style({
 	display: 'flex',
-	gap: '8px',
+	flexWrap: 'wrap',
+	gap: '2px 8px',
 });
 
 export const button = style({

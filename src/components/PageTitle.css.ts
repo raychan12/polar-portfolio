@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../styles/theme.css';
+import { breakPoints, vars } from '../styles/theme.css';
 
 export const root = style({
 	position: 'relative',
@@ -43,10 +43,15 @@ export const background = style({
 export const titleText = style({
 	width: 'fit-content',
 	padding: '0 20px 7px 10px',
-	margin: '56px 140px',
+	margin: '32px 40px',
 	color: vars.color.text.tertiary,
 	fontFamily: vars.font.enSerif,
 	fontSize: '32px',
 	borderBottom: `1px solid ${vars.color.text.tertiary}`,
 	zIndex: 1,
+	'@media': {
+		[breakPoints.sm]: {
+			margin: '56px 140px',
+		},
+	},
 });
