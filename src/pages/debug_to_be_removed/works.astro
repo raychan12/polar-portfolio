@@ -2,7 +2,7 @@
 import CommonLayout from '../../layout/CommonLayout.astro';
 import { getCollection } from 'astro:content';
 
-import { collectionToWork } from '../../context/work/collection';
+import { collectionToWork } from '../../context/work/services';
 
 const works = await getCollection('works');
 

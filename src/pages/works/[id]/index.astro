@@ -13,7 +13,7 @@ import type { Work } from '../../../context/work/types';
 
 import { root, backButton } from './_index.css';
 import { getCollection } from 'astro:content';
-import { collectionToWork } from '../../../context/work/collection';
+import { collectionToWork } from '../../../context/work/services';
 import { processImageForThumbnailGallery } from './_internal/components/ThumbnailGallery/image';
 
 export const getStaticPaths = (async () => {
