@@ -2,11 +2,27 @@ import { style } from '@vanilla-extract/css';
 
 import { vars } from '../../../styles/theme.css';
 
+// <a> タグの中に <a> はネストできないので、nav.tagsList の取り扱いに関して
+// この記事を参考にしています:
+// https://zenn.dev/ixkaito/articles/nested-links-using-subgrid
+
 export const root = style({
-	display: 'flex',
+	display: 'grid',
+	gridTemplateRows: '1fr repeat(3, max-content) 1fr',
+	gridTemplateColumns: 'max-content max-content 1fr',
+	gridTemplateAreas: `
+		". . ."
+		". . ."
+		". . tags"
+		". . ."
+		". . ."
+	`,
+	rowGap: '8px',
+	alignContent: 'center',
 	width: '100%',
 	minHeight: '320px',
 	maxWidth: '960px',
+	paddingRight: '80px',
 	boxShadow: '0px 4px 32px 0px rgba(60, 99, 135, 0.16)',
 	backgroundColor: vars.color.bg.primary,
 	transition: '300ms transform, 300ms box-shadow',
@@ -19,7 +35,24 @@ export const root = style({
 	},
 });
 
+export const grid = style({
+	width: '100%',
+	gridColumn: '1 / 4',
+	gridRow: '1 / 6',
+	display: 'grid',
+	gridTemplateRows: 'subgrid',
+	gridTemplateColumns: 'subgrid',
+	gridTemplateAreas: `
+		"img logo ."
+		"img logo title"
+		"img logo tags"
+		"img logo meta"
+		"img logo ."
+	`,
+});
+
 export const visualImageContainer = style({
+	gridArea: 'img',
 	flexShrink: 0,
 	position: 'relative',
 	overflow: 'hidden',
@@ -48,11 +81,11 @@ export const visualImageBackground = style({
 });
 
 export const logoLeft = style({
+	gridArea: 'logo',
+	marginRight: '40px',
 	width: '160px',
 	height: '100%',
 	objectFit: 'contain',
-	marginBlock: 'auto',
-	marginRight: '40px',
 });
 
 export const logoInline = style({
@@ -62,16 +95,8 @@ export const logoInline = style({
 	maxHeight: '100px',
 });
 
-export const workInfo = style({
-	display: 'flex',
-	flexDirection: 'column',
-	justifyContent: 'center',
-	gap: '16px',
-	paddingBlock: '20px',
-	paddingRight: '40px',
-});
-
-export const workInfoSection = style({
+export const titleSection = style({
+	gridArea: 'title',
 	display: 'flex',
 	flexDirection: 'column',
 	gap: '8px',
@@ -82,6 +107,8 @@ export const descriptionText = style({
 });
 
 export const tagsList = style({
+	pointerEvents: 'none',
+	gridArea: 'tags',
 	display: 'flex',
 	flexWrap: 'wrap',
 	gap: '8px 20px',
@@ -89,8 +116,16 @@ export const tagsList = style({
 });
 
 export const tagsLink = style({
+	pointerEvents: 'all',
 	color: vars.color.text.secondary,
 	textDecoration: 'underline',
+});
+
+export const metaSection = style({
+	gridArea: 'meta',
+	display: 'flex',
+	flexDirection: 'column',
+	gap: '8px',
 });
 
 export const dateText = style({

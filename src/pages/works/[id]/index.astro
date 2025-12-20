@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from 'astro';
+
+import CommonLayout from '../../../layout/CommonLayout.astro';
+import PageLayout from '../../../layout/PageLayout.astro';
+import PageTitle from '../../../components/PageTitle.astro';
+
+import type { Work } from '../../../context/work/types';
+import {
+	createWorkWithInlineLogoFixture,
+	createWorkWithPeriodFixture,
+	createWorkWithPortraitFixture,
+	createWorkWithLongTextFixture,
+} from '../../../context/work/fixtures';
+import { createSampleWork } from '../../../context/work/factories';
+
+// TODO: Notion からとってくる
+export const works = [
+	createSampleWork(),
+	createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
+	{ ...createWorkWithPortraitFixture(), id: 'work-2' },
+	{ ...createWorkWithInlineLogoFixture(), id: 'work-3' },
+	{ ...createWorkWithPeriodFixture(), id: 'work-4' },
+	{ ...createWorkWithLongTextFixture(), id: 'work-5' },
+];
+
+export const getStaticPaths = (() => {
+	return works.map((work) => ({
+		params: { id: work.id },
+		props: { work },
+	}));
+}) satisfies GetStaticPaths;
+
+interface Props {
+	work: Work;
+}
+
+const { work } = Astro.props;
+---
+
+<CommonLayout>
+	<PageTitle title="works" />
+	<PageLayout>
+		<pre>
+			{("\n" + JSON.stringify(work, undefined, 2))}
+		</pre>
+	</PageLayout>
+</CommonLayout>
