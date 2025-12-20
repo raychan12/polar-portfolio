@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { breakPoints, vars } from '../styles/theme.css';
+import { BreakPoints, vars } from '../styles/theme.css';
 
 export const root = style({
 	position: 'relative',
@@ -50,7 +50,7 @@ export const titleText = style({
 	borderBottom: `1px solid ${vars.color.text.tertiary}`,
 	zIndex: 1,
 	'@media': {
-		[breakPoints.sm]: {
+		[BreakPoints.sm]: {
 			margin: '56px 140px',
 		},
 	},

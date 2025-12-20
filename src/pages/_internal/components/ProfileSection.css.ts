@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { breakPoints, vars } from '../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -13,7 +13,7 @@ export const content = style({
 	flexDirection: 'column',
 	gap: '40px',
 	'@media': {
-		[breakPoints.sm]: {
+		[BreakPoints.sm]: {
 			flexDirection: 'row',
 		},
 	},
@@ -70,7 +70,7 @@ export const linksList = style({
 	gap: '16px',
 	marginTop: '32px',
 	'@media': {
-		[breakPoints.sm]: {
+		[BreakPoints.sm]: {
 			flexDirection: 'row',
 			alignItems: 'start',
 			gap: '32px',

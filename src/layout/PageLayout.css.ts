@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { breakPoints } from '../styles/theme.css';
+import { BreakPoints } from '../styles/theme.css';
 
 export const main = style({
 	flexGrow: 1,
@@ -9,10 +9,10 @@ export const main = style({
 	padding: '60px 32px',
 	marginInline: 'auto',
 	'@media': {
-		[breakPoints.sm]: {
+		[BreakPoints.sm]: {
 			padding: '60px',
 		},
-		[breakPoints.lg]: {
+		[BreakPoints.lg]: {
 			padding: '60px 120px',
 		},
 	},

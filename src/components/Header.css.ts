@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { breakPoints, vars } from '../styles/theme.css';
+import { BreakPoints, vars } from '../styles/theme.css';
 
 export const root = style({
 	position: 'absolute',
@@ -9,7 +9,7 @@ export const root = style({
 	display: 'flex',
 	color: 'white',
 	'@media': {
-		[breakPoints.sm]: {
+		[BreakPoints.sm]: {
 			right: '40px',
 		},
 	},

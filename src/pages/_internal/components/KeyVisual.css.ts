@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { breakPoints, vars } from '../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../styles/theme.css';
 
 export const root = style({
 	position: 'relative',
@@ -13,7 +13,7 @@ export const main = style({
 	position: 'relative',
 	height: '100dvh',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			height: '800px',
 		},
 	},
@@ -26,7 +26,7 @@ export const image = style({
 	width: '100%',
 	height: '100%',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			objectPosition: 'left center',
 		},
 	},
@@ -52,7 +52,7 @@ export const phrase = style({
 	flexDirection: 'column',
 	alignItems: 'end',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			gap: '20px',
 			right: '120px',
 			alignItems: 'center',
@@ -64,7 +64,7 @@ export const phrase = style({
 export const phraseImage = style({
 	display: 'none',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			display: 'block',
 		},
 	},
@@ -73,7 +73,7 @@ export const phraseImage = style({
 export const phraseImageSm = style({
 	display: 'block',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			display: 'none',
 		},
 	},
@@ -88,7 +88,7 @@ export const scroll = style({
 	gap: '8px',
 	color: 'white',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			display: 'none',
 		},
 	},

@@ -1,6 +1,6 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { breakPoints, vars } from '../../../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../../../styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -45,7 +45,7 @@ export const logoInline = style({
 	maxWidth: '350px',
 	maxHeight: '200px',
 	'@media': {
-		[breakPoints.md]: {
+		[BreakPoints.md]: {
 			maxWidth: '60%',
 		},
 	},
