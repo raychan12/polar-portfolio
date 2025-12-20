@@ -1,6 +1,6 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { vars } from '../../../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../../../styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -42,8 +42,13 @@ export const logoInline = style({
 	aspectRatio: 'unset',
 	objectFit: 'contain',
 	objectPosition: 'left',
-	maxWidth: '60%',
+	maxWidth: '350px',
 	maxHeight: '200px',
+	'@media': {
+		[BreakPoints.TABLET]: {
+			maxWidth: '60%',
+		},
+	},
 });
 
 export const dateText = style({

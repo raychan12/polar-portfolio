@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -10,7 +10,13 @@ export const root = style({
 
 export const content = style({
 	display: 'flex',
+	flexDirection: 'column',
 	gap: '40px',
+	'@media': {
+		[BreakPoints.SP]: {
+			flexDirection: 'row',
+		},
+	},
 });
 
 export const avatar = style({
@@ -32,24 +38,24 @@ export const bio = style({
 });
 
 export const shirokumaText = style({
-	'display': 'inline-block',
-	'position': 'relative',
-	':after': {
-		content: '',
-		display: 'block',
-		position: 'absolute',
-		width: '80px',
-		height: '80px',
-		maxWidth: 'none',
-		maxHeight: 'none',
-		borderRadius: '120px',
-		bottom: '50%',
-		opacity: '0%',
-		background: `url(/shirokuma.webp)`,
-		backgroundSize: 'contain',
-		transition: 'opacity 2000ms, bottom 2000ms',
-	},
-	'selectors': {
+	display: 'inline-block',
+	position: 'relative',
+	selectors: {
+		'&:after': {
+			content: '',
+			display: 'block',
+			position: 'absolute',
+			width: '80px',
+			height: '80px',
+			maxWidth: 'none',
+			maxHeight: 'none',
+			borderRadius: '120px',
+			bottom: '50%',
+			opacity: '0%',
+			background: `url(/shirokuma.webp)`,
+			backgroundSize: 'contain',
+			transition: 'opacity 2000ms, bottom 2000ms',
+		},
 		'&:hover:after': {
 			opacity: '75%',
 			bottom: '105%',
@@ -59,9 +65,18 @@ export const shirokumaText = style({
 
 export const linksList = style({
 	display: 'flex',
-	flexWrap: 'wrap',
-	gap: '4px 32px',
-	marginTop: '16px',
+	flexDirection: 'column',
+	alignItems: 'center',
+	gap: '16px',
+	marginTop: '32px',
+	'@media': {
+		[BreakPoints.SP]: {
+			flexDirection: 'row',
+			alignItems: 'start',
+			gap: '32px',
+			marginTop: '16px',
+		},
+	},
 });
 
 export const link = style({

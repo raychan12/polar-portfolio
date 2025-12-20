@@ -46,12 +46,12 @@ export default [
 			'import-x/order': [
 				'error',
 				{
-					'alphabetize': {
+					alphabetize: {
 						order: 'asc',
 						orderImportKind: 'desc',
 						caseInsensitive: true,
 					},
-					'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+					groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
 					'newlines-between': 'always',
 				},
 			],
@@ -87,10 +87,10 @@ export default [
 			'no-unreachable-loop': 'error',
 			'no-unused-private-class-members': 'error',
 			'require-atomic-updates': 'error',
-			'complexity': ['error', 15],
+			complexity: ['error', 15],
 			'default-case-last': 'error',
 			'default-param-last': 'error',
-			'eqeqeq': ['error', 'always', { null: 'never' }],
+			eqeqeq: ['error', 'always', { null: 'never' }],
 			'grouped-accessor-pairs': ['error', 'setBeforeGet'],
 			'no-alert': 'error',
 			'no-console': ['error', { allow: ['error', 'warn'] }],
@@ -121,7 +121,7 @@ export default [
 			'prefer-regex-literals': 'error',
 			'prefer-rest-params': 'error',
 			'prefer-spread': 'error',
-			'radix': 'error',
+			radix: 'error',
 			'require-unicode-regexp': 'error',
 			'symbol-description': 'error',
 		},

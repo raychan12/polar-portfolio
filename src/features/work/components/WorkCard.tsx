@@ -24,6 +24,8 @@ import {
 	titleSection,
 	metaSection,
 	grid,
+	smLogoSection,
+	smLogo,
 } from './WorkCard.css';
 
 export type WorkCardProps = {
@@ -45,6 +47,10 @@ export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAt
 				</div>
 
 				{logoPosition === 'left' && <img className={logoLeft} {...logoImageAttrs} alt={logoAlt} />}
+
+				<div className={smLogoSection}>
+					<img className={smLogo} {...logoImageAttrs} alt={logoAlt} />
+				</div>
 
 				<div className={titleSection}>
 					<h2 className={descriptionText}>{description}</h2>

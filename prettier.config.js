@@ -10,7 +10,7 @@ export default {
 	useTabs: true,
 	semi: true,
 	singleQuote: true,
-	quoteProps: 'consistent',
+	quoteProps: 'as-needed',
 	jsxSingleQuote: false,
 	trailingComma: 'all',
 	bracketSpacing: true,

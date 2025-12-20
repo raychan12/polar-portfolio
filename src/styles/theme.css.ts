@@ -71,3 +71,9 @@ export const vars = createGlobalTheme(':root', {
 		default: '150%',
 	},
 } as const);
+
+export const BreakPoints = {
+	SP: 'screen and (min-width: 640px)',
+	TABLET: 'screen and (min-width: 744px)',
+	PC: 'screen and (min-width: 1000px)',
+} as const;
