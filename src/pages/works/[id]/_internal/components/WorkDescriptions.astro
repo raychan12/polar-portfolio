@@ -23,13 +23,17 @@ import {
 	externalLink,
 	detailSection,
 	detailSectionTitle,
+	renderedContent,
 } from './WorkDescriptions.css';
+import type { RenderResult } from 'astro:content';
 
 interface Props {
+	rendered: RenderResult;
 	work: Work;
 }
 
 const {
+	rendered: { Content },
 	work: { logoUrl, description, logoAlt, date, context, types: type, assigning, links },
 } = Astro.props;
 ---
@@ -101,7 +105,9 @@ const {
 		}
 	</section>
 	<section class={detailSection}>
-		<span class={detailSectionTitle}>details</span>
-		<p>TODO: Render</p>
+		<span class={detailSectionTitle}>detail</span>
+		<div class={renderedContent}>
+			<Content />
+		</div>
 	</section>
 </div>

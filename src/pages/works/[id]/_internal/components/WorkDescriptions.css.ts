@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 import { vars } from '../../../../../styles/theme.css';
 
@@ -21,7 +21,7 @@ export const tagsList = style({
 });
 
 export const tagsLink = style({
-	font: vars.text.en.caption,
+	font: vars.text.en.description,
 	color: vars.color.text.secondary,
 	textDecoration: 'underline',
 });
@@ -94,3 +94,71 @@ export const detailSectionTitle = style({
 	font: vars.text.en.sectionTitle,
 	color: vars.color.brand.primary,
 });
+
+export const renderedContent = style({
+	fontFamily: vars.font.jp,
+	lineHeight: '200%',
+});
+
+// FIXME: Markdown コンテンツが入る div 以下のスタイリングのために globalStyle を
+//        使っているけど、もう少しいいやり方がありそう
+
+globalStyle(`${renderedContent} h1`, {
+	fontSize: '1.75em',
+	lineHeight: '200%',
+	marginBlock: '1em 0.5em',
+});
+
+globalStyle(`${renderedContent} h2`, {
+	fontSize: '1.5em',
+	lineHeight: '200%',
+	marginBlock: '1em 0.5em',
+});
+
+globalStyle(`${renderedContent} h3`, {
+	fontSize: '1.3em',
+	lineHeight: '200%',
+	marginBlock: '1em 0.5em',
+});
+
+globalStyle(`${renderedContent} b`, {
+	fontWeight: 600,
+});
+
+globalStyle(`${renderedContent} i`, {
+	fontStyle: 'italic',
+});
+
+globalStyle(`${renderedContent} u`, {
+	textDecoration: 'underline',
+});
+
+globalStyle(`${renderedContent} s`, {
+	textDecoration: 'line-through',
+});
+
+globalStyle(`${renderedContent} code`, {
+	fontFamily: 'monospace',
+});
+
+globalStyle(`${renderedContent} a`, {
+	textDecoration: 'underline',
+	color: vars.color.accent.alpha,
+});
+
+globalStyle(`${renderedContent} ul`, {
+	marginLeft: '1.5em',
+	listStyle: 'disc',
+});
+
+globalStyle(`${renderedContent} ol`, {
+	marginLeft: '1.5em',
+	listStyle: 'decimal',
+});
+
+globalStyle(`${renderedContent} li`, {
+	paddingLeft: '0.5em',
+});
+
+// TODO: 他にも Notion コンテンツからパースされている
+//       スタイルはいろいろあるので、必要に応じてスタイルを追加

@@ -12,26 +12,30 @@ import WorkDescriptions from './_internal/components/WorkDescriptions.astro';
 import type { Work } from '../../../context/work/types';
 
 import { root, backButton } from './_index.css';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { collectionToWork } from '../../../context/work/services';
 import { processImageForThumbnailGallery } from './_internal/components/ThumbnailGallery/image';
+import type { RenderResult } from 'astro:content';
 
 export const getStaticPaths = (async () => {
 	const worksCollectionEntries = await getCollection('works');
-
-	const works = worksCollectionEntries.map((work) => collectionToWork(work));
-
-	return works.map((work) => ({
-		params: { id: work.id },
-		props: { work },
-	}));
+	return await Promise.all(
+		worksCollectionEntries.map(async (entry) => {
+			const work = collectionToWork(entry);
+			return {
+				params: { id: work.id },
+				props: { rendered: await render(entry), work },
+			};
+		}),
+	);
 }) satisfies GetStaticPaths;
 
 interface Props {
+	rendered: RenderResult;
 	work: Work;
 }
 
-const { work } = Astro.props;
+const { rendered, work } = Astro.props;
 
 const galleryProps = await processImageForThumbnailGallery(work);
 ---
@@ -40,7 +44,7 @@ const galleryProps = await processImageForThumbnailGallery(work);
 	<PageTitle title="works" />
 	<PageLayout class={root}>
 		<ThumbnailGallery client:load {...galleryProps} />
-		<WorkDescriptions {work} />
+		<WorkDescriptions {work} {rendered} />
 		<a href="/works" class={backButton}>
 			<Icon name="back-arrow" width={32} height={6} />
 			<span>back</span>
