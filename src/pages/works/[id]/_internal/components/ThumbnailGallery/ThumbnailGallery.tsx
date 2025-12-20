@@ -2,7 +2,7 @@ import type { FunctionComponent, MouseEventHandler } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 
 import type { Work } from '../../../../../../context/work/types';
-import type { ImgTagAttributes } from '../../../../../../lib/image';
+import type { ImgTagAttributes } from '../../../../../../utils/imageUtils';
 
 import {
 	currentImage,

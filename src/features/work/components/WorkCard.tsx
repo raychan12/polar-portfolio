@@ -6,8 +6,8 @@ import type { FunctionComponent } from 'preact';
 import { getTopThumbnailUrl } from '../../../context/work/services';
 import { workTypeColorsCSS } from '../../../context/work/styles';
 import type { Work } from '../../../context/work/types';
-import { getImageToImgAttrs } from '../../../lib/image';
-import type { ImgTagAttributes } from '../../../lib/image';
+import { getImageToImgAttrs } from '../../../utils/imageUtils';
+import type { ImgTagAttributes } from '../../../utils/imageUtils';
 
 import {
 	root,
