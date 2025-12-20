@@ -18,7 +18,7 @@ export const Content: FunctionComponent<Props> = ({ workCardProps }) => {
 	}, []);
 
 	if (!loaded) {
-		return <Skeleton works={works} />;
+		return <Skeleton workCardProps={workCardProps} />;
 	}
 
 	return <Actual workCardProps={workCardProps} />;
