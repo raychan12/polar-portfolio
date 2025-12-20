@@ -50,7 +50,7 @@ export const titleText = style({
 	borderBottom: `1px solid ${vars.color.text.tertiary}`,
 	zIndex: 1,
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			margin: '56px 140px',
 		},
 	},

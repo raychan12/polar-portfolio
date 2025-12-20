@@ -34,7 +34,7 @@ export const root = style({
 		},
 	},
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			gridTemplateColumns: 'max-content max-content minmax(0, 1fr)',
 			minHeight: '320px',
 		},
@@ -56,7 +56,7 @@ export const grid = style({
 		"img logo logo"
 	`,
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			gridTemplateAreas: `
 				"img logo ."
 				"img logo title"
@@ -77,11 +77,11 @@ export const visualImageContainer = style({
 	transform: 'translate(0)',
 	marginRight: '32px',
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			width: '227px',
 			marginRight: '40px',
 		},
-		[BreakPoints.tablet]: {
+		[BreakPoints.TABLET]: {
 			marginRight: '80px',
 		},
 	},
@@ -128,7 +128,7 @@ export const smLogoSection = style({
 	width: '100%',
 	height: '100%',
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			display: 'none',
 		},
 	},
@@ -144,7 +144,7 @@ export const titleSection = style({
 	gridArea: 'title',
 	display: 'none',
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			display: 'flex',
 			flexDirection: 'column',
 			gap: '8px',
@@ -162,7 +162,7 @@ export const tagsList = style({
 	display: 'none',
 	font: vars.text.en.caption,
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			display: 'flex',
 			flexWrap: 'wrap',
 			gap: '8px 20px',
@@ -180,7 +180,7 @@ export const metaSection = style({
 	display: 'none',
 	gridArea: 'meta',
 	'@media': {
-		[BreakPoints.sp]: {
+		[BreakPoints.SP]: {
 			display: 'flex',
 			flexDirection: 'column',
 			gap: '8px',
