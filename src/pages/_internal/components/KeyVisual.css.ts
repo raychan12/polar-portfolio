@@ -13,7 +13,7 @@ export const main = style({
 	position: 'relative',
 	height: '100dvh',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			height: '800px',
 		},
 	},
@@ -26,7 +26,7 @@ export const image = style({
 	width: '100%',
 	height: '100%',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			objectPosition: 'left center',
 		},
 	},
@@ -52,7 +52,7 @@ export const phrase = style({
 	flexDirection: 'column',
 	alignItems: 'end',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			gap: '20px',
 			right: '120px',
 			alignItems: 'center',
@@ -64,7 +64,7 @@ export const phrase = style({
 export const phraseImage = style({
 	display: 'none',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			display: 'block',
 		},
 	},
@@ -73,7 +73,7 @@ export const phraseImage = style({
 export const phraseImageSm = style({
 	display: 'block',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			display: 'none',
 		},
 	},
@@ -88,7 +88,7 @@ export const scroll = style({
 	gap: '8px',
 	color: 'white',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			display: 'none',
 		},
 	},

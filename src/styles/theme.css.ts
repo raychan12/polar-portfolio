@@ -73,7 +73,7 @@ export const vars = createGlobalTheme(':root', {
 } as const);
 
 export const BreakPoints = {
-	sm: 'screen and (min-width: 640px)',
-	md: 'screen and (min-width: 744px)',
-	lg: 'screen and (min-width: 1000px)',
+	sp: 'screen and (min-width: 640px)',
+	tablet: 'screen and (min-width: 744px)',
+	pc: 'screen and (min-width: 1000px)',
 } as const;

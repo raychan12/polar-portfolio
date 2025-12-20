@@ -7,7 +7,7 @@ export const root = style({
 	flexDirection: 'column',
 	gap: '48px',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			display: 'grid',
 			gridTemplateColumns: '320px minmax(0, 1fr)',
 			gridTemplateRows: 'auto auto',

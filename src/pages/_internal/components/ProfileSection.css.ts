@@ -13,7 +13,7 @@ export const content = style({
 	flexDirection: 'column',
 	gap: '40px',
 	'@media': {
-		[BreakPoints.sm]: {
+		[BreakPoints.sp]: {
 			flexDirection: 'row',
 		},
 	},
@@ -70,7 +70,7 @@ export const linksList = style({
 	gap: '16px',
 	marginTop: '32px',
 	'@media': {
-		[BreakPoints.sm]: {
+		[BreakPoints.sp]: {
 			flexDirection: 'row',
 			alignItems: 'start',
 			gap: '32px',

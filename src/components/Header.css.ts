@@ -9,7 +9,7 @@ export const root = style({
 	display: 'flex',
 	color: 'white',
 	'@media': {
-		[BreakPoints.sm]: {
+		[BreakPoints.sp]: {
 			right: '40px',
 		},
 	},

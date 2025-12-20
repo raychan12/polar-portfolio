@@ -9,10 +9,10 @@ export const main = style({
 	padding: '60px 32px',
 	marginInline: 'auto',
 	'@media': {
-		[BreakPoints.sm]: {
+		[BreakPoints.sp]: {
 			padding: '60px',
 		},
-		[BreakPoints.lg]: {
+		[BreakPoints.pc]: {
 			padding: '60px 120px',
 		},
 	},

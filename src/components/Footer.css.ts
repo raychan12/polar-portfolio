@@ -15,7 +15,7 @@ export const footer = style({
 	color: vars.color.text.tertiary,
 	gap: '12px',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			padding: '40px 120px',
 		},
 	},
@@ -57,7 +57,7 @@ export const logos = style({
 	gap: '16px',
 	alignItems: 'center',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			gap: '40px',
 		},
 	},
@@ -67,7 +67,7 @@ export const ljusLogo = style({
 	width: '60px',
 	height: '60px',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			width: '120px',
 			height: '120px',
 		},
@@ -78,7 +78,7 @@ export const circleLogo = style({
 	width: '95px',
 	height: '35.5px',
 	'@media': {
-		[BreakPoints.md]: {
+		[BreakPoints.tablet]: {
 			width: '190px',
 			height: '71px',
 		},
