@@ -9,7 +9,7 @@ export const root = style({
 
 export const main = style({
 	position: 'relative',
-	height: '100dvh',
+	height: '800px',
 });
 
 export const image = style({

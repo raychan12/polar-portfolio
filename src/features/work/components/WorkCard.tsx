@@ -3,6 +3,7 @@ import { getImage } from 'astro:assets';
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
+import { getTopThumbnailUrl } from '../../../context/work/services';
 import { workTypeColorsCSS } from '../../../context/work/styles';
 import type { Work } from '../../../context/work/types';
 import { getImageToImgAttrs } from '../../../lib/image';
@@ -94,7 +95,7 @@ export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAt
 
 export const processImageForWorkCard = async (work: Work): Promise<WorkCardProps> => {
 	const [visualImage, logoImage] = await Promise.all([
-		getImage({ src: work.visualImageUrl[0], width: 227, height: 320, densities: [1, 2] }),
+		getImage({ src: getTopThumbnailUrl(work), width: 227, height: 320, densities: [1, 2] }),
 		getImage({
 			src: work.logoUrl,
 			...inferLogoRenderDimension(work),
