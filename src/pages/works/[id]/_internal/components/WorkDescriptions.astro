@@ -1,0 +1,106 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import type { Work } from '../../../../../context/work/types';
+import { workTypeColorsCSS } from '../../../../../context/work/styles';
+
+import { format } from 'date-fns';
+
+import {
+	tagsList,
+	tagsLink,
+	root,
+	metaSection,
+	subSection,
+	descriptionText,
+	logoInline,
+	dateText,
+	assigningText,
+	externalLinkSection,
+	externalLinkList,
+	externalLinkIcon,
+	externalLink,
+	detailSection,
+	detailSectionTitle,
+} from './WorkDescriptions.css';
+
+interface Props {
+	work: Work;
+}
+
+const {
+	work: { logoUrl, description, logoAlt, date, context, types: type, assigning, links },
+} = Astro.props;
+---
+
+<div class={root}>
+	<section class={metaSection}>
+		<nav class={tagsList}>
+			{
+				type.map((tag) => (
+					<a
+						class={tagsLink}
+						href={`/works?types=${encodeURIComponent(tag)}`}
+						style={{ color: workTypeColorsCSS[tag] }}>
+						#{tag}
+					</a>
+				))
+			}
+		</nav>
+		<div class={subSection}>
+			<h1 class={descriptionText}>{description}</h1>
+			<img class={logoInline} src={logoUrl} alt={logoAlt} />
+		</div>
+
+		<span class={dateText}>
+			{
+				date.instant != null && (
+					<time datetime={format(date.instant, 'yyyy-MM-dd')}>{format(date.instant, 'yyyy.MM.dd')}</time>
+				)
+			}
+
+			{
+				date.period != null && (
+					<>
+						<time datetime={format(date.period.from, 'yyyy-MM-dd')}>{format(date.period.from, 'yyyy.MM.dd')}</time>
+						{' - '}
+						<time datetime={format(date.period.to, 'yyyy-MM-dd')}>
+							{format(
+								date.period.to,
+								date.period.from.getFullYear() === date.period.to.getFullYear() ? 'MM.dd' : 'yyyy.MM.dd',
+							)}
+						</time>
+					</>
+				)
+			}
+		</span>
+
+		<div class={subSection}>
+			<a class={tagsLink} href={`/works?context=${encodeURIComponent(context)}`}>
+				#{context}
+			</a>
+			<p class={assigningText}>
+				{assigning}
+			</p>
+		</div>
+
+		{
+			links.length > 0 && (
+				<nav class={externalLinkSection}>
+					<Icon class={externalLinkIcon} name="link" width={24} height={24} />
+					<ul class={externalLinkList}>
+						{links.map((link) => (
+							<li class={externalLink}>
+								<a href={link.toString()}>{link.hostname}</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			)
+		}
+	</section>
+	<section class={detailSection}>
+		<span class={detailSectionTitle}>details</span>
+		<p>TODO: Render</p>
+	</section>
+</div>

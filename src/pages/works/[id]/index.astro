@@ -1,11 +1,13 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import { Icon } from 'astro-icon/components';
 
 import CommonLayout from '../../../layout/CommonLayout.astro';
 import PageLayout from '../../../layout/PageLayout.astro';
 import PageTitle from '../../../components/PageTitle.astro';
 
 import { ThumbnailGallery } from './_internal/components/ThumbnailGallery';
+import WorkDescriptions from './_internal/components/WorkDescriptions.astro';
 
 import type { Work } from '../../../context/work/types';
 import {
@@ -16,7 +18,7 @@ import {
 } from '../../../context/work/fixtures';
 import { createSampleWork } from '../../../context/work/factories';
 
-import { root } from './_index.css';
+import { root, backButton } from './_index.css';
 
 // TODO: Notion からとってくる
 export const works = [
@@ -24,6 +26,7 @@ export const works = [
 	{
 		...createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
 		visualImageUrl: ['https://picsum.photos/id/1/226/320', 'https://picsum.photos/id/2/226/320'],
+		links: Array.from({ length: 5 }).map((_, i) => new URL(`https://${i + 1}.example.com`)),
 	},
 	{ ...createWorkWithPortraitFixture(), id: 'work-2' },
 	{ ...createWorkWithInlineLogoFixture(), id: 'work-3' },
@@ -49,8 +52,10 @@ const { work } = Astro.props;
 	<PageTitle title="works" />
 	<PageLayout class={root}>
 		<ThumbnailGallery client:load {work} />
-		<pre>
-			{("\n" + JSON.stringify(work, undefined, 2))}
-		</pre>
+		<WorkDescriptions {work} />
+		<a href="/works" class={backButton}>
+			<Icon name="back-arrow" width={32} height={6} />
+			<span>back</span>
+		</a>
 	</PageLayout>
 </CommonLayout>

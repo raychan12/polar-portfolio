@@ -76,7 +76,7 @@ export const WorkCard: FunctionComponent<Props> = ({ work }) => {
 					<a
 						key={tag}
 						className={tagsLink}
-						href={`/works?type=${encodeURIComponent(tag)}`}
+						href={`/works?types=${encodeURIComponent(tag)}`}
 						style={{ color: workTypeColorsCSS[tag] }}>
 						#{tag}
 					</a>
