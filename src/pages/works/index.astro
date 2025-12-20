@@ -7,8 +7,7 @@ import { Content } from './_internal/page/Content';
 
 import { collectionToWork } from '../../context/work/services';
 import { getCollection } from 'astro:content';
-import type { WorkCardProps } from '../../features/work/components/WorkCard/WorkCard';
-import { processImageForWorkCard } from '../../features/work/components/WorkCard/image';
+import { processImageForWorkCard, type WorkCardProps } from '../../features/work/components/WorkCard';
 
 const worksCollectionEntries = await getCollection('works');
 const works = worksCollectionEntries.map((work) => collectionToWork(work));

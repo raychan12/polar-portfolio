@@ -105,6 +105,9 @@ export const renderedContent = style({
 	lineHeight: '200%',
 });
 
+// FIXME: Markdown コンテンツが入る div 以下のスタイリングのために globalStyle を
+//        使っているけど、もう少しいいやり方がありそう
+
 globalStyle(`${renderedContent} h1`, {
 	fontSize: '1.75em',
 	lineHeight: '200%',

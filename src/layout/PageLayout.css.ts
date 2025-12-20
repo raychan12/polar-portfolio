@@ -5,7 +5,7 @@ import { BreakPoints } from '../styles/theme.css';
 export const main = style({
 	flexGrow: 1,
 	width: '100%',
-	maxWidth: '1440px',
+	maxWidth: '1200px',
 	padding: '60px 32px',
 	marginInline: 'auto',
 	'@media': {

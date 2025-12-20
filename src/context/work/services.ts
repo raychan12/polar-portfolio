@@ -6,10 +6,17 @@ import type { Work } from './types';
 export const collectionToWork = (entry: CollectionEntry<'works'>): Work => {
 	const props = entry.data.properties;
 
+	const id = props['Slug'];
+
+	const logoImageFile = props['ロゴ画像'].files.at(0);
+	if (logoImageFile == null) {
+		throw new Error(`Expected to have at least one logo image for work '${id}'`);
+	}
+
 	return {
-		id: props['Slug'],
+		id,
 		visualImageUrl: props['サムネイル画像'].files.map((file) => fileToUrl(file)),
-		logoUrl: fileToUrl(props['ロゴ画像'].files[0]),
+		logoUrl: fileToUrl(logoImageFile),
 		description: props['概要'],
 		logoAlt: props['ロゴタイトル'],
 		date:
@@ -23,4 +30,13 @@ export const collectionToWork = (entry: CollectionEntry<'works'>): Work => {
 		links: props['リンク'],
 		pickUp: props['トップページで表示'],
 	};
+};
+
+export const getTopThumbnailUrl = (work: Work): string => {
+	const topThumbnail = work.visualImageUrl.at(0);
+	if (topThumbnail == null) {
+		throw new Error(`Expected to have at least one thumnbail for work '${work.id}'`);
+	}
+
+	return topThumbnail;
 };

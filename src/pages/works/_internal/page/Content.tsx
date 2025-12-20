@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
-import type { WorkCardProps } from '../../../../features/work/components/WorkCard/WorkCard';
+import type { WorkCardProps } from '../../../../features/work/components/WorkCard';
 
 import { Actual } from './Actual';
 import { Skeleton } from './Skeleton';
@@ -18,7 +18,7 @@ export const Content: FunctionComponent<Props> = ({ workCardProps }) => {
 	}, []);
 
 	if (!loaded) {
-		return <Skeleton />;
+		return <Skeleton workCardProps={workCardProps} />;
 	}
 
 	return <Actual workCardProps={workCardProps} />;

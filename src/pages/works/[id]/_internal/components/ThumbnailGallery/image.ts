@@ -1,7 +1,7 @@
 import { getImage } from 'astro:assets';
 
 import type { Work } from '../../../../../../context/work/types';
-import { getImageToImgAttrs } from '../../../../../../lib/image';
+import { getImageToImgAttrs } from '../../../../../../utils/imageUtils';
 
 import type { ThumbnailGalleryProps, VisualImageAttrs } from './ThumbnailGallery';
 

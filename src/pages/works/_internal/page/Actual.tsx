@@ -1,8 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
 
-import { WorkCard } from '../../../../features/work/components/WorkCard/WorkCard';
-import type { WorkCardProps } from '../../../../features/work/components/WorkCard/WorkCard';
+import { WorkCard, type WorkCardProps } from '../../../../features/work/components/WorkCard';
 import { ContextFilter } from '../components/ContextFilter';
 import { TypesFilter } from '../components/TypesFilter';
 import {
@@ -55,8 +54,8 @@ export const Actual: FunctionComponent<Props> = ({ workCardProps }) => {
 			</div>
 			<ul className={workList}>
 				{filteredWork.map((work) => (
-					<li>
-						<WorkCard key={work.work.id} {...work} />
+					<li key={work.work.id}>
+						<WorkCard {...work} />
 					</li>
 				))}
 			</ul>

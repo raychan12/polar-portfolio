@@ -81,7 +81,7 @@ export const linksList = style({
 
 export const link = style({
 	color: vars.color.brand.primary,
-	borderBottom: `1px solid transparent`,
+	borderBottom: `2px solid transparent`,
 	transition: '150ms border-bottom-color',
 	fontSize: '24px',
 	selectors: {
