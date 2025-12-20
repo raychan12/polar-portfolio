@@ -38,6 +38,8 @@ export const descriptionText = style({
 
 export const logoInline = style({
 	width: '100%',
+	height: '100%',
+	aspectRatio: 'unset',
 	objectFit: 'contain',
 	objectPosition: 'left',
 	maxWidth: '60%',

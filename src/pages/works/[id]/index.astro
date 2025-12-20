@@ -6,35 +6,21 @@ import CommonLayout from '../../../layout/CommonLayout.astro';
 import PageLayout from '../../../layout/PageLayout.astro';
 import PageTitle from '../../../components/PageTitle.astro';
 
-import { ThumbnailGallery } from './_internal/components/ThumbnailGallery';
+import { ThumbnailGallery } from './_internal/components/ThumbnailGallery/ThumbnailGallery';
 import WorkDescriptions from './_internal/components/WorkDescriptions.astro';
 
 import type { Work } from '../../../context/work/types';
-import {
-	createWorkWithInlineLogoFixture,
-	createWorkWithPeriodFixture,
-	createWorkWithPortraitFixture,
-	createWorkWithLongTextFixture,
-} from '../../../context/work/fixtures';
-import { createSampleWork } from '../../../context/work/factories';
 
 import { root, backButton } from './_index.css';
+import { getCollection } from 'astro:content';
+import { collectionToWork } from '../../../context/work/services';
+import { processImageForThumbnailGallery } from './_internal/components/ThumbnailGallery/image';
 
-// TODO: Notion からとってくる
-export const works = [
-	createSampleWork(),
-	{
-		...createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
-		visualImageUrl: ['https://picsum.photos/id/1/226/320', 'https://picsum.photos/id/2/226/320'],
-		links: Array.from({ length: 5 }).map((_, i) => new URL(`https://${i + 1}.example.com`)),
-	},
-	{ ...createWorkWithPortraitFixture(), id: 'work-2' },
-	{ ...createWorkWithInlineLogoFixture(), id: 'work-3' },
-	{ ...createWorkWithPeriodFixture(), id: 'work-4' },
-	{ ...createWorkWithLongTextFixture(), id: 'work-5' },
-];
+export const getStaticPaths = (async () => {
+	const worksCollectionEntries = await getCollection('works');
 
-export const getStaticPaths = (() => {
+	const works = worksCollectionEntries.map((work) => collectionToWork(work));
+
 	return works.map((work) => ({
 		params: { id: work.id },
 		props: { work },
@@ -46,12 +32,14 @@ interface Props {
 }
 
 const { work } = Astro.props;
+
+const galleryProps = await processImageForThumbnailGallery(work);
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
 	<PageLayout class={root}>
-		<ThumbnailGallery client:load {work} />
+		<ThumbnailGallery client:load {...galleryProps} />
 		<WorkDescriptions {work} />
 		<a href="/works" class={backButton}>
 			<Icon name="back-arrow" width={32} height={6} />

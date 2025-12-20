@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 
 import type { Work } from '../../../../../context/work/types';
 import { workTypeColorsCSS } from '../../../../../context/work/styles';
@@ -49,7 +50,7 @@ const {
 		</nav>
 		<div class={subSection}>
 			<h1 class={descriptionText}>{description}</h1>
-			<img class={logoInline} src={logoUrl} alt={logoAlt} />
+			<Image class={logoInline} src={logoUrl} alt={logoAlt} inferSize />
 		</div>
 
 		<span class={dateText}>
@@ -91,7 +92,7 @@ const {
 					<ul class={externalLinkList}>
 						{links.map((link) => (
 							<li class={externalLink}>
-								<a href={link.toString()}>{link.hostname}</a>
+								<a href={link.toString()}>{new URL(link).hostname}</a>
 							</li>
 						))}
 					</ul>

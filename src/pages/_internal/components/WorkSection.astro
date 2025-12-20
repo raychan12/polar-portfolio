@@ -1,35 +1,28 @@
 ---
 import Heading from './Heading.astro';
 import LinkButton from '../../../components/LinkButton.astro';
-import { WorkCard } from '../../../features/work/components/WorkCard.tsx';
+import { WorkCard, processImageForWorkCard } from '../../../features/work/components/WorkCard';
 
 import { root, worksList, work, linkButton } from './WorkSection.css';
 
-import {
-	createWorkWithInlineLogoFixture,
-	createWorkWithPeriodFixture,
-	createWorkWithPortraitFixture,
-	createWorkWithLongTextFixture,
-} from '../../../context/work/fixtures';
-import { createSampleWork } from '../../../context/work/factories';
+import { getCollection } from 'astro:content';
+import { collectionToWork } from '../../../context/work/services';
 
-// TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る
-const works = [
-	createSampleWork(),
-	{ ...createWorkWithPortraitFixture(), id: 'work-1' },
-	{ ...createWorkWithInlineLogoFixture(), id: 'work-2' },
-	{ ...createWorkWithPeriodFixture(), id: 'work-3' },
-	{ ...createWorkWithLongTextFixture(), id: 'work-4' },
-];
+const workCardProps = await Promise.all(
+	(await getCollection('works'))
+		.map((work) => collectionToWork(work))
+		.filter((work) => work.pickUp)
+		.map((work) => processImageForWorkCard(work)),
+);
 ---
 
 <section class={root}>
 	<Heading>works</Heading>
 	<ul class={worksList}>
 		{
-			works.map((workData) => (
+			workCardProps.map((workCardProps) => (
 				<li class={work}>
-					<WorkCard key={workData.id} work={workData} />
+					<WorkCard {...workCardProps} />
 				</li>
 			))
 		}

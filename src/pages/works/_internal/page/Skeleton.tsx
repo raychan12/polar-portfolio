@@ -1,7 +1,6 @@
 import type { FunctionComponent } from 'preact';
 
-import type { Work } from '../../../../context/work/types';
-import { WorkCard } from '../../../../features/work/components/WorkCard';
+import { WorkCard, type WorkCardProps } from '../../../../features/work/components/WorkCard';
 
 import {
 	skeleton,
@@ -14,10 +13,10 @@ import {
 } from './Skeleton.css';
 
 type Props = {
-	works: Work[];
+	workCardProps: WorkCardProps[];
 };
 
-export const Skeleton: FunctionComponent<Props> = ({ works }) => {
+export const Skeleton: FunctionComponent<Props> = ({ workCardProps }) => {
 	return (
 		<div className={skeleton} aria-hidden>
 			<div className={filter}>
@@ -31,8 +30,8 @@ export const Skeleton: FunctionComponent<Props> = ({ works }) => {
 			</div>
 			<div className={workListForCrawler}>
 				<div className={spacing} />
-				{works.map((work) => (
-					<WorkCard work={work} />
+				{workCardProps.map((work) => (
+					<WorkCard {...work} />
 				))}
 			</div>
 		</div>

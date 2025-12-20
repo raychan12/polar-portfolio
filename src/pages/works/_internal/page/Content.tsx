@@ -1,16 +1,16 @@
 import type { FunctionComponent } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
-import type { Work } from '../../../../context/work/types';
+import type { WorkCardProps } from '../../../../features/work/components/WorkCard';
 
 import { Actual } from './Actual';
 import { Skeleton } from './Skeleton';
 
 type Props = {
-	works: Work[];
+	workCardProps: WorkCardProps[];
 };
 
-export const Content: FunctionComponent<Props> = ({ works }) => {
+export const Content: FunctionComponent<Props> = ({ workCardProps }) => {
 	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
@@ -18,8 +18,8 @@ export const Content: FunctionComponent<Props> = ({ works }) => {
 	}, []);
 
 	if (!loaded) {
-		return <Skeleton works={works} />;
+		return <Skeleton workCardProps={workCardProps} />;
 	}
 
-	return <Actual works={works} />;
+	return <Actual workCardProps={workCardProps} />;
 };

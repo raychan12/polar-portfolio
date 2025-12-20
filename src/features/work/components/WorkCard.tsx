@@ -1,9 +1,13 @@
+import type { UnresolvedImageTransform } from 'astro';
+import { getImage } from 'astro:assets';
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
 import { getTopThumbnailUrl } from '../../../context/work/services';
 import { workTypeColorsCSS } from '../../../context/work/styles';
 import type { Work } from '../../../context/work/types';
+import { getImageToImgAttrs } from '../../../utils/imageUtils';
+import type { ImgTagAttributes } from '../../../utils/imageUtils';
 
 import {
 	root,
@@ -22,29 +26,29 @@ import {
 	grid,
 } from './WorkCard.css';
 
-type Props = {
+export type WorkCardProps = {
 	work: Work;
+	visualImageAttrs: ImgTagAttributes;
+	logoImageAttrs: ImgTagAttributes;
 };
 
-export const WorkCard: FunctionComponent<Props> = ({ work }) => {
-	const { id, logoUrl, description, logoAlt, date, context, types: type, assigning, logoPosition } = work;
-
-	const visualImageUrl = getTopThumbnailUrl(work);
+export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAttrs, logoImageAttrs }) => {
+	const { id, description, logoAlt, date, context, types: type, assigning, logoPosition } = work;
 
 	return (
 		<article className={root}>
 			<a href={`/works/${id}`} className={grid}>
 				<div className={visualImageContainer}>
 					{/* TODO: alt 確認する */}
-					<img className={visualImage} src={visualImageUrl} alt="" width={227} height={320} />
-					<img className={visualImageBackground} src={visualImageUrl} alt="" width={23} height={32} />
+					<img className={visualImage} {...visualImageAttrs} alt="" />
+					<img className={visualImageBackground} {...visualImageAttrs} alt="" />
 				</div>
 
-				{logoPosition === 'left' && <img className={logoLeft} src={logoUrl} alt={logoAlt} />}
+				{logoPosition === 'left' && <img className={logoLeft} {...logoImageAttrs} alt={logoAlt} />}
 
 				<div className={titleSection}>
 					<h2 className={descriptionText}>{description}</h2>
-					{logoPosition === 'inline' && <img className={logoInline} src={logoUrl} alt={logoAlt} />}
+					{logoPosition === 'inline' && <img className={logoInline} {...logoImageAttrs} alt={logoAlt} />}
 				</div>
 
 				<div className={metaSection}>
@@ -87,4 +91,37 @@ export const WorkCard: FunctionComponent<Props> = ({ work }) => {
 			</nav>
 		</article>
 	);
+};
+
+export const processImageForWorkCard = async (work: Work): Promise<WorkCardProps> => {
+	const [visualImage, logoImage] = await Promise.all([
+		getImage({ src: getTopThumbnailUrl(work), width: 227, height: 320, densities: [1, 2] }),
+		getImage({
+			src: work.logoUrl,
+			...inferLogoRenderDimension(work),
+		}),
+	]);
+
+	return {
+		work,
+		visualImageAttrs: getImageToImgAttrs(visualImage),
+		logoImageAttrs: getImageToImgAttrs(logoImage),
+	};
+};
+
+const inferLogoRenderDimension = (work: Work): Partial<UnresolvedImageTransform> => {
+	if (work.logoPosition === 'left') {
+		return {
+			width: 160,
+			densities: [1, 2],
+			inferSize: true,
+		};
+	}
+
+	// inline の場合は、どういうサイズで表示されるのかがよくわからないので、
+	// ある程度の横幅の画像を準備する。960px (WorkCard の幅の) は絶対に超えない
+	return {
+		widths: [160, 320, 480, 640, 960],
+		inferSize: true,
+	};
 };
