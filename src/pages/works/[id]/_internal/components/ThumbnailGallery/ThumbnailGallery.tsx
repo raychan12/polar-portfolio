@@ -26,6 +26,13 @@ export type VisualImageAttrs = {
 export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ work, visualImageAttrs }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
+	const currentImageAttr = visualImageAttrs.at(currentIndex);
+	if (currentImageAttr == null) {
+		throw new Error(
+			`ThumbnailGallery for work '${work.id}' has ${visualImageAttrs.length} images provided but its index is ${currentIndex}`,
+		);
+	}
+
 	const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback((e) => {
 		const maybeIndex = e.currentTarget.dataset.index;
 		if (maybeIndex == null) {
@@ -46,7 +53,7 @@ export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ wor
 		<div className={root}>
 			<img
 				className={mainImage}
-				{...visualImageAttrs[currentIndex].mainImage}
+				{...currentImageAttr.mainImage}
 				alt={`「${work.logoAlt}」の${currentIndex + 1}枚目の画像`}
 			/>
 			<ul className={selectorList}>
