@@ -1,13 +1,12 @@
 ---
 import Heading from './Heading.astro';
 import LinkButton from '../../../components/LinkButton.astro';
-import { WorkCard } from '../../../features/work/components/WorkCard/WorkCard';
+import { WorkCard, processImageForWorkCard } from '../../../features/work/components/WorkCard';
 
 import { root, worksList, work, linkButton } from './WorkSection.css';
 
 import { getCollection } from 'astro:content';
 import { collectionToWork } from '../../../context/work/services';
-import { processImageForWorkCard } from '../../../features/work/components/WorkCard/image';
 
 const workCardProps = await Promise.all(
 	(await getCollection('works'))

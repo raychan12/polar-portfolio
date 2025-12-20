@@ -1,8 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
 
-import { WorkCard } from '../../../../features/work/components/WorkCard/WorkCard';
-import type { WorkCardProps } from '../../../../features/work/components/WorkCard/WorkCard';
+import { WorkCard, type WorkCardProps } from '../../../../features/work/components/WorkCard';
 import { ContextFilter } from '../components/ContextFilter';
 import { TypesFilter } from '../components/TypesFilter';
 import {

@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../../../../styles/theme.css';
+import { vars } from '../../../styles/theme.css';
 
 // <a> タグの中に <a> はネストできないので、nav.tagsList の取り扱いに関して
 // この記事を参考にしています:
