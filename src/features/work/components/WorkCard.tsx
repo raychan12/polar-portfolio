@@ -1,8 +1,9 @@
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
+import { getTopThumbnailUrl } from '../../../context/work/services';
 import { workTypeColorsCSS } from '../../../context/work/styles';
-import { getTopThumbnailUrl, type Work } from '../../../context/work/types';
+import type { Work } from '../../../context/work/types';
 
 import {
 	root,
