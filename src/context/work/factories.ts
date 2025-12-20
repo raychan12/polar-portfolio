@@ -2,7 +2,13 @@ import type { Work } from './types';
 
 const baseSampleWork: Work = {
 	id: 'work',
-	visualImageUrl: 'https://picsum.photos/id/1/226/320',
+	visualImageUrl: [
+		'https://picsum.photos/id/1/226/320',
+		'https://picsum.photos/id/2/226/320',
+		'https://picsum.photos/id/3/226/320',
+		'https://picsum.photos/id/4/226/320',
+		'https://picsum.photos/id/5/226/320',
+	],
 	logoUrl: 'https://picsum.photos/id/1/320/320',
 	logoPosition: 'left',
 	description: '映画「数分間のエールを」合同誌',

@@ -5,6 +5,8 @@ import CommonLayout from '../../../layout/CommonLayout.astro';
 import PageLayout from '../../../layout/PageLayout.astro';
 import PageTitle from '../../../components/PageTitle.astro';
 
+import { ThumbnailGallery } from './_internal/components/ThumbnailGallery';
+
 import type { Work } from '../../../context/work/types';
 import {
 	createWorkWithInlineLogoFixture,
@@ -14,10 +16,15 @@ import {
 } from '../../../context/work/fixtures';
 import { createSampleWork } from '../../../context/work/factories';
 
+import { root } from './_index.css';
+
 // TODO: Notion からとってくる
 export const works = [
 	createSampleWork(),
-	createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
+	{
+		...createSampleWork({ id: 'work-1', types: ['uiux'], context: 'collaboration' }),
+		visualImageUrl: ['https://picsum.photos/id/1/226/320', 'https://picsum.photos/id/2/226/320'],
+	},
 	{ ...createWorkWithPortraitFixture(), id: 'work-2' },
 	{ ...createWorkWithInlineLogoFixture(), id: 'work-3' },
 	{ ...createWorkWithPeriodFixture(), id: 'work-4' },
@@ -40,7 +47,8 @@ const { work } = Astro.props;
 
 <CommonLayout>
 	<PageTitle title="works" />
-	<PageLayout>
+	<PageLayout class={root}>
+		<ThumbnailGallery client:load {work} />
 		<pre>
 			{("\n" + JSON.stringify(work, undefined, 2))}
 		</pre>

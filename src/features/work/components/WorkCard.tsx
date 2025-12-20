@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
+import { getTopThumbnailUrl } from '../../../context/work/services';
 import { workTypeColorsCSS } from '../../../context/work/styles';
 import type { Work } from '../../../context/work/types';
 
@@ -26,18 +27,9 @@ type Props = {
 };
 
 export const WorkCard: FunctionComponent<Props> = ({ work }) => {
-	const {
-		id,
-		visualImageUrl,
-		logoUrl,
-		description,
-		logoAlt,
-		date,
-		context,
-		types: type,
-		assigning,
-		logoPosition,
-	} = work;
+	const { id, logoUrl, description, logoAlt, date, context, types: type, assigning, logoPosition } = work;
+
+	const visualImageUrl = getTopThumbnailUrl(work);
 
 	return (
 		<article className={root}>
