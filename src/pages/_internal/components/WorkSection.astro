@@ -22,7 +22,7 @@ const workCardProps = await Promise.all(
 		{
 			workCardProps.map((workCardProps) => (
 				<li class={work}>
-					<WorkCard key={workCardProps.work.id} {...workCardProps} />
+					<WorkCard {...workCardProps} />
 				</li>
 			))
 		}

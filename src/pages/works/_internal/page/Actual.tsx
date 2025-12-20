@@ -54,8 +54,8 @@ export const Actual: FunctionComponent<Props> = ({ workCardProps }) => {
 			</div>
 			<ul className={workList}>
 				{filteredWork.map((work) => (
-					<li>
-						<WorkCard key={work.work.id} {...work} />
+					<li key={work.work.id}>
+						<WorkCard {...work} />
 					</li>
 				))}
 			</ul>
