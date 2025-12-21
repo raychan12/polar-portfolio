@@ -4,13 +4,13 @@ import { BreakPoints, vars } from '../styles/theme.css';
 
 export const root = style({
 	position: 'absolute',
-	right: '20px',
+	right: 'calc(max(50vw - 600px, 0px) + 20px)',
 	top: '40px',
 	display: 'flex',
 	color: 'white',
 	'@media': {
 		[BreakPoints.SP]: {
-			right: '40px',
+			right: 'calc(max(50vw - 600px, 0px) + 40px)',
 		},
 	},
 });
