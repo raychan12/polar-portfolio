@@ -39,7 +39,7 @@ export const ContextFilter: FunctionComponent<Props> = ({ currentContext, onCont
 
 	const isCurrentContext = useCallback(
 		(context: ContextFilterButtons) => {
-			if (currentContext === undefined) {
+			if (currentContext == null) {
 				return context === 'all';
 			}
 
