@@ -71,6 +71,8 @@ export const externalLinkList = style({
 	display: 'flex',
 	flexWrap: 'wrap',
 	gap: '8px',
+	// 外部リンクリストの左のアイコンとの上下中央揃え
+	paddingTop: '4px',
 });
 
 export const externalLinkIcon = style({
