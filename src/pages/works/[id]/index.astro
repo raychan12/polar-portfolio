@@ -45,21 +45,27 @@ const galleryProps = await processImageForThumbnailGallery(work);
 	<PageLayout class={root}>
 		<ThumbnailGallery client:load {...galleryProps} />
 		<WorkDescriptions {work} {rendered} />
-		<a href="/works" class={backButton} id="back">
+		<button class={backButton} id="back">
 			<Icon name="back-arrow" width={32} height={6} />
 			<span>back</span>
-		</a>
+		</button>
 	</PageLayout>
 </CommonLayout>
 
 <script>
 	const backButton = document.getElementById('back');
-	if (backButton == null || !(backButton instanceof HTMLAnchorElement)) {
+	if (backButton == null || !(backButton instanceof HTMLButtonElement)) {
 		throw new Error('The element #back was not found');
 	}
 
-	if (document.referrer.startsWith(document.location.origin)) {
-		// 同サイトから来ていそうな場合は、history.back() で前ページに戻る
-		backButton.href = 'javascript:history.back()';
-	}
+	backButton.addEventListener('click', () => {
+		if (document.referrer.startsWith(document.location.origin)) {
+			// 同サイトから来ていそうな場合は、history.back() で前ページに戻る
+			history.back();
+			return;
+		}
+
+		// それ以外の場合は、一覧ページに固定で遷移する
+		document.location.assign('/works');
+	});
 </script>
