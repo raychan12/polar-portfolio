@@ -31,7 +31,7 @@ export type WorkCardProps = {
 };
 
 export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAttrs, logoImageAttrs }) => {
-	const { id, description, logoAlt, date, context, types: type, assigning, logoPosition } = work;
+	const { id, description, logoAlt, date, types: type, assigning, logoPosition } = work;
 
 	return (
 		<article className={root}>
@@ -87,9 +87,6 @@ export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAt
 						#{tag}
 					</a>
 				))}
-				<a className={tagsLink} href={`/works?context=${encodeURIComponent(context)}`}>
-					#{context}
-				</a>
 			</nav>
 		</article>
 	);
