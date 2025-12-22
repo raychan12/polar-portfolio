@@ -1,3 +1,4 @@
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 import type { FunctionComponent } from 'preact';
 import { useCallback } from 'preact/hooks';
 
@@ -5,7 +6,7 @@ import { workTypeColorsCSS } from '../../../../context/work/styles';
 import { WorkType } from '../../../../context/work/types';
 import type { TypesFilterQuery } from '../query';
 
-import { list, button } from './Filter.css';
+import { list, button, filterButtonTypeColor } from './Filter.css';
 
 const TypeFilterButtons = ['all', ...WorkType] as const;
 type TypeFilterButtons = (typeof TypeFilterButtons)[number];
@@ -58,7 +59,9 @@ export const TypesFilter: FunctionComponent<Props> = ({ currentTypes, onTypesUpd
 							class={button}
 							onClick={handleClick(type)}
 							aria-current={isCurrentTypes(type) ? 'page' : undefined}
-							style={{ '--filter-button-type-color': type === 'all' ? undefined : workTypeColorsCSS[type] }}>
+							style={assignInlineVars({
+								[filterButtonTypeColor]: type === 'all' ? undefined : workTypeColorsCSS[type],
+							})}>
 							#{type}
 						</button>
 					</li>
