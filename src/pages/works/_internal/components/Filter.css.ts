@@ -11,14 +11,14 @@ export const list = style({
 export const button = style({
 	fontFamily: vars.font.en,
 	fontWeight: 300,
-	color: vars.color.text.secondary,
+	color: `var(--filter-button-type-color, ${vars.color.text.secondary})`,
 	textDecoration: 'underline',
 	borderRadius: '4px',
 	padding: '4px 8px',
 	selectors: {
 		'&[aria-current="page"]': {
 			color: vars.color.text.tertiary,
-			backgroundColor: vars.color.text.secondary,
+			backgroundColor: `var(--filter-button-type-color, ${vars.color.text.secondary})`,
 		},
 	},
 });

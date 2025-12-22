@@ -58,7 +58,7 @@ export const TypesFilter: FunctionComponent<Props> = ({ currentTypes, onTypesUpd
 							class={button}
 							onClick={handleClick(type)}
 							aria-current={isCurrentTypes(type) ? 'page' : undefined}
-							style={{ color: type === 'all' ? undefined : workTypeColorsCSS[type] }}>
+							style={{ '--filter-button-type-color': type === 'all' ? undefined : workTypeColorsCSS[type] }}>
 							#{type}
 						</button>
 					</li>
