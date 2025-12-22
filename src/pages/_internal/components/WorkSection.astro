@@ -7,7 +7,7 @@ import { root, worksList, work, linkButton } from './WorkSection.css';
 
 import { getCollection } from 'astro:content';
 import { collectionToWork } from '../../../context/work/services';
-import { processImageForWorkCard } from '../../../features/work/services/image';
+import { processImageForWorkCard } from '../../../features/work/services';
 
 const workCardProps = await Promise.all(
 	(await getCollection('works'))

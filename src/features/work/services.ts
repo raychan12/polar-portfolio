@@ -1,10 +1,11 @@
 import type { UnresolvedImageTransform } from 'astro';
 import { getImage } from 'astro:assets';
 
-import { getTopThumbnailUrl } from '../../../context/work/services';
-import type { Work } from '../../../context/work/types';
-import { getImageToImgAttrs } from '../../../utils/imageUtils';
-import type { WorkCardProps } from '../../work/components/WorkCard';
+import { getTopThumbnailUrl } from '../../context/work/services';
+import type { Work } from '../../context/work/types';
+import { getImageToImgAttrs } from '../../utils/imageUtils';
+
+import type { WorkCardProps } from './components/WorkCard';
 
 export const processImageForWorkCard = async (work: Work): Promise<WorkCardProps> => {
 	const [visualImage, logoImage] = await Promise.all([
