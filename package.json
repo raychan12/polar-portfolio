@@ -21,6 +21,7 @@
 	},
 	"dependencies": {
 		"@chlorinec-pkgs/notion-astro-loader": "1.1.2",
+		"@vanilla-extract/dynamic": "2.1.5",
 		"astro": "5.9.4",
 		"preact": "10.28.0"
 	},
