@@ -1,0 +1,85 @@
+name: Push build artifacts to the branch
+
+on:
+  push:
+    tags:
+      - v*
+  workflow_dispatch:
+
+concurrency:
+  group: build-branch
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: ./.github/actions/setup
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: NODE_ENV=production pnpm build
+        env:
+          ADOBE_PROJECT_ID: ${{ secrets.ADOBE_PROJECT_ID }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_WORKS_DATABASE_ID: ${{ secrets.NOTION_WORKS_DATABASE_ID }}
+
+      - name: Prepare worktree for build
+        run: |
+          rm -rf _worktree
+          mkdir -p _worktree
+          git fetch origin build:refs/remotes/origin/build || true
+
+          if git show-ref --verify --quiet refs/remotes/origin/build; then
+            git worktree add _worktree origin/build
+            cd _worktree
+            git switch -C build
+          else
+            git worktree add _worktree
+            cd _worktree
+            git switch --orphan build
+            git commit --allow-empty -m "Initialize build branch"
+          fi
+
+      - name: Copy contents
+        working-directory: _worktree/
+        run: |
+          git rm -r --ignore-unmatch .
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+
+          cp -r ../dist/. .
+          echo "${{ vars.DOMAIN_NAME }}" > CNAME
+
+      - name: Verify changes exist
+        id: changes
+        working-directory: _worktree/
+        run: |
+          find | xargs ls -ald
+          git add -A
+          if git diff --staged --quiet; then
+            echo "::warning::No changes to commit; skipping push."
+            echo "exist=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "exist=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit the changes
+        working-directory: _worktree/
+        if: ${{ steps.changes.outputs.exist == 'true' }}
+        run: |
+          # https://github.com/orgs/community/discussions/26560#discussioncomment-3252339
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "feat: commit for ${{ github.sha }}"
+
+      - name: Push changes
+        if: ${{ steps.changes.outputs.exist == 'true' }}
+        working-directory: _worktree/
+        run: git push origin build
