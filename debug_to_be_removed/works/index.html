@@ -1,0 +1,486 @@
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf8"><meta name="viewport" content="width=device-width"><title>ljus - 涼夏 / raychan / 七夕の月光</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="description" content="涼夏 / raychan のポートフォリオサイトです。"><link rel="canonical" href="https://ijus.art"><!--
+			{/* 参考: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs */ }
+			<link rel="icon" href="/favicon.ico" sizes="32x32" />
+			<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+			<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		--><meta property="og:title" content="ljus - 涼夏 / raychan / 七夕の月光"><meta property="og:description" content="涼夏 / raychan のポートフォリオサイトです。"><meta property="og:url" content="https://ijus.art"><meta name="og:type" content="website"><meta name="og:site_name" content="ljus"><meta name="og:image" content="https://ljus.art/figure/OGP.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://ljus.art/figure/OGP.png"><style>@font-face{font-family:"Avenir LT Pro-21b881cb9def2207";src:url("/_astro/fonts/2b0aab746bef29c0.woff2") format("woff2"), url("/_astro/fonts/3db374b6880aabc0.woff") format("woff"), url("/_astro/fonts/3bc190876b9377e2.otf") format("opentype");font-display:auto;font-weight:800;font-style:normal;}@font-face{font-family:"Avenir LT Pro-21b881cb9def2207";src:url("/_astro/fonts/6adf4429cf7beace.woff2") format("woff2"), url("/_astro/fonts/3e2b2b712bc05ce6.woff") format("woff"), url("/_astro/fonts/6ca4805a9b4b715f.otf") format("opentype");font-display:auto;font-weight:500;font-style:normal;}@font-face{font-family:"Avenir LT Pro-21b881cb9def2207";src:url("/_astro/fonts/ba7eeb1b9516aff1.woff2") format("woff2"), url("/_astro/fonts/f07588005f5953fd.woff") format("woff"), url("/_astro/fonts/a013127953d5e985.otf") format("opentype");font-display:auto;font-weight:200;font-style:normal;}:root{--font-avenir:"Avenir LT Pro-21b881cb9def2207",Avenir;}</style><style>@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/1ced871a98bd5610.woff2") format("woff2");font-display:swap;unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-weight:600;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/4142faa7314df31b.woff2") format("woff2");font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-weight:600;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/5967144e4dc91e5a.woff2") format("woff2");font-display:swap;unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-weight:600;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/a1975e4d13fc3466.woff2") format("woff2");font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-weight:600;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/fdb6ae2420c1f5b9.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:600;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/c969ec337cc2161f.woff2") format("woff2");font-display:swap;unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-weight:700;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/3a1d1ab4d9c4dc6e.woff2") format("woff2");font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-weight:700;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/e112d415a4218a27.woff2") format("woff2");font-display:swap;unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-weight:700;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/3e569092f11d4dce.woff2") format("woff2");font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-weight:700;font-style:normal;}@font-face{font-family:"Cormorant SC-f2eb27bd9948c4e1";src:url("/_astro/fonts/baae920c898aeaf2.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:700;font-style:normal;}:root{--font-cormorant-sc:"Cormorant SC-f2eb27bd9948c4e1","Times New Roman";}</style><style>@font-face{font-family:"Hina Mincho-96086f760831da88";src:url("/_astro/fonts/5c598cebfb505527.woff2") format("woff2");font-display:swap;font-weight:400;font-style:normal;}:root{--font-hina-mincho:"Hina Mincho-96086f760831da88","Hiragino Mincho","Yu Mincho","Noto Serif JP";}</style><style>*:where(:not(html,iframe,canvas,img,svg,video,audio):not(svg *,symbol *)){all:unset;display:revert}*,*:before,*:after{box-sizing:border-box}html{-moz-text-size-adjust:none;text-size-adjust:none;-webkit-text-size-adjust:none}a,button{cursor:pointer}ol,ul,menu,summary{list-style:none}img{max-block-size:100%;max-inline-size:100%}table{border-collapse:collapse}input,textarea{-webkit-user-select:auto}textarea{white-space:revert}meter{appearance:revert;-webkit-appearance:revert}:where(pre){all:revert;box-sizing:border-box}::placeholder{color:unset}:where([hidden]){display:none}:where([contenteditable]:not([contenteditable=false])){-moz-user-modify:read-write;overflow-wrap:break-word;-webkit-line-break:after-white-space;-webkit-user-modify:read-write;-webkit-user-select:auto}:where([draggable=true]){-webkit-user-drag:element}:where(dialog:modal){all:revert;box-sizing:border-box}.jgutt90{font-family:var(--p83jsmd);line-height:var(--p83jsmu);width:100%;display:flex;flex-direction:column;min-height:100dvh}
+:root{--p83jsm0: #3c6387;--p83jsm1: #ffffff;--p83jsm2: #ffffff;--p83jsm3: #222222;--p83jsm4: #555555;--p83jsm5: #ffffff;--p83jsm6: #527cb4;--p83jsm7: #3c8bc0;--p83jsm8: #15b98b;--p83jsm9: var(--font-avenir), "Avenir", Roboto;--p83jsma: var(--font-cormorant-sc), serif, system-ui;--p83jsmb: "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmc: var(--font-hina-mincho), serif, system-ui;--p83jsmd: var(--font-avenir), "Avenir", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, -apple-system, BlinkMacSystemFont, sans-serif, system-ui;--p83jsme: 700 1.875rem var(--font-avenir), "Avenir", Roboto;--p83jsmf: 700 1.5rem var(--font-avenir), "Avenir", Roboto;--p83jsmg: 700 1.25rem var(--font-avenir), "Avenir", Roboto;--p83jsmh: 700 1rem var(--font-avenir), "Avenir", Roboto;--p83jsmi: 300 1rem var(--font-avenir), "Avenir", Roboto;--p83jsmj: 700 .875rem var(--font-avenir), "Avenir", Roboto;--p83jsmk: 300 .875rem var(--font-avenir), "Avenir", Roboto;--p83jsml: 500 .875rem var(--font-avenir), "Avenir", Roboto;--p83jsmm: 700 1.875rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmn: 700 1.5rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmo: 700 1.25rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmp: 700 1rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmq: 300 1rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmr: 700 .875rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsms: 300 .875rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmt: 500 .875rem "Hiragino Sans", "Hiragino Kaku Gothic ProN";--p83jsmu: 150%}
+</style></head> <body class="jgutt90">  <h2>Raw work</h2> <pre>{
+  &quot;id&quot;: &quot;2d1edfb4-fbb1-81ef-9434-e6e422d12bc9&quot;,
+  &quot;data&quot;: {
+    &quot;icon&quot;: null,
+    &quot;cover&quot;: null,
+    &quot;archived&quot;: false,
+    &quot;in_trash&quot;: false,
+    &quot;url&quot;: &quot;https://www.notion.so/Foobar-1-2d1edfb4fbb181ef9434e6e422d12bc9&quot;,
+    &quot;public_url&quot;: null,
+    &quot;properties&quot;: {
+      &quot;Slug&quot;: &quot;afpoc&quot;,
+      &quot;作品タイプ&quot;: [
+        &quot;sosaku&quot;,
+        &quot;graphic&quot;
+      ],
+      &quot;制作形態&quot;: &quot;collaboration&quot;,
+      &quot;サムネイル画像&quot;: {
+        &quot;type&quot;: &quot;files&quot;,
+        &quot;id&quot;: &quot;zhZd&quot;,
+        &quot;files&quot;: [
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/8b85f3b5-7719-4d5b-b7e5-7af2e1fc3e50/088a26ae842b9dae90acdfd9ffd42af530ec98d4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=b90ad98ecc5013f969a1df1154941a6784a76f76e5dcbf0ce1092bed9b6ad48b&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.552Z&quot;
+            },
+            &quot;name&quot;: &quot;088a26ae842b9dae90acdfd9ffd42af530ec98d4.jpg&quot;
+          },
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/e030eb1c-cc58-4937-be30-6b527d9668cb/_DSF1852.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=62e726ca04c9024c6800c4395f89a31c8e5b922f9957c3a2cf0f770eb7f34761&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.556Z&quot;
+            },
+            &quot;name&quot;: &quot;_DSF1852.JPG&quot;
+          },
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/6baa2f49-c97c-41fd-ba2f-2bff4f22b386/_DSF1774.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=185af8d7751bcbe2fee7c396fa63ca570c9fd1ff49b2445f42b838baed361469&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.559Z&quot;
+            },
+            &quot;name&quot;: &quot;_DSF1774.JPG&quot;
+          }
+        ]
+      },
+      &quot;ロゴ画像&quot;: {
+        &quot;type&quot;: &quot;files&quot;,
+        &quot;id&quot;: &quot;Tl~n&quot;,
+        &quot;files&quot;: [
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/21ed6fa9-9814-44a9-ac82-229a11752b46/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=137e74af40b2469c37c8e98c4f3a861474ef3a7d79565d762adfa7d37bacc9e4&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.546Z&quot;
+            },
+            &quot;name&quot;: &quot;logo.png&quot;
+          }
+        ]
+      },
+      &quot;ロゴタイトル&quot;: &quot;数ペールのエールを - A FEW PAGES OF CHEERS&quot;,
+      &quot;日付&quot;: {
+        &quot;start&quot;: &quot;2025-01-07T00:00:00.000Z&quot;,
+        &quot;end&quot;: &quot;2025-08-17T00:00:00.000Z&quot;,
+        &quot;time_zone&quot;: null
+      },
+      &quot;概要&quot;: &quot;映画「数分間のエールを」合同誌 第2弾&quot;,
+      &quot;担当部分&quot;: &quot;企画・主宰・全体進行統括 / デザイン統括・表紙イラスト / 編集統括 / 広報 /  一部寄稿&quot;,
+      &quot;ロゴ配置&quot;: &quot;inline&quot;,
+      &quot;リンク&quot;: [
+        &quot;https://twitter.com/2ji_yellmovie&quot;
+      ],
+      &quot;トップページで表示&quot;: true
+    }
+  },
+  &quot;filePath&quot;: &quot;src/content/notion/2d1edfb4-fbb1-81ef-9434-e6e422d12bc9.md&quot;,
+  &quot;digest&quot;: &quot;2025-12-22T14:27:00.000Z&quot;,
+  &quot;rendered&quot;: {
+    &quot;html&quot;: &quot;&lt;p&gt;C105合わせ「数ページのエールを」の反響を受け、引き続き第2弾に当たる合同誌の制作を企画・進行しました。&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;※ その他担当領域&lt;/p&gt;&lt;ul&gt;&lt;li&gt;原作プロデューサーへのインタビュー案件の企画進行・編集&lt;/li&gt;&lt;li&gt;上記に伴うメーカー企業との折衝・合意形成&lt;/li&gt;&lt;li&gt;「トラペジウム合同」代表との対談・編集&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;ここだけ行高さ200%&lt;/p&gt;&quot;,
+    &quot;metadata&quot;: {
+      &quot;headings&quot;: [],
+      &quot;imagePaths&quot;: []
+    }
+  },
+  &quot;collection&quot;: &quot;works&quot;
+}</pre> <h2>Work</h2> <pre>{
+  &quot;id&quot;: &quot;afpoc&quot;,
+  &quot;visualImageUrl&quot;: [
+    &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/8b85f3b5-7719-4d5b-b7e5-7af2e1fc3e50/088a26ae842b9dae90acdfd9ffd42af530ec98d4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=b90ad98ecc5013f969a1df1154941a6784a76f76e5dcbf0ce1092bed9b6ad48b&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+    &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/e030eb1c-cc58-4937-be30-6b527d9668cb/_DSF1852.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=62e726ca04c9024c6800c4395f89a31c8e5b922f9957c3a2cf0f770eb7f34761&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+    &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/6baa2f49-c97c-41fd-ba2f-2bff4f22b386/_DSF1774.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=185af8d7751bcbe2fee7c396fa63ca570c9fd1ff49b2445f42b838baed361469&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;
+  ],
+  &quot;logoUrl&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/21ed6fa9-9814-44a9-ac82-229a11752b46/logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=137e74af40b2469c37c8e98c4f3a861474ef3a7d79565d762adfa7d37bacc9e4&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+  &quot;description&quot;: &quot;映画「数分間のエールを」合同誌 第2弾&quot;,
+  &quot;logoAlt&quot;: &quot;数ペールのエールを - A FEW PAGES OF CHEERS&quot;,
+  &quot;date&quot;: {
+    &quot;period&quot;: {
+      &quot;from&quot;: &quot;2025-01-07T00:00:00.000Z&quot;,
+      &quot;to&quot;: &quot;2025-08-17T00:00:00.000Z&quot;
+    }
+  },
+  &quot;types&quot;: [
+    &quot;sosaku&quot;,
+    &quot;graphic&quot;
+  ],
+  &quot;context&quot;: &quot;collaboration&quot;,
+  &quot;assigning&quot;: &quot;企画・主宰・全体進行統括 / デザイン統括・表紙イラスト / 編集統括 / 広報 /  一部寄稿&quot;,
+  &quot;logoPosition&quot;: &quot;inline&quot;,
+  &quot;links&quot;: [
+    &quot;https://twitter.com/2ji_yellmovie&quot;
+  ],
+  &quot;pickUp&quot;: true
+}</pre> <hr>  <h2>Raw work</h2> <pre>{
+  &quot;id&quot;: &quot;2d1edfb4-fbb1-8145-9930-e4b2e473ba5e&quot;,
+  &quot;data&quot;: {
+    &quot;icon&quot;: null,
+    &quot;cover&quot;: null,
+    &quot;archived&quot;: false,
+    &quot;in_trash&quot;: false,
+    &quot;url&quot;: &quot;https://www.notion.so/Work-from-Shirokuma-2d1edfb4fbb181459930e4b2e473ba5e&quot;,
+    &quot;public_url&quot;: null,
+    &quot;properties&quot;: {
+      &quot;Slug&quot;: &quot;foobar&quot;,
+      &quot;作品タイプ&quot;: [
+        &quot;uiux&quot;
+      ],
+      &quot;制作形態&quot;: &quot;collaboration&quot;,
+      &quot;サムネイル画像&quot;: {
+        &quot;type&quot;: &quot;files&quot;,
+        &quot;id&quot;: &quot;zhZd&quot;,
+        &quot;files&quot;: [
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/e030eb1c-cc58-4937-be30-6b527d9668cb/_DSF1852.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=62e726ca04c9024c6800c4395f89a31c8e5b922f9957c3a2cf0f770eb7f34761&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.552Z&quot;
+            },
+            &quot;name&quot;: &quot;_DSF1852.JPG&quot;
+          },
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/6baa2f49-c97c-41fd-ba2f-2bff4f22b386/_DSF1774.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=185af8d7751bcbe2fee7c396fa63ca570c9fd1ff49b2445f42b838baed361469&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.556Z&quot;
+            },
+            &quot;name&quot;: &quot;_DSF1774.JPG&quot;
+          }
+        ]
+      },
+      &quot;ロゴ画像&quot;: {
+        &quot;type&quot;: &quot;files&quot;,
+        &quot;id&quot;: &quot;Tl~n&quot;,
+        &quot;files&quot;: [
+          {
+            &quot;type&quot;: &quot;file&quot;,
+            &quot;file&quot;: {
+              &quot;url&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/e511f08c-73a9-43e1-a4e5-12037ec3a537/_DSF0538.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=a2d2ef4d1406547a1b4c6fca2a11666bd4c444834cb88a427249e5d4d0c49323&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+              &quot;expiry_time&quot;: &quot;2025-12-23T14:04:24.546Z&quot;
+            },
+            &quot;name&quot;: &quot;_DSF0538.jpeg&quot;
+          }
+        ]
+      },
+      &quot;ロゴタイトル&quot;: &quot;LogoAlt&quot;,
+      &quot;日付&quot;: {
+        &quot;start&quot;: &quot;2025-12-07T00:00:00.000Z&quot;,
+        &quot;end&quot;: &quot;2025-12-14T00:00:00.000Z&quot;,
+        &quot;time_zone&quot;: null
+      },
+      &quot;概要&quot;: &quot;This is from Shirokuma Workspace!&quot;,
+      &quot;担当部分&quot;: &quot;Assigning&quot;,
+      &quot;ロゴ配置&quot;: &quot;inline&quot;,
+      &quot;リンク&quot;: [
+        &quot;https://1.example.com&quot;,
+        &quot;https://2.example.com&quot;,
+        &quot;https://3.example.com&quot;
+      ],
+      &quot;トップページで表示&quot;: false
+    }
+  },
+  &quot;filePath&quot;: &quot;src/content/notion/2d1edfb4-fbb1-8145-9930-e4b2e473ba5e.md&quot;,
+  &quot;digest&quot;: &quot;2025-12-23T10:25:00.000Z&quot;,
+  &quot;rendered&quot;: {
+    &quot;html&quot;: &quot;&lt;p&gt;&lt;b&gt;This is from shirokuma Workspace!&lt;/b&gt;&lt;/p&gt;&lt;h1 id=\&quot;フォーマットテストページ\&quot;&gt;フォーマットテストページ&lt;/h1&gt;&lt;p&gt;このページはNotionで利用可能なすべてのフォーマット機能を示しています。&lt;/p&gt;&lt;h2 id=\&quot;テキストフォーマット\&quot;&gt;テキストフォーマット&lt;/h2&gt;&lt;p&gt;これは&lt;b&gt;太字テキスト&lt;/b&gt;、&lt;i&gt;イタリックテキスト&lt;/i&gt;、&lt;s&gt;取り消し線テキスト&lt;/s&gt;、&lt;u&gt;下線付きテキスト&lt;/u&gt;です。&lt;/p&gt;&lt;p&gt;フォーマットを組み合わせることもできます:&lt;i&gt;&lt;b&gt;太字とイタリック&lt;/b&gt;&lt;/i&gt;、&lt;u&gt;&lt;b&gt;太字と下線&lt;/b&gt;&lt;/u&gt;、&lt;s&gt;&lt;i&gt;イタリックと取り消し線&lt;/i&gt;&lt;/s&gt;。&lt;/p&gt;&lt;p&gt;これは&lt;code&gt;インラインコード&lt;/code&gt;と&lt;a href=\&quot;https://www.example.com/\&quot;&gt;ウェブサイトへのリンク&lt;/a&gt;です。&lt;/p&gt;&lt;h2 id=\&quot;テキストの色とハイライト\&quot;&gt;テキストの色とハイライト&lt;/h2&gt;&lt;p&gt;デフォルトテキストに&lt;span class=\&quot;color-red\&quot;&gt;赤のハイライト&lt;/span&gt;、&lt;span class=\&quot;color-blue\&quot;&gt;青のハイライト&lt;/span&gt;、&lt;span class=\&quot;color-green\&quot;&gt;緑のハイライト&lt;/span&gt;、&lt;span class=\&quot;color-yellow\&quot;&gt;黄色のハイライト&lt;/span&gt;、&lt;span class=\&quot;color-orange\&quot;&gt;オレンジのハイライト&lt;/span&gt;、&lt;span class=\&quot;color-purple\&quot;&gt;紫のハイライト&lt;/span&gt;、&lt;span class=\&quot;color-pink\&quot;&gt;ピンクのハイライト&lt;/span&gt;、&lt;span class=\&quot;color-gray\&quot;&gt;グレーのハイライト&lt;/span&gt;、&lt;span class=\&quot;color-brown\&quot;&gt;茶色のハイライト&lt;/span&gt;。&lt;/p&gt;&lt;p&gt;背景ハイライト:&lt;span class=\&quot;color-red_background\&quot;&gt;赤の背景&lt;/span&gt;、&lt;span class=\&quot;color-blue_background\&quot;&gt;青の背景&lt;/span&gt;、&lt;span class=\&quot;color-green_background\&quot;&gt;緑の背景&lt;/span&gt;、&lt;span class=\&quot;color-yellow_background\&quot;&gt;黄色の背景&lt;/span&gt;、&lt;span class=\&quot;color-orange_background\&quot;&gt;オレンジの背景&lt;/span&gt;、&lt;span class=\&quot;color-purple_background\&quot;&gt;紫の背景&lt;/span&gt;、&lt;span class=\&quot;color-pink_background\&quot;&gt;ピンクの背景&lt;/span&gt;、&lt;span class=\&quot;color-gray_background\&quot;&gt;グレーの背景&lt;/span&gt;、&lt;span class=\&quot;color-brown_background\&quot;&gt;茶色の背景&lt;/span&gt;。&lt;/p&gt;&lt;h2 id=\&quot;見出し\&quot;&gt;見出し&lt;/h2&gt;&lt;h1 id=\&quot;見出し1\&quot;&gt;見出し1&lt;/h1&gt;&lt;h2 id=\&quot;見出し2\&quot;&gt;見出し2&lt;/h2&gt;&lt;h3 id=\&quot;見出し3\&quot;&gt;見出し3&lt;/h3&gt;&lt;h2 id=\&quot;色付きブロック\&quot;&gt;色付きブロック&lt;/h2&gt;&lt;p class=\&quot;color-red\&quot;&gt;赤色のテキストブロック&lt;/p&gt;&lt;p class=\&quot;color-blue\&quot;&gt;青色のテキストブロック&lt;/p&gt;&lt;p class=\&quot;color-green\&quot;&gt;緑色のテキストブロック&lt;/p&gt;&lt;h2 id=\&quot;リスト\&quot;&gt;リスト&lt;/h2&gt;&lt;h3 id=\&quot;箇条書きリスト\&quot;&gt;箇条書きリスト&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;最初の項目&lt;/li&gt;&lt;li&gt;&lt;p&gt;2番目の項目&lt;/p&gt;&lt;ul&gt;&lt;li&gt;ネストされた項目1&lt;/li&gt;&lt;li&gt;&lt;p&gt;ネストされた項目2&lt;/p&gt;&lt;ul&gt;&lt;li&gt;深くネストされた項目&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;3番目の項目&lt;/li&gt;&lt;/ul&gt;&lt;h3 id=\&quot;番号付きリスト\&quot;&gt;番号付きリスト&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;最初の番号付き項目&lt;/li&gt;&lt;li&gt;&lt;p&gt;2番目の番号付き項目&lt;/p&gt;&lt;ol&gt;&lt;li&gt;ネストされた番号付き項目1&lt;/li&gt;&lt;li&gt;ネストされた番号付き項目2&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;3番目の番号付き項目&lt;/li&gt;&lt;/ol&gt;&lt;h3 id=\&quot;todoリスト\&quot;&gt;ToDoリスト&lt;/h3&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; checked disabled&gt;完了したタスク&lt;/li&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;&lt;p&gt;未完了のタスク&lt;/p&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;ネストされた未完了のタスク&lt;/li&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; checked disabled&gt;ネストされた完了したタスク&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;別のタスク&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=\&quot;引用ブロック\&quot;&gt;引用ブロック&lt;/h2&gt;&lt;blockquote&gt;これは引用ブロックです。複数行のテキストを含めることができ、重要な情報や引用を強調するのに便利です。&lt;/blockquote&gt;&lt;blockquote class=\&quot;color-blue\&quot;&gt;これは&lt;b&gt;フォーマットされたテキスト&lt;/b&gt;を含む色付きの引用ブロックです。&lt;/blockquote&gt;&lt;h2 id=\&quot;コードブロック\&quot;&gt;コードブロック&lt;/h2&gt;&lt;pre&gt;&lt;code class=\&quot;language-javascript\&quot;&gt;function helloWorld() {\n  console.log(\&quot;Hello, World!\&quot;);\n  return true;\n}\n\n// これはコメントです\nconst x = 10;\nif (x &gt; 5) {\n  helloWorld();\n}&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=\&quot;language-python\&quot;&gt;def fibonacci(n):\n    if n &amp;#x3C;= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\n# 最初の10個のフィボナッチ数を計算\nfor i in range(10):\n    print(fibonacci(i))&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=\&quot;数式ブロック\&quot;&gt;数式ブロック&lt;/h2&gt;&lt;section class=\&quot;math math-display\&quot;&gt;&lt;span class=\&quot;katex-display\&quot;&gt;&lt;span class=\&quot;katex\&quot;&gt;&lt;span class=\&quot;katex-mathml\&quot;&gt;&lt;math xmlns=\&quot;http://www.w3.org/1998/Math/MathML\&quot; display=\&quot;block\&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=\&quot;application/x-tex\&quot;&gt;E = mc^2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=\&quot;katex-html\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:0.6833em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot; style=\&quot;margin-right:0.05764em;\&quot;&gt;E&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mrel\&quot;&gt;=&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:0.8641em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;m&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;c&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.8641em;\&quot;&gt;&lt;span style=\&quot;top:-3.113em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/section&gt;&lt;section class=\&quot;math math-display\&quot;&gt;&lt;span class=\&quot;katex-display\&quot;&gt;&lt;span class=\&quot;katex\&quot;&gt;&lt;span class=\&quot;katex-mathml\&quot;&gt;&lt;math xmlns=\&quot;http://www.w3.org/1998/Math/MathML\&quot; display=\&quot;block\&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msubsup&gt;&lt;mo&gt;∫&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mi mathvariant=\&quot;normal\&quot;&gt;∞&lt;/mi&gt;&lt;/msubsup&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;msqrt&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;/msqrt&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=\&quot;application/x-tex\&quot;&gt;\\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=\&quot;katex-html\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:2.3262em;vertical-align:-0.9119em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mop\&quot;&gt;&lt;span class=\&quot;mop op-symbol large-op\&quot; style=\&quot;margin-right:0.44445em;position:relative;top:-0.0011em;\&quot;&gt;∫&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t vlist-t2\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:1.4143em;\&quot;&gt;&lt;span style=\&quot;top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-3.8129em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;∞&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-s\&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.9119em;\&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.1667em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;e&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:1.0369em;\&quot;&gt;&lt;span style=\&quot;top:-3.113em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;−&lt;/span&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mathnormal mtight\&quot;&gt;x&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.8913em;\&quot;&gt;&lt;span style=\&quot;top:-2.931em;margin-right:0.0714em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.5em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size3 size1 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;d&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;x&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mrel\&quot;&gt;=&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:2.1633em;vertical-align:-0.686em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mopen nulldelimiter\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mfrac\&quot;&gt;&lt;span class=\&quot;vlist-t vlist-t2\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:1.4773em;\&quot;&gt;&lt;span style=\&quot;top:-2.314em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord\&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-3.23em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;frac-line\&quot; style=\&quot;border-bottom-width:0.04em;\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-3.677em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord sqrt\&quot;&gt;&lt;span class=\&quot;vlist-t vlist-t2\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.8003em;\&quot;&gt;&lt;span class=\&quot;svg-align\&quot; style=\&quot;top:-3em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot; style=\&quot;padding-left:0.833em;\&quot;&gt;&lt;span class=\&quot;mord mathnormal\&quot; style=\&quot;margin-right:0.03588em;\&quot;&gt;π&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-2.7603em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;hide-tail\&quot; style=\&quot;min-width:0.853em;height:1.08em;\&quot;&gt;&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;400em\&quot; height=\&quot;1.08em\&quot; viewBox=\&quot;0 0 400000 1080\&quot; preserveAspectRatio=\&quot;xMinYMin slice\&quot;&gt;&lt;path d=\&quot;M95,702\nc-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14\nc0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54\nc44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10\ns173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429\nc69,-144,104.5,-217.7,106.5,-221\nl0 -0\nc5.3,-9.3,12,-14,20,-14\nH400000v40H845.2724\ns-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7\nc-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z\nM834 80h400000v40h-400000z\&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-s\&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.2397em;\&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-s\&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.686em;\&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;mclose nulldelimiter\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/section&gt;&lt;h2 id=\&quot;インライン数式\&quot;&gt;インライン数式&lt;/h2&gt;&lt;p&gt;二次方程式は&lt;code&gt;ax^2 + bx + c = 0&lt;/code&gt;で、アインシュタインの有名な方程式は&lt;code&gt;E = mc^2&lt;/code&gt;です。&lt;/p&gt;&lt;h2 id=\&quot;区切り線\&quot;&gt;区切り線&lt;/h2&gt;&lt;p&gt;区切り線の上のコンテンツ&lt;/p&gt;&lt;hr&gt;&lt;p&gt;区切り線の下のコンテンツ&lt;/p&gt;&lt;h2 id=\&quot;テーブル\&quot;&gt;テーブル&lt;/h2&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;ヘッダー1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;ヘッダー2&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;ヘッダー3&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;行1、列1&lt;/td&gt;&lt;td&gt;行1、列2&lt;/td&gt;&lt;td&gt;行1、列3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;行2、列1&lt;/td&gt;&lt;td&gt;&lt;i&gt;イタリックテキスト&lt;/i&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;コード&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;https://www.example.com/\&quot;&gt;リンク&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;太字&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;s&gt;取り消し線&lt;/s&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h2 id=\&quot;カラム\&quot;&gt;カラム&lt;/h2&gt;&lt;section class=\&quot;notion-column_list notion-column_list-3\&quot;&gt;&lt;section class=\&quot;notion-column\&quot;&gt;&lt;h3 id=\&quot;カラム1\&quot;&gt;カラム1&lt;/h3&gt;&lt;p&gt;これは最初のカラムです。ここに任意のコンテンツを配置できます。&lt;/p&gt;&lt;ul&gt;&lt;li&gt;箇条書き1&lt;/li&gt;&lt;li&gt;箇条書き2&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=\&quot;notion-column\&quot;&gt;&lt;h3 id=\&quot;カラム2\&quot;&gt;カラム2&lt;/h3&gt;&lt;p&gt;これは異なるコンテンツを持つ2番目のカラムです。&lt;/p&gt;&lt;ol&gt;&lt;li&gt;番号付き項目1&lt;/li&gt;&lt;li&gt;番号付き項目2&lt;/li&gt;&lt;/ol&gt;&lt;/section&gt;&lt;section class=\&quot;notion-column\&quot;&gt;&lt;h3 id=\&quot;カラム3\&quot;&gt;カラム3&lt;/h3&gt;&lt;p&gt;3つのカラムが一緒に機能しています!&lt;/p&gt;&lt;p&gt;ここにさらにコンテンツがあります。&lt;/p&gt;&lt;/section&gt;&lt;/section&gt;&lt;h2 id=\&quot;mermaid図\&quot;&gt;Mermaid図&lt;/h2&gt;&lt;pre&gt;&lt;code class=\&quot;language-mermaid\&quot;&gt;graph TD;\n    A[\&quot;開始\&quot;] --&gt; B{\&quot;決定\&quot;};\n    B -- はい --&gt; C[\&quot;プロセス1\&quot;];\n    B -- いいえ --&gt; D[\&quot;プロセス2\&quot;];\n    C --&gt; E[\&quot;終了\&quot;];\n    D --&gt; E;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=\&quot;複雑なネスト構造\&quot;&gt;複雑なネスト構造&lt;/h2&gt;&lt;details class=\&quot;notion-toggle color-blue\&quot;&gt;&lt;summary&gt;📚 複雑なネストの例&lt;/summary&gt;&lt;blockquote&gt;このトグルには複数のブロックタイプが含まれています&lt;/blockquote&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;b&gt;太字&lt;/b&gt;と&lt;i&gt;イタリック&lt;/i&gt;テキストを含むリスト項目&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;コード&lt;/code&gt;を含むネストされた項目&lt;/li&gt;&lt;li&gt;&lt;p&gt;別のネストされた項目&lt;/p&gt;&lt;ul&gt;&lt;li&gt;深いネストレベル3&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;&lt;p&gt;トグル内のToDo&lt;/p&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; checked disabled&gt;ネストされた完了したToDo&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/details&gt;&lt;h2 id=\&quot;すべてのテキストフォーマットの組み合わせ\&quot;&gt;すべてのテキストフォーマットの組み合わせ&lt;/h2&gt;&lt;p&gt;この段落は&lt;b&gt;太字&lt;/b&gt;、&lt;i&gt;イタリック&lt;/i&gt;、&lt;u&gt;下線&lt;/u&gt;、&lt;s&gt;取り消し線&lt;/s&gt;、&lt;code&gt;インラインコード&lt;/code&gt;、&lt;a href=\&quot;https://www.notion.so/\&quot;&gt;リンク&lt;/a&gt;、&lt;span class=\&quot;color-yellow\&quot;&gt;黄色のハイライト&lt;/span&gt;、&lt;span class=\&quot;color-pink_background\&quot;&gt;ピンクの背景&lt;/span&gt;、そして&lt;u&gt;&lt;i&gt;&lt;b&gt;複数の&lt;/b&gt;&lt;/i&gt;&lt;/u&gt;&lt;s class=\&quot;color-green\&quot;&gt;組み合わせた&lt;/s&gt;&lt;code&gt;フォーマット&lt;/code&gt;をすべて1つの文で示しています!&lt;/p&gt;&lt;p&gt;Unicode絵文字:🎉 🚀 💡 ⚡ 🌟 ✨ 🔥 💻 📱 🎨 🎭 🎪&lt;/p&gt;&lt;h2 id=\&quot;コードをテキストとして表示\&quot;&gt;コードをテキストとして表示&lt;/h2&gt;&lt;p&gt;NotionでXML/HTMLを表示するには、コードタグを使用します:&lt;code&gt;&amp;#x26;lt;h1&amp;#x26;gt;これは見出しです&amp;#x26;lt;/h1&amp;#x26;gt;&lt;/code&gt;と&lt;code&gt;&amp;#x26;lt;b&amp;#x26;gt;太字テキスト&amp;#x26;lt;/b&amp;#x26;gt;&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;フォーマットテストページの終わり&lt;/i&gt;&lt;/p&gt;&lt;h1 id=\&quot;formatting-testing-page\&quot;&gt;Formatting Testing Page&lt;/h1&gt;&lt;p&gt;This page demonstrates all available Notion formatting features.&lt;/p&gt;&lt;h2 id=\&quot;text-formatting\&quot;&gt;Text Formatting&lt;/h2&gt;&lt;p&gt;This is &lt;b&gt;bold text&lt;/b&gt;, &lt;i&gt;italic text&lt;/i&gt;, &lt;s&gt;strikethrough text&lt;/s&gt;, and &lt;u&gt;underlined text&lt;/u&gt;.&lt;/p&gt;&lt;p&gt;You can also combine formatting: &lt;i&gt;&lt;b&gt;bold and italic&lt;/b&gt;&lt;/i&gt;, &lt;u&gt;&lt;b&gt;bold and underlined&lt;/b&gt;&lt;/u&gt;, &lt;s&gt;&lt;i&gt;italic and strikethrough&lt;/i&gt;&lt;/s&gt;.&lt;/p&gt;&lt;p&gt;Here&#39;s some &lt;code&gt;inline code&lt;/code&gt; and a &lt;a href=\&quot;https://www.example.com/\&quot;&gt;link to a website&lt;/a&gt;.&lt;/p&gt;&lt;h2 id=\&quot;text-colors-and-highlights\&quot;&gt;Text Colors and Highlights&lt;/h2&gt;&lt;p&gt;Default text with &lt;span class=\&quot;color-red\&quot;&gt;red highlight&lt;/span&gt;, &lt;span class=\&quot;color-blue\&quot;&gt;blue highlight&lt;/span&gt;, &lt;span class=\&quot;color-green\&quot;&gt;green highlight&lt;/span&gt;, &lt;span class=\&quot;color-yellow\&quot;&gt;yellow highlight&lt;/span&gt;, &lt;span class=\&quot;color-orange\&quot;&gt;orange highlight&lt;/span&gt;, &lt;span class=\&quot;color-purple\&quot;&gt;purple highlight&lt;/span&gt;, &lt;span class=\&quot;color-pink\&quot;&gt;pink highlight&lt;/span&gt;, &lt;span class=\&quot;color-gray\&quot;&gt;gray highlight&lt;/span&gt;, and &lt;span class=\&quot;color-brown\&quot;&gt;brown highlight&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;Background highlights: &lt;span class=\&quot;color-red_background\&quot;&gt;red background&lt;/span&gt;, &lt;span class=\&quot;color-blue_background\&quot;&gt;blue background&lt;/span&gt;, &lt;span class=\&quot;color-green_background\&quot;&gt;green background&lt;/span&gt;, &lt;span class=\&quot;color-yellow_background\&quot;&gt;yellow background&lt;/span&gt;, &lt;span class=\&quot;color-orange_background\&quot;&gt;orange background&lt;/span&gt;, &lt;span class=\&quot;color-purple_background\&quot;&gt;purple background&lt;/span&gt;, &lt;span class=\&quot;color-pink_background\&quot;&gt;pink background&lt;/span&gt;, &lt;span class=\&quot;color-gray_background\&quot;&gt;gray background&lt;/span&gt;, and &lt;span class=\&quot;color-brown_background\&quot;&gt;brown background&lt;/span&gt;.&lt;/p&gt;&lt;h2 id=\&quot;headings\&quot;&gt;Headings&lt;/h2&gt;&lt;h1 id=\&quot;heading-1\&quot;&gt;Heading 1&lt;/h1&gt;&lt;h2 id=\&quot;heading-2\&quot;&gt;Heading 2&lt;/h2&gt;&lt;h3 id=\&quot;heading-3\&quot;&gt;Heading 3&lt;/h3&gt;&lt;h2 id=\&quot;colored-blocks\&quot;&gt;Colored Blocks&lt;/h2&gt;&lt;p class=\&quot;color-red\&quot;&gt;Red colored text block&lt;/p&gt;&lt;p class=\&quot;color-blue\&quot;&gt;Blue colored text block&lt;/p&gt;&lt;p class=\&quot;color-green\&quot;&gt;Green colored text block&lt;/p&gt;&lt;h2 id=\&quot;lists\&quot;&gt;Lists&lt;/h2&gt;&lt;h3 id=\&quot;bulleted-list\&quot;&gt;Bulleted List&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;&lt;p&gt;Second item&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Nested item 1&lt;/li&gt;&lt;li&gt;&lt;p&gt;Nested item 2&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Deeply nested item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Third item&lt;/li&gt;&lt;/ul&gt;&lt;h3 id=\&quot;numbered-list\&quot;&gt;Numbered List&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;First numbered item&lt;/li&gt;&lt;li&gt;&lt;p&gt;Second numbered item&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Nested numbered item 1&lt;/li&gt;&lt;li&gt;Nested numbered item 2&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;li&gt;Third numbered item&lt;/li&gt;&lt;/ol&gt;&lt;h3 id=\&quot;to-do-list\&quot;&gt;To-do List&lt;/h3&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; checked disabled&gt;Completed task&lt;/li&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;&lt;p&gt;Incomplete task&lt;/p&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;Nested incomplete task&lt;/li&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; checked disabled&gt;Nested completed task&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;Another task&lt;/li&gt;&lt;/ul&gt;&lt;h2 id=\&quot;quote-block\&quot;&gt;Quote Block&lt;/h2&gt;&lt;blockquote&gt;This is a quote block. It can contain multiple lines of text and is useful for highlighting important information or citations.&lt;/blockquote&gt;&lt;blockquote class=\&quot;color-blue\&quot;&gt;This is a colored quote block with &lt;b&gt;formatted text&lt;/b&gt; inside.&lt;/blockquote&gt;&lt;h2 id=\&quot;code-block\&quot;&gt;Code Block&lt;/h2&gt;&lt;pre&gt;&lt;code class=\&quot;language-javascript\&quot;&gt;function helloWorld() {\n  console.log(\&quot;Hello, World!\&quot;);\n  return true;\n}\n\n// This is a comment\nconst x = 10;\nif (x &gt; 5) {\n  helloWorld();\n}&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class=\&quot;language-python\&quot;&gt;def fibonacci(n):\n    if n &amp;#x3C;= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\n# Calculate first 10 Fibonacci numbers\nfor i in range(10):\n    print(fibonacci(i))&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=\&quot;math-block\&quot;&gt;Math Block&lt;/h2&gt;&lt;section class=\&quot;math math-display\&quot;&gt;&lt;span class=\&quot;katex-display\&quot;&gt;&lt;span class=\&quot;katex\&quot;&gt;&lt;span class=\&quot;katex-mathml\&quot;&gt;&lt;math xmlns=\&quot;http://www.w3.org/1998/Math/MathML\&quot; display=\&quot;block\&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=\&quot;application/x-tex\&quot;&gt;E = mc^2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=\&quot;katex-html\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:0.6833em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot; style=\&quot;margin-right:0.05764em;\&quot;&gt;E&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mrel\&quot;&gt;=&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:0.8641em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;m&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;c&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.8641em;\&quot;&gt;&lt;span style=\&quot;top:-3.113em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/section&gt;&lt;section class=\&quot;math math-display\&quot;&gt;&lt;span class=\&quot;katex-display\&quot;&gt;&lt;span class=\&quot;katex\&quot;&gt;&lt;span class=\&quot;katex-mathml\&quot;&gt;&lt;math xmlns=\&quot;http://www.w3.org/1998/Math/MathML\&quot; display=\&quot;block\&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msubsup&gt;&lt;mo&gt;∫&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mi mathvariant=\&quot;normal\&quot;&gt;∞&lt;/mi&gt;&lt;/msubsup&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;msqrt&gt;&lt;mi&gt;π&lt;/mi&gt;&lt;/msqrt&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=\&quot;application/x-tex\&quot;&gt;\\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=\&quot;katex-html\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:2.3262em;vertical-align:-0.9119em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mop\&quot;&gt;&lt;span class=\&quot;mop op-symbol large-op\&quot; style=\&quot;margin-right:0.44445em;position:relative;top:-0.0011em;\&quot;&gt;∫&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t vlist-t2\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:1.4143em;\&quot;&gt;&lt;span style=\&quot;top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-3.8129em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;∞&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-s\&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.9119em;\&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.1667em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;e&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:1.0369em;\&quot;&gt;&lt;span style=\&quot;top:-3.113em;margin-right:0.05em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.7em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size6 size3 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;−&lt;/span&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;&lt;span class=\&quot;mord mathnormal mtight\&quot;&gt;x&lt;/span&gt;&lt;span class=\&quot;msupsub\&quot;&gt;&lt;span class=\&quot;vlist-t\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.8913em;\&quot;&gt;&lt;span style=\&quot;top:-2.931em;margin-right:0.0714em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:2.5em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;sizing reset-size3 size1 mtight\&quot;&gt;&lt;span class=\&quot;mord mtight\&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;d&lt;/span&gt;&lt;span class=\&quot;mord mathnormal\&quot;&gt;x&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mrel\&quot;&gt;=&lt;/span&gt;&lt;span class=\&quot;mspace\&quot; style=\&quot;margin-right:0.2778em;\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;base\&quot;&gt;&lt;span class=\&quot;strut\&quot; style=\&quot;height:2.1633em;vertical-align:-0.686em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mopen nulldelimiter\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mfrac\&quot;&gt;&lt;span class=\&quot;vlist-t vlist-t2\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:1.4773em;\&quot;&gt;&lt;span style=\&quot;top:-2.314em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord\&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-3.23em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;frac-line\&quot; style=\&quot;border-bottom-width:0.04em;\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-3.677em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot;&gt;&lt;span class=\&quot;mord sqrt\&quot;&gt;&lt;span class=\&quot;vlist-t vlist-t2\&quot;&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.8003em;\&quot;&gt;&lt;span class=\&quot;svg-align\&quot; style=\&quot;top:-3em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;mord\&quot; style=\&quot;padding-left:0.833em;\&quot;&gt;&lt;span class=\&quot;mord mathnormal\&quot; style=\&quot;margin-right:0.03588em;\&quot;&gt;π&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\&quot;top:-2.7603em;\&quot;&gt;&lt;span class=\&quot;pstrut\&quot; style=\&quot;height:3em;\&quot;&gt;&lt;/span&gt;&lt;span class=\&quot;hide-tail\&quot; style=\&quot;min-width:0.853em;height:1.08em;\&quot;&gt;&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;400em\&quot; height=\&quot;1.08em\&quot; viewBox=\&quot;0 0 400000 1080\&quot; preserveAspectRatio=\&quot;xMinYMin slice\&quot;&gt;&lt;path d=\&quot;M95,702\nc-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14\nc0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54\nc44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10\ns173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429\nc69,-144,104.5,-217.7,106.5,-221\nl0 -0\nc5.3,-9.3,12,-14,20,-14\nH400000v40H845.2724\ns-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7\nc-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z\nM834 80h400000v40h-400000z\&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-s\&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.2397em;\&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-s\&quot;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;vlist-r\&quot;&gt;&lt;span class=\&quot;vlist\&quot; style=\&quot;height:0.686em;\&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=\&quot;mclose nulldelimiter\&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/section&gt;&lt;h2 id=\&quot;inline-math\&quot;&gt;Inline Math&lt;/h2&gt;&lt;p&gt;The quadratic formula is &lt;code&gt;ax^2 + bx + c = 0&lt;/code&gt; and Einstein&#39;s famous equation is &lt;code&gt;E = mc^2&lt;/code&gt;.&lt;/p&gt;&lt;h2 id=\&quot;divider\&quot;&gt;Divider&lt;/h2&gt;&lt;p&gt;Content above the divider&lt;/p&gt;&lt;hr&gt;&lt;p&gt;Content below the divider&lt;/p&gt;&lt;h2 id=\&quot;table\&quot;&gt;Table&lt;/h2&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Header 1&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Header 2&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Header 3&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Row 1, Col 1&lt;/td&gt;&lt;td&gt;Row 1, Col 2&lt;/td&gt;&lt;td&gt;Row 1, Col 3&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Row 2, Col 1&lt;/td&gt;&lt;td&gt;&lt;i&gt;Italic text&lt;/i&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;https://www.example.com/\&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Bold&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;s&gt;Strikethrough&lt;/s&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;h2 id=\&quot;columns\&quot;&gt;Columns&lt;/h2&gt;&lt;section class=\&quot;notion-column_list notion-column_list-3\&quot;&gt;&lt;section class=\&quot;notion-column\&quot;&gt;&lt;h3 id=\&quot;column-1\&quot;&gt;Column 1&lt;/h3&gt;&lt;p&gt;This is the first column. You can put any content here.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Bullet point 1&lt;/li&gt;&lt;li&gt;Bullet point 2&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=\&quot;notion-column\&quot;&gt;&lt;h3 id=\&quot;column-2\&quot;&gt;Column 2&lt;/h3&gt;&lt;p&gt;This is the second column with different content.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbered item 1&lt;/li&gt;&lt;li&gt;Numbered item 2&lt;/li&gt;&lt;/ol&gt;&lt;/section&gt;&lt;section class=\&quot;notion-column\&quot;&gt;&lt;h3 id=\&quot;column-3\&quot;&gt;Column 3&lt;/h3&gt;&lt;p&gt;Three columns working together!&lt;/p&gt;&lt;p&gt;More content here.&lt;/p&gt;&lt;/section&gt;&lt;/section&gt;&lt;h2 id=\&quot;mermaid-diagram\&quot;&gt;Mermaid Diagram&lt;/h2&gt;&lt;pre&gt;&lt;code class=\&quot;language-mermaid\&quot;&gt;graph TD;\n    A[\&quot;Start\&quot;] --&gt; B{\&quot;Decision\&quot;};\n    B -- Yes --&gt; C[\&quot;Process 1\&quot;];\n    B -- No --&gt; D[\&quot;Process 2\&quot;];\n    C --&gt; E[\&quot;End\&quot;];\n    D --&gt; E;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=\&quot;complex-nested-structure\&quot;&gt;Complex Nested Structure&lt;/h2&gt;&lt;details class=\&quot;notion-toggle color-blue\&quot;&gt;&lt;summary&gt;📚 Complex nested example&lt;/summary&gt;&lt;blockquote&gt;This toggle contains multiple block types&lt;/blockquote&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;List item with &lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt; text&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Nested item with &lt;code&gt;code&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Another nested item&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Deep nesting level 3&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; disabled&gt;&lt;p&gt;Todo inside toggle&lt;/p&gt;&lt;ul class=\&quot;notion-to_do_list\&quot;&gt;&lt;li&gt;&lt;input type=\&quot;checkbox\&quot; checked disabled&gt;Nested completed todo&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/details&gt;&lt;h2 id=\&quot;all-text-formatting-combined\&quot;&gt;All Text Formatting Combined&lt;/h2&gt;&lt;p&gt;This paragraph demonstrates &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italic&lt;/i&gt;, &lt;u&gt;underline&lt;/u&gt;, &lt;s&gt;strikethrough&lt;/s&gt;, &lt;code&gt;inline code&lt;/code&gt;, &lt;a href=\&quot;https://www.notion.so/\&quot;&gt;links&lt;/a&gt;, &lt;span class=\&quot;color-yellow\&quot;&gt;yellow highlight&lt;/span&gt;, &lt;span class=\&quot;color-pink_background\&quot;&gt;pink background&lt;/span&gt;, and &lt;u&gt;&lt;i&gt;&lt;b&gt;multiple&lt;/b&gt;&lt;/i&gt;&lt;/u&gt; &lt;s class=\&quot;color-green\&quot;&gt;combined&lt;/s&gt; &lt;code&gt;formats&lt;/code&gt; all in one sentence!&lt;/p&gt;&lt;p&gt;Unicode emojis: 🎉 🚀 💡 ⚡ 🌟 ✨ 🔥 💻 📱 🎨 🎭 🎪&lt;/p&gt;&lt;h2 id=\&quot;displaying-code-as-text\&quot;&gt;Displaying Code as Text&lt;/h2&gt;&lt;p&gt;To display XML/HTML in Notion, use code tags: &lt;code&gt;&amp;#x3C;h1&gt;This is a heading&amp;#x3C;/h1&gt;&lt;/code&gt; and &lt;code&gt;&amp;#x3C;b&gt;bold text&amp;#x3C;/b&gt;&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;End of formatting testing page&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&quot;,
+    &quot;metadata&quot;: {
+      &quot;headings&quot;: [
+        {
+          &quot;depth&quot;: 0,
+          &quot;text&quot;: &quot;フォーマットテストページ&quot;,
+          &quot;slug&quot;: &quot;フォーマットテストページ&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;テキストフォーマット&quot;,
+          &quot;slug&quot;: &quot;テキストフォーマット&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;テキストの色とハイライト&quot;,
+          &quot;slug&quot;: &quot;テキストの色とハイライト&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;見出し&quot;,
+          &quot;slug&quot;: &quot;見出し&quot;
+        },
+        {
+          &quot;depth&quot;: 0,
+          &quot;text&quot;: &quot;見出し1&quot;,
+          &quot;slug&quot;: &quot;見出し1&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;見出し2&quot;,
+          &quot;slug&quot;: &quot;見出し2&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;見出し3&quot;,
+          &quot;slug&quot;: &quot;見出し3&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;色付きブロック&quot;,
+          &quot;slug&quot;: &quot;色付きブロック&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;リスト&quot;,
+          &quot;slug&quot;: &quot;リスト&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;箇条書きリスト&quot;,
+          &quot;slug&quot;: &quot;箇条書きリスト&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;番号付きリスト&quot;,
+          &quot;slug&quot;: &quot;番号付きリスト&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;ToDoリスト&quot;,
+          &quot;slug&quot;: &quot;todoリスト&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;引用ブロック&quot;,
+          &quot;slug&quot;: &quot;引用ブロック&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;コードブロック&quot;,
+          &quot;slug&quot;: &quot;コードブロック&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;数式ブロック&quot;,
+          &quot;slug&quot;: &quot;数式ブロック&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;インライン数式&quot;,
+          &quot;slug&quot;: &quot;インライン数式&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;区切り線&quot;,
+          &quot;slug&quot;: &quot;区切り線&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;テーブル&quot;,
+          &quot;slug&quot;: &quot;テーブル&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;カラム&quot;,
+          &quot;slug&quot;: &quot;カラム&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;カラム1&quot;,
+          &quot;slug&quot;: &quot;カラム1&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;カラム2&quot;,
+          &quot;slug&quot;: &quot;カラム2&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;カラム3&quot;,
+          &quot;slug&quot;: &quot;カラム3&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Mermaid図&quot;,
+          &quot;slug&quot;: &quot;mermaid図&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;複雑なネスト構造&quot;,
+          &quot;slug&quot;: &quot;複雑なネスト構造&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;すべてのテキストフォーマットの組み合わせ&quot;,
+          &quot;slug&quot;: &quot;すべてのテキストフォーマットの組み合わせ&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;コードをテキストとして表示&quot;,
+          &quot;slug&quot;: &quot;コードをテキストとして表示&quot;
+        },
+        {
+          &quot;depth&quot;: 0,
+          &quot;text&quot;: &quot;Formatting Testing Page&quot;,
+          &quot;slug&quot;: &quot;formatting-testing-page&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Text Formatting&quot;,
+          &quot;slug&quot;: &quot;text-formatting&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Text Colors and Highlights&quot;,
+          &quot;slug&quot;: &quot;text-colors-and-highlights&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Headings&quot;,
+          &quot;slug&quot;: &quot;headings&quot;
+        },
+        {
+          &quot;depth&quot;: 0,
+          &quot;text&quot;: &quot;Heading 1&quot;,
+          &quot;slug&quot;: &quot;heading-1&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Heading 2&quot;,
+          &quot;slug&quot;: &quot;heading-2&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;Heading 3&quot;,
+          &quot;slug&quot;: &quot;heading-3&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Colored Blocks&quot;,
+          &quot;slug&quot;: &quot;colored-blocks&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Lists&quot;,
+          &quot;slug&quot;: &quot;lists&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;Bulleted List&quot;,
+          &quot;slug&quot;: &quot;bulleted-list&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;Numbered List&quot;,
+          &quot;slug&quot;: &quot;numbered-list&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;To-do List&quot;,
+          &quot;slug&quot;: &quot;to-do-list&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Quote Block&quot;,
+          &quot;slug&quot;: &quot;quote-block&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Code Block&quot;,
+          &quot;slug&quot;: &quot;code-block&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Math Block&quot;,
+          &quot;slug&quot;: &quot;math-block&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Inline Math&quot;,
+          &quot;slug&quot;: &quot;inline-math&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Divider&quot;,
+          &quot;slug&quot;: &quot;divider&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Table&quot;,
+          &quot;slug&quot;: &quot;table&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Columns&quot;,
+          &quot;slug&quot;: &quot;columns&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;Column 1&quot;,
+          &quot;slug&quot;: &quot;column-1&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;Column 2&quot;,
+          &quot;slug&quot;: &quot;column-2&quot;
+        },
+        {
+          &quot;depth&quot;: 2,
+          &quot;text&quot;: &quot;Column 3&quot;,
+          &quot;slug&quot;: &quot;column-3&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Mermaid Diagram&quot;,
+          &quot;slug&quot;: &quot;mermaid-diagram&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Complex Nested Structure&quot;,
+          &quot;slug&quot;: &quot;complex-nested-structure&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;All Text Formatting Combined&quot;,
+          &quot;slug&quot;: &quot;all-text-formatting-combined&quot;
+        },
+        {
+          &quot;depth&quot;: 1,
+          &quot;text&quot;: &quot;Displaying Code as Text&quot;,
+          &quot;slug&quot;: &quot;displaying-code-as-text&quot;
+        }
+      ],
+      &quot;imagePaths&quot;: []
+    }
+  },
+  &quot;collection&quot;: &quot;works&quot;
+}</pre> <h2>Work</h2> <pre>{
+  &quot;id&quot;: &quot;foobar&quot;,
+  &quot;visualImageUrl&quot;: [
+    &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/e030eb1c-cc58-4937-be30-6b527d9668cb/_DSF1852.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=62e726ca04c9024c6800c4395f89a31c8e5b922f9957c3a2cf0f770eb7f34761&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+    &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/6baa2f49-c97c-41fd-ba2f-2bff4f22b386/_DSF1774.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=185af8d7751bcbe2fee7c396fa63ca570c9fd1ff49b2445f42b838baed361469&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;
+  ],
+  &quot;logoUrl&quot;: &quot;https://prod-files-secure.s3.us-west-2.amazonaws.com/49be3b28-00ae-42e2-8607-25438a58d55b/e511f08c-73a9-43e1-a4e5-12037ec3a537/_DSF0538.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB4662322EPMY%2F20251223%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20251223T130424Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEUaCXVzLXdlc3QtMiJHMEUCIH7aIuaYLNmFItxW9TLc1DsO%2BqmePnY0Bd9ZJWCwJlwxAiEArx4y2zXCRQx9C%2FZtuixEJawcW5RWeJO%2BNHeD%2F86M7Qwq%2FwMIDhAAGgw2Mzc0MjMxODM4MDUiDNeNEn%2FVqSn9Ptz%2BHircAwXAoG6lmsnDL7703QPvL58JzhgG5HyxGKEC8%2Frpj4kx21s6cqRWmHibEdl%2FXTbEYZ%2B%2FmyaeBF5H57%2Bb5NPuuSmtVhs3HH8ZKhJP8HQ2IP7UPO9Sv7aPXYtjRavy0oTBL5fpu9XWVkhRWm4fdIXOVBddrHAfNtsw5PcZ3AX7%2FTKeuxagNAySQitHRh8vDrDCvx2N714rrUENdb1iXJrmt6QuXHydUZLg7V9g3RaTUHvxIdyVMBr7rZLx5pLiYjfqRA6erDafp7x7iW5gjxKxWDcvEgYNWpvvT3Y%2Fpl0MAFEx0tVoR03jJzlaLVQCvfkueg1R978zggiJPWf66SngjLeORiMoMPheViySpd%2FAiOUpC%2BAT%2BOZxwU04abrek%2F6v3EfboATq7lgMCreFlhMuiDtnm45NeVKC2%2FvOuiSOyGO51Gc8xN9U3GW2sur643WpKp7mJaeFBvOAAVCqxmrv%2BAdfvIO7oOH2zN9zoOZLaEWAckTtB1ZHI7xVzfH2pKWqupe%2FJb6JG6RjJ3oTzp9l83sxYeRQhCcfTyp%2BHy8XKfh9bUgzGDVVm19PD8UAnZdhj5rluKRAstcZpcS1h9LmMJhHRMHbdjymONwNFlXQCqztNWKjcgSX2FUo0VHaMOGkqsoGOqUBWI%2Bdz5BUzNgYm8C0t864biH59FEu1zRuh86Sof8HgYNEg%2F%2BQ1qovbfAivo5ZpCEiW8Bz3rJxlTEvFAB2UueJTak8OcdVaBPk%2BfrdGWP4sorNlmDZhwZKyC9BarSlwo6YIgDYb2cJBmsbRVHqWHfOiyJtmRenK0XAfWxLyaNwX2BH58Xpp%2F7YTHbrDG6F1G35fV8J5%2F8M07P9%2BhpfgbzqSqtSa9b8&amp;X-Amz-Signature=a2d2ef4d1406547a1b4c6fca2a11666bd4c444834cb88a427249e5d4d0c49323&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject&quot;,
+  &quot;description&quot;: &quot;This is from Shirokuma Workspace!&quot;,
+  &quot;logoAlt&quot;: &quot;LogoAlt&quot;,
+  &quot;date&quot;: {
+    &quot;period&quot;: {
+      &quot;from&quot;: &quot;2025-12-07T00:00:00.000Z&quot;,
+      &quot;to&quot;: &quot;2025-12-14T00:00:00.000Z&quot;
+    }
+  },
+  &quot;types&quot;: [
+    &quot;uiux&quot;
+  ],
+  &quot;context&quot;: &quot;collaboration&quot;,
+  &quot;assigning&quot;: &quot;Assigning&quot;,
+  &quot;logoPosition&quot;: &quot;inline&quot;,
+  &quot;links&quot;: [
+    &quot;https://1.example.com&quot;,
+    &quot;https://2.example.com&quot;,
+    &quot;https://3.example.com&quot;
+  ],
+  &quot;pickUp&quot;: false
+}</pre> <hr>  </body></html>
