@@ -34,13 +34,27 @@ jobs:
 
       - name: Prepare worktree for build
         run: |
-          git fetch origin build
-          git worktree add -B build _worktree/ origin/build
+          rm -rf _worktree
+          mkdir -p _worktree
+          git fetch origin build:refs/remotes/origin/build || true
+
+          if git show-ref --verify --quiet refs/remotes/origin/build; then
+            git worktree add _worktree origin/build
+            cd _worktree
+            git switch -C build
+          else
+            git worktree add _worktree
+            cd _worktree
+            git switch --orphan build
+            git commit --allow-empty -m "Initialize build branch"
+          fi
 
       - name: Copy contents
         working-directory: _worktree/
         run: |
-          find -mindepth 1 ! -name ".git" -exec rm -rfv -- {} +
+          git rm -r --ignore-unmatch .
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+
           cp -r ../dist/. .
           echo "${{ vars.DOMAIN_NAME }}" > CNAME
 
