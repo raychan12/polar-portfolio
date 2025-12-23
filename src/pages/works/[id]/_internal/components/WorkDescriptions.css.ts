@@ -167,5 +167,9 @@ globalStyle(`${renderedContent} li`, {
 	paddingLeft: '0.5em',
 });
 
+globalStyle(`${renderedContent} .color-blue`, {
+	color: vars.color.brand.primary,
+});
+
 // TODO: 他にも Notion コンテンツからパースされている
 //       スタイルはいろいろあるので、必要に応じてスタイルを追加
