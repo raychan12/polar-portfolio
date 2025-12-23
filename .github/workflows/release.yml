@@ -1,7 +1,6 @@
 name: Push build artifacts to the branch
 
 on:
-  pull_request: # Todo - remove when ready
   push:
     tags:
       - v*
