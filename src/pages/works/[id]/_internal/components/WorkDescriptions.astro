@@ -24,8 +24,10 @@ import {
 	detailSection,
 	detailSectionTitle,
 	renderedContent,
+	tagsLinkColor,
 } from './WorkDescriptions.css';
 import type { RenderResult } from 'astro:content';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 interface Props {
 	rendered: RenderResult;
@@ -46,7 +48,9 @@ const {
 					<a
 						class={tagsLink}
 						href={`/works?types=${encodeURIComponent(tag)}`}
-						style={{ color: workTypeColorsCSS[tag] }}>
+						style={assignInlineVars({
+							[tagsLinkColor]: workTypeColorsCSS[tag],
+						})}>
 						#{tag}
 					</a>
 				))

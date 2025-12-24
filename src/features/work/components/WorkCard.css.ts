@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { createVar, fallbackVar, style } from '@vanilla-extract/css';
 
 import { BreakPoints, vars } from '../../../styles/theme.css';
 
@@ -170,9 +170,11 @@ export const tagsList = style({
 	},
 });
 
+export const tagsLinkColor = createVar();
+
 export const tagsLink = style({
 	pointerEvents: 'all',
-	color: vars.color.text.secondary,
+	color: fallbackVar(tagsLinkColor, vars.color.text.secondary),
 	textDecoration: 'underline',
 });
 

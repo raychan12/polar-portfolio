@@ -1,3 +1,4 @@
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { format } from 'date-fns';
 import type { FunctionComponent } from 'preact';
 
@@ -22,6 +23,7 @@ import {
 	grid,
 	smLogoSection,
 	smLogo,
+	tagsLinkColor,
 } from './WorkCard.css';
 
 export type WorkCardProps = {
@@ -83,7 +85,9 @@ export const WorkCard: FunctionComponent<WorkCardProps> = ({ work, visualImageAt
 						key={tag}
 						className={tagsLink}
 						href={`/works?types=${encodeURIComponent(tag)}`}
-						style={{ color: workTypeColorsCSS[tag] }}>
+						style={assignInlineVars({
+							[tagsLinkColor]: workTypeColorsCSS[tag],
+						})}>
 						#{tag}
 					</a>
 				))}
