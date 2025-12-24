@@ -1,4 +1,4 @@
-import { globalStyle, style } from '@vanilla-extract/css';
+import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css';
 
 import { BreakPoints, vars } from '../../../../../styles/theme.css';
 
@@ -20,9 +20,11 @@ export const tagsList = style({
 	gap: '8px 20px',
 });
 
+export const tagsLinkColor = createVar();
+
 export const tagsLink = style({
 	font: vars.text.en.description,
-	color: vars.color.text.secondary,
+	color: fallbackVar(tagsLinkColor, vars.color.text.secondary),
 	textDecoration: 'underline',
 });
 
