@@ -24,7 +24,9 @@ const pageUrl = Astro.site?.origin ?? '/';
 		<meta name="viewport" content="width=device-width" />
 		<title>{pageTitle}</title>
 
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
 		<meta name="description" content={pageDescription} />
 		<link rel="canonical" href={pageUrl} />
@@ -41,9 +43,9 @@ const pageUrl = Astro.site?.origin ?? '/';
 		<meta property="og:url" content={pageUrl} />
 		<meta name="og:type" content="website" />
 		<meta name="og:site_name" content="ljus" />
-		<meta name="og:image" content="https://ljus.art/figure/OGP.png" />
+		<meta name="og:image" content="https://ljus.art/ogimage.png" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:image" content="https://ljus.art/figure/OGP.png" />
+		<meta name="twitter:image" content="https://ljus.art/ogimage.png" />
 
 		<Font cssVariable="--font-avenir" />
 		<Font cssVariable="--font-cormorant-sc" />
