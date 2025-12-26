@@ -9,6 +9,18 @@ const works = defineCollection({
 	loader: notionLoader({
 		auth: NOTION_TOKEN,
 		database_id: NOTION_WORKS_DATABASE_ID,
+		sorts: [
+			{
+				// 基本、こちらで並び順を指定してもらう
+				property: '掲載順',
+				direction: 'ascending',
+			},
+			{
+				// こちらは掲載順が被ってしまった際に、並び順を決定的にするためのバックアップ
+				timestamp: 'last_edited_time',
+				direction: 'ascending',
+			},
+		],
 	}),
 	schema: notionPageSchema({
 		properties: z.object({
