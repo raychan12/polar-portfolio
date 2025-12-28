@@ -13,7 +13,7 @@ const works = defineCollection({
 			{
 				// 基本、こちらで並び順を指定してもらう
 				property: '掲載順',
-				direction: 'ascending',
+				direction: 'descending',
 			},
 			{
 				// こちらは掲載順が被ってしまった際に、並び順を決定的にするためのバックアップ
