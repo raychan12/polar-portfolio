@@ -9,6 +9,18 @@ const works = defineCollection({
 	loader: notionLoader({
 		auth: NOTION_TOKEN,
 		database_id: NOTION_WORKS_DATABASE_ID,
+		sorts: [
+			{
+				// 基本、こちらで並び順を指定してもらう
+				property: '掲載順',
+				direction: 'ascending',
+			},
+			{
+				// こちらは掲載順が被ってしまった際に、並び順を決定的にするためのバックアップ
+				timestamp: 'last_edited_time',
+				direction: 'ascending',
+			},
+		],
 	}),
 	schema: notionPageSchema({
 		properties: z.object({
@@ -31,7 +43,7 @@ const works = defineCollection({
 			担当部分: transformedPropertySchema.rich_text,
 			ロゴ配置: transformedPropertySchema.select.pipe(z.enum(['inline', 'left'])),
 			リンク: transformedPropertySchema.rich_text
-				.transform((linkText) => linkText.split('\n'))
+				.transform((linkText) => linkText.split('\n').filter((line) => line.length !== 0))
 				.pipe(z.array(z.string().url())),
 			トップページで表示: transformedPropertySchema.checkbox,
 		}),
