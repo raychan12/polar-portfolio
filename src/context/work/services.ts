@@ -15,6 +15,7 @@ export const collectionToWork = (entry: CollectionEntry<'works'>): Work => {
 
 	return {
 		id,
+		displayOrder: props['掲載順'],
 		visualImageUrl: props['サムネイル画像'].files.map((file) => fileToUrl(file)),
 		logoUrl: fileToUrl(logoImageFile),
 		description: props['概要'],
@@ -39,4 +40,16 @@ export const getTopThumbnailUrl = (work: Work): string => {
 	}
 
 	return topThumbnail;
+};
+
+// getCollection() の返り値の順番は非決定的なので、自前でソートを持つ必要がある
+export const sortWorksInDisplayOrder = (works: Work[]): Work[] => {
+	return works.toSorted((left, right) => {
+		if (right.displayOrder === left.displayOrder) {
+			// 常に並び順が決定的にできるように、少なくとも揺れはしないようにする
+			return right.id.localeCompare(left.id);
+		}
+
+		return right.displayOrder - left.displayOrder;
+	});
 };

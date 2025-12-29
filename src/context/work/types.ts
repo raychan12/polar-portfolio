@@ -1,5 +1,6 @@
 export type Work = {
 	id: string;
+	displayOrder: number;
 	visualImageUrl: string[];
 	logoUrl: string;
 	description: string;

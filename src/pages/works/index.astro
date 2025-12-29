@@ -5,13 +5,13 @@ import PageLayout from '../../layout/PageLayout.astro';
 
 import { Content } from './_internal/page/Content';
 
-import { collectionToWork } from '../../context/work/services';
+import { collectionToWork, sortWorksInDisplayOrder } from '../../context/work/services';
 import { getCollection } from 'astro:content';
 import { processImageForWorkCard } from '../../features/work/services';
 import type { WorkCardProps } from '../../features/work/components/WorkCard';
 
 const worksCollectionEntries = await getCollection('works');
-const works = worksCollectionEntries.map((work) => collectionToWork(work));
+const works = sortWorksInDisplayOrder(worksCollectionEntries.map((work) => collectionToWork(work)));
 
 const workCardProps: WorkCardProps[] = await Promise.all(works.map((work) => processImageForWorkCard(work)));
 ---
