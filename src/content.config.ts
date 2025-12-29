@@ -9,22 +9,17 @@ const works = defineCollection({
 	loader: notionLoader({
 		auth: NOTION_TOKEN,
 		database_id: NOTION_WORKS_DATABASE_ID,
-		sorts: [
-			{
-				// 基本、こちらで並び順を指定してもらう
-				property: '掲載順',
-				direction: 'descending',
-			},
-			{
-				// こちらは掲載順が被ってしまった際に、並び順を決定的にするためのバックアップ
-				timestamp: 'last_edited_time',
-				direction: 'ascending',
-			},
-		],
 	}),
 	schema: notionPageSchema({
 		properties: z.object({
 			Slug: transformedPropertySchema.rich_text,
+			掲載順: transformedPropertySchema.number.transform((order, ctx) => {
+				if (order == null) {
+					ctx.addIssue({ code: 'custom', message: '日付が設定されていません' });
+					return z.NEVER;
+				}
+				return order;
+			}),
 			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(WorkType))),
 			制作形態: transformedPropertySchema.select.pipe(z.enum(WorkContext)),
 			サムネイル画像: propertySchema.files.refine((file) => file.files.length > 0, {
