@@ -13,11 +13,12 @@ const works = defineCollection({
 	schema: notionPageSchema({
 		properties: z.object({
 			Slug: transformedPropertySchema.rich_text,
-			掲載順: transformedPropertySchema.number.transform((order, ctx) => {
-				if (order == null) {
-					ctx.addIssue({ code: 'custom', message: '日付が設定されていません' });
-					return z.NEVER;
-				}
+			掲載順: transformedPropertySchema.number.transform((order) => {
+				// TODO: @re-taro null の場合の扱いを確認後修正する
+				// if (order == null) {
+				// 	ctx.addIssue({ code: 'custom', message: '掲載順が設定されていません' });
+				// 	return z.NEVER;
+				// }
 				return order;
 			}),
 			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(WorkType))),
