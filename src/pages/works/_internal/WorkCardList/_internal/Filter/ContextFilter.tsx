@@ -1,13 +1,17 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback } from 'preact/hooks';
 
-import { WorkContext } from '../../../../context/work/types';
-import type { ContextFilterQuery } from '../query';
+import { WorkContext } from '../../../../../../context/work/definitions';
+import type { ContextFilterQuery } from '../../../../../../context/work/definitions';
+import type { EnumLike } from '../../../../../../foundation/utils/TypeUtils';
 
-import { list, button } from './Filter.css';
+import { list, button } from './styles.css';
 
-const ContextFilterButtons = ['all', ...WorkContext] as const;
-type ContextFilterButtons = (typeof ContextFilterButtons)[number];
+const ContextFilterButtons = {
+	ALL: 'all',
+	...WorkContext,
+} as const;
+type ContextFilterButtons = EnumLike<typeof ContextFilterButtons>;
 
 type Props = {
 	currentContext: ContextFilterQuery;
@@ -51,8 +55,8 @@ export const ContextFilter: FunctionComponent<Props> = ({ currentContext, onCont
 	return (
 		<nav aria-label="作品形態">
 			<ul class={list}>
-				{ContextFilterButtons.map((context) => (
-					<li>
+				{Object.values(ContextFilterButtons).map((context) => (
+					<li key={context}>
 						<button
 							class={button}
 							onClick={handleClick(context)}

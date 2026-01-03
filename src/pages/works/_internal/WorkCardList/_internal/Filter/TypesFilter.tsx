@@ -2,14 +2,18 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
 import type { FunctionComponent } from 'preact';
 import { useCallback } from 'preact/hooks';
 
-import { workTypeColorsCSS } from '../../../../context/work/styles';
-import { WorkType } from '../../../../context/work/types';
-import type { TypesFilterQuery } from '../query';
+import { WorkType } from '../../../../../../context/work/definitions';
+import type { TypesFilterQuery } from '../../../../../../context/work/definitions';
+import { workTypeColorMap } from '../../../../../../context/work/styles.css';
+import type { EnumLike } from '../../../../../../foundation/utils/TypeUtils';
 
-import { list, button, filterButtonTypeColor } from './Filter.css';
+import { list, button, filterButtonTypeColor } from './styles.css';
 
-const TypeFilterButtons = ['all', ...WorkType] as const;
-type TypeFilterButtons = (typeof TypeFilterButtons)[number];
+const TypeFilterButtons = {
+	ALL: 'all',
+	...WorkType,
+} as const;
+type TypeFilterButtons = EnumLike<typeof TypeFilterButtons>;
 
 type Props = {
 	currentTypes: TypesFilterQuery;
@@ -53,14 +57,14 @@ export const TypesFilter: FunctionComponent<Props> = ({ currentTypes, onTypesUpd
 	return (
 		<nav aria-label="作品タイプ">
 			<ul class={list}>
-				{TypeFilterButtons.map((type) => (
-					<li>
+				{Object.values(TypeFilterButtons).map((type) => (
+					<li key={type}>
 						<button
 							class={button}
 							onClick={handleClick(type)}
 							aria-current={isCurrentTypes(type) ? 'page' : undefined}
 							style={assignInlineVars({
-								[filterButtonTypeColor]: type === 'all' ? undefined : workTypeColorsCSS[type],
+								[filterButtonTypeColor]: type === 'all' ? undefined : workTypeColorMap[type],
 							})}>
 							#{type}
 						</button>

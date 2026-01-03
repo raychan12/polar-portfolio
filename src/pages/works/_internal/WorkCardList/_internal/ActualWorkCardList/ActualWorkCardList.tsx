@@ -1,50 +1,44 @@
 import type { FunctionComponent } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
 
-import { WorkCard, type WorkCardProps } from '../../../../features/work/components/WorkCard';
-import { ContextFilter } from '../components/ContextFilter';
-import { TypesFilter } from '../components/TypesFilter';
-import {
-	checkWorkMatch,
-	filterQueryToSearchParam,
-	parseFilterQuery,
-	type ContextFilterQuery,
-	type FilterQuery,
-	type TypesFilterQuery,
-} from '../query';
+import { WorkCard } from '../../../../../../context/work/components/WorkCard/WorkCard';
+import type {
+	ContextFilterQuery,
+	FilterQuery,
+	TypesFilterQuery,
+	WorkCard as WorkCardType,
+} from '../../../../../../context/work/definitions';
+import { parseFilterQuery, filterQueryToSearchParam, checkWorkMatch } from '../../../../../../context/work/services';
+import { ContextFilter } from '../Filter/ContextFilter';
+import { TypesFilter } from '../Filter/TypesFilter';
 
-import { filter, root, workList } from './Actual.css';
+import { filter, root, workList } from './styles.css';
 
 type Props = {
-	workCardProps: WorkCardProps[];
+	workCards: WorkCardType[];
 };
 
-export const Actual: FunctionComponent<Props> = ({ workCardProps }) => {
+export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 	const [query, setQuery] = useState(parseFilterQuery(new URLSearchParams(window.location.search)));
 
-	const handleQueryUpdate = (query: FilterQuery) => {
+	const handleQueryUpdate = useCallback((query: FilterQuery) => {
 		setQuery(query);
 		history.replaceState(undefined, '', `/works/?${filterQueryToSearchParam(query).toString()}`);
-	};
-
+	}, []);
 	const handleTypesQueryUpdate = useCallback(
 		(types: TypesFilterQuery) => {
 			handleQueryUpdate({ ...query, types });
 		},
-		[query],
+		[query, handleQueryUpdate],
 	);
-
 	const handleContextQueryUpdate = useCallback(
 		(context: ContextFilterQuery) => {
 			handleQueryUpdate({ ...query, context });
 		},
-		[query],
+		[query, handleQueryUpdate],
 	);
 
-	const filteredWork = useMemo(
-		() => workCardProps.filter((work) => checkWorkMatch(work.work, query)),
-		[query, workCardProps],
-	);
+	const filteredWork = useMemo(() => workCards.filter((work) => checkWorkMatch(work.work, query)), [query, workCards]);
 
 	return (
 		<div className={root}>
