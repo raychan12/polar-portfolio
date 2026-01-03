@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import Heading from './Heading.astro';
-import LinkButton from '../../../components/LinkButton.astro';
 
-import { CONTACT_FORM, TWITTER } from '../../../constant';
+import Heading from '../Heading/Heading.astro';
 
 import Avatar from '../../../assets/avatar.png';
 
-import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkIcon } from './ProfileSection.css';
+import { root, content, avatar, name, bio, shirokumaText, linksList, link, linkIcon } from './styles.css';
+import LinkButton from '../../../foundation/components/LinkButton/LinkButton.astro';
+import { TWITTER, CONTACT_FORM } from '../../../foundation/constants/link';
 ---
 
 <!-- TODO: コンテンツをあとで Notion に引っ越して、そこから引っ張る -->

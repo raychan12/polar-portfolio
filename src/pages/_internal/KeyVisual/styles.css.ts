@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { BreakPoints, vars } from '../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../foundation/styles/theme.css';
 
 export const root = style({
 	position: 'relative',

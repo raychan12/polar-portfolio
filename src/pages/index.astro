@@ -1,17 +1,18 @@
 ---
-import CommonLayout from '../layout/CommonLayout.astro';
-import PageLayout from '../layout/PageLayout.astro';
-import KeyVisual from './_internal/components/KeyVisual.astro';
-import WorkSection from './_internal/components/WorkSection.astro';
-import ProfileSection from './_internal/components/ProfileSection.astro';
-
-import { content } from './index.css';
+import CommonLayout from '../foundation/layouts/CommonLayout/CommonLayout.astro';
+import PageLayout from '../foundation/layouts/PageLayout/PageLayout.astro';
+import TopLayout from '../foundation/layouts/TopLayout/TopLayout.astro';
+import KeyVisual from './_internal/KeyVisual/KeyVisual.astro';
+import WorkSection from './_internal/WorkSection/WorkSection.astro';
+import ProfileSection from './_internal/ProfileSection/ProfileSection.astro';
 ---
 
 <CommonLayout>
 	<KeyVisual />
-	<PageLayout class={content}>
-		<WorkSection />
-		<ProfileSection />
+	<PageLayout>
+		<TopLayout>
+			<WorkSection />
+			<ProfileSection />
+		</TopLayout>
 	</PageLayout>
 </CommonLayout>
