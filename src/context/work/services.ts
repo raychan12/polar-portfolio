@@ -43,13 +43,31 @@ export const getTopThumbnailUrl = (work: Work): string => {
 };
 
 // getCollection() の返り値の順番は非決定的なので、自前でソートを持つ必要がある
+// TODO: @re-taro null の場合の扱いを確認後修正する
 export const sortWorksInDisplayOrder = (works: Work[]): Work[] => {
 	return works.toSorted((left, right) => {
-		if (right.displayOrder === left.displayOrder) {
-			// 常に並び順が決定的にできるように、少なくとも揺れはしないようにする
+		const leftOrder = left.displayOrder;
+		const rightOrder = right.displayOrder;
+
+		// 両方 null
+		if (leftOrder == null && rightOrder == null) {
+			// 揺れ防止のため id で決定的に
 			return right.id.localeCompare(left.id);
 		}
 
-		return right.displayOrder - left.displayOrder;
+		// null は一番うしろ
+		if (leftOrder == null) {
+			return 1;
+		}
+		if (rightOrder == null) {
+			return -1;
+		}
+
+		// 両方 number
+		if (leftOrder === rightOrder) {
+			return right.id.localeCompare(left.id);
+		}
+
+		return rightOrder - leftOrder;
 	});
 };
