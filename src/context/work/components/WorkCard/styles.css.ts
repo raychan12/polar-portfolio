@@ -1,6 +1,6 @@
 import { createVar, fallbackVar, style } from '@vanilla-extract/css';
 
-import { BreakPoints, vars } from '../../../styles/theme.css';
+import { BreakPoints, vars } from '../../../../foundation/styles/theme.css';
 
 // <a> タグの中に <a> はネストできないので、nav.tagsList の取り扱いに関して
 // この記事を参考にしています:
