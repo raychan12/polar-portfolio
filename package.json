@@ -7,8 +7,8 @@
 		"node": "24.11.0"
 	},
 	"scripts": {
-		"build": "astro build",
-		"clean:cache": "rimraf .astro node_modules/.cache",
+		"build": "pnpm run clean:cache && astro build",
+		"clean:cache": "rimraf .astro node_modules/.astro",
 		"dev": "pnpm run clean:cache && astro dev",
 		"format": "prettier --write .",
 		"format:ci": "prettier --check .",
