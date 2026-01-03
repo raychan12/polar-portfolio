@@ -3,7 +3,8 @@ import { propertySchema, transformedPropertySchema } from '@chlorinec-pkgs/notio
 import { defineCollection, z } from 'astro:content';
 import { NOTION_TOKEN, NOTION_WORKS_DATABASE_ID } from 'astro:env/server';
 
-import { WorkContext, WorkType } from './context/work/types';
+import { WorkContext, WorkType } from './context/work/definitions';
+import { valuesOf } from './foundation/utils/SchemaUtils';
 
 const works = defineCollection({
 	loader: notionLoader({
@@ -21,8 +22,8 @@ const works = defineCollection({
 				// }
 				return order;
 			}),
-			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(WorkType))),
-			制作形態: transformedPropertySchema.select.pipe(z.enum(WorkContext)),
+			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(valuesOf(WorkType)))),
+			制作形態: transformedPropertySchema.select.pipe(z.enum(valuesOf(WorkContext))),
 			サムネイル画像: propertySchema.files.refine((file) => file.files.length > 0, {
 				message: 'サムネイル画像は 1 枚以上設定する必要があります',
 			}),

@@ -17,12 +17,14 @@
 		"lint:fix": "eslint --fix .",
 		"preview": "astro preview",
 		"sync": "astro sync",
+		"test": "vitest",
 		"typecheck": "tsc --noEmit && astro check"
 	},
 	"dependencies": {
 		"@chlorinec-pkgs/notion-astro-loader": "1.1.2",
 		"@vanilla-extract/dynamic": "2.1.5",
 		"astro": "5.9.4",
+		"clsx": "2.1.1",
 		"preact": "10.28.0"
 	},
 	"devDependencies": {
@@ -53,6 +55,8 @@
 		"typescript": "5.9.3",
 		"typescript-eslint": "8.46.2",
 		"vite": "7.2.2",
-		"wrangler": "4.50.0"
+		"vitest": "4.0.16",
+		"wrangler": "4.50.0",
+		"zod": "4.3.4"
 	}
 }

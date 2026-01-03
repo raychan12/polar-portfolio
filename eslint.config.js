@@ -36,7 +36,7 @@ export default [
 	...astro.configs.recommended,
 	...astro.configs['jsx-a11y-strict'],
 	{
-		files: ['**/*.{js,ts,tsx}'],
+		files: ['**/*.{js,ts,tsx}', '**/*.astro/*.ts'],
 		languageOptions: {
 			parser: tseslint.parser,
 			ecmaVersion: 'latest',
