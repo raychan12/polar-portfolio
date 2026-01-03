@@ -1,29 +1,14 @@
+import { clsx } from 'clsx';
 import type { FunctionComponent, MouseEventHandler } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 
-import type { Work } from '../../../../../../context/work/types';
-import type { ImgTagAttributes } from '../../../../../../utils/imageUtils';
+import type { ThumbnailGallery as ThumbnailGalleryType } from '../definitions';
 
-import {
-	currentImage,
-	mainImage,
-	root,
-	selectorListElement,
-	selectorImage,
-	selectorList,
-} from './ThumbnailGallery.css';
+import { currentImage, mainImage, root, selectorListElement, selectorImage, selectorList } from './styles.css';
 
-export type ThumbnailGalleryProps = {
-	work: Work;
-	visualImageAttrs: VisualImageAttrs[];
-};
+type Props = ThumbnailGalleryType;
 
-export type VisualImageAttrs = {
-	mainImage: ImgTagAttributes;
-	selectorImage: ImgTagAttributes;
-};
-
-export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ work, visualImageAttrs }) => {
+export const ThumbnailGallery: FunctionComponent<Props> = ({ work, visualImageAttrs }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const currentImageAttr = visualImageAttrs.at(currentIndex);
@@ -40,7 +25,7 @@ export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ wor
 		}
 
 		const index = parseInt(maybeIndex, 10);
-		if (isNaN(index)) {
+		if (Number.isNaN(index)) {
 			return;
 		}
 
@@ -52,8 +37,8 @@ export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ wor
 	return (
 		<div className={root}>
 			<img
-				className={mainImage}
 				{...currentImageAttr.mainImage}
+				className={mainImage}
 				alt={`「${work.logoAlt}」の${currentIndex + 1}枚目の画像`}
 			/>
 			<ul className={selectorList}>
@@ -64,8 +49,8 @@ export const ThumbnailGallery: FunctionComponent<ThumbnailGalleryProps> = ({ wor
 						<li className={selectorListElement} key={image.selectorImage.src}>
 							<button onClick={handleClick} data-index={i} aria-selected={current}>
 								<img
-									className={`${selectorImage} ${current ? currentImage : ''}`}
 									{...image.selectorImage}
+									className={clsx([selectorImage, current && currentImage])}
 									alt={`${i + 1}枚目`}
 								/>
 							</button>

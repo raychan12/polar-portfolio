@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import { backButton } from './styles.css';
+---
+
+<button class={backButton} id="back">
+	<Icon name="back-arrow" width={32} height={6} />
+	<span>back</span>
+</button>
+<script>
+	const backButton = document.getElementById('back');
+	if (backButton == null || !(backButton instanceof HTMLButtonElement)) {
+		throw new Error('The element #back was not found');
+	}
+
+	backButton.addEventListener('click', () => {
+		if (document.referrer.startsWith(document.location.origin)) {
+			// 同サイトから来ていそうな場合は、history.back() で前ページに戻る
+			history.back();
+			return;
+		}
+
+		// それ以外の場合は、一覧ページに固定で遷移する
+		document.location.assign('/works');
+	});
+</script>

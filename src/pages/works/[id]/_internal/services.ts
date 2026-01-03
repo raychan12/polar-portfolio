@@ -1,11 +1,11 @@
 import { getImage } from 'astro:assets';
 
-import type { Work } from '../../../../../../context/work/types';
-import { getImageToImgAttrs } from '../../../../../../utils/imageUtils';
+import type { Work } from '../../../../context/work/definitions';
+import { getImageToImgAttrs } from '../../../../foundation/utils/ImageUtils';
 
-import type { ThumbnailGalleryProps, VisualImageAttrs } from './ThumbnailGallery';
+import type { ThumbnailGallery, VisualImageAttrs } from './definitions';
 
-export const processImageForThumbnailGallery = async (work: Work): Promise<ThumbnailGalleryProps> => {
+export const processImageForThumbnailGallery = async (work: Work): Promise<ThumbnailGallery> => {
 	const visualImageAttrs = await Promise.all(
 		work.visualImageUrl.map(
 			async (img) =>

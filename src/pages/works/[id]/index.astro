@@ -1,27 +1,39 @@
 ---
+import { fileToUrl } from '@chlorinec-pkgs/notion-astro-loader';
 import type { GetStaticPaths } from 'astro';
-import { Icon } from 'astro-icon/components';
 
-import CommonLayout from '../../../layout/CommonLayout.astro';
-import PageLayout from '../../../layout/PageLayout.astro';
-import PageTitle from '../../../components/PageTitle.astro';
+import type { Work } from '../../../context/work/definitions';
 
-import { ThumbnailGallery } from './_internal/components/ThumbnailGallery/ThumbnailGallery';
-import WorkDescriptions from './_internal/components/WorkDescriptions.astro';
-
-import type { Work } from '../../../context/work/types';
-
-import { root, backButton } from './_index.css';
 import { getCollection, render } from 'astro:content';
-import { collectionToWork } from '../../../context/work/services';
-import { processImageForThumbnailGallery } from './_internal/components/ThumbnailGallery/image';
+import { convertCollectionToWork } from '../../../context/work/services';
 import type { RenderResult } from 'astro:content';
+import PageTitle from '../../../foundation/components/PageTitle/PageTitle.astro';
+import CommonLayout from '../../../foundation/layouts/CommonLayout/CommonLayout.astro';
+import PageLayout from '../../../foundation/layouts/PageLayout/PageLayout.astro';
+import WorkLayout from '../../../foundation/layouts/WorkLayout/WorkLayout.astro';
+import WorkDescriptions from './_internal/WorkDescriptions/WorkDescriptions.astro';
+import { processImageForThumbnailGallery } from './_internal/services';
+import { ThumbnailGallery } from './_internal/ThumbnailGallery/ThumbnailGallery';
+import BackButton from './_internal/BackButton/BackButton.astro';
 
 export const getStaticPaths = (async () => {
 	const worksCollectionEntries = await getCollection('works');
 	return await Promise.all(
 		worksCollectionEntries.map(async (entry) => {
-			const work = collectionToWork(entry);
+			const {
+				['ロゴ画像']: logoImages,
+				['サムネイル画像']: thumbnailImages,
+				...propsWithoutImages
+			} = entry.data.properties;
+			const logoImageFile = logoImages.files.at(0);
+			if (logoImageFile == null) {
+				throw new Error(`Expected to have at least one logo image for work '${propsWithoutImages.Slug}'`);
+			}
+			const logoUrl = fileToUrl(logoImageFile);
+			const visualImageUrl = thumbnailImages.files.map((file) => fileToUrl(file));
+
+			const work = convertCollectionToWork({ propsWithoutImages, logoUrl, visualImageUrl });
+
 			return {
 				params: { id: work.id },
 				props: { rendered: await render(entry), work },
@@ -42,30 +54,11 @@ const galleryProps = await processImageForThumbnailGallery(work);
 
 <CommonLayout>
 	<PageTitle title="works" />
-	<PageLayout class={root}>
-		<ThumbnailGallery client:load {...galleryProps} />
-		<WorkDescriptions {work} {rendered} />
-		<button class={backButton} id="back">
-			<Icon name="back-arrow" width={32} height={6} />
-			<span>back</span>
-		</button>
+	<PageLayout>
+		<WorkLayout>
+			<ThumbnailGallery client:load {...galleryProps} />
+			<WorkDescriptions {work} {rendered} />
+			<BackButton />
+		</WorkLayout>
 	</PageLayout>
 </CommonLayout>
-
-<script>
-	const backButton = document.getElementById('back');
-	if (backButton == null || !(backButton instanceof HTMLButtonElement)) {
-		throw new Error('The element #back was not found');
-	}
-
-	backButton.addEventListener('click', () => {
-		if (document.referrer.startsWith(document.location.origin)) {
-			// 同サイトから来ていそうな場合は、history.back() で前ページに戻る
-			history.back();
-			return;
-		}
-
-		// それ以外の場合は、一覧ページに固定で遷移する
-		document.location.assign('/works');
-	});
-</script>

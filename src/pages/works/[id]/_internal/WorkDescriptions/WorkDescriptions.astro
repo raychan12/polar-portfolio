@@ -2,9 +2,6 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
-import type { Work } from '../../../../../context/work/types';
-import { workTypeColorsCSS } from '../../../../../context/work/styles';
-
 import { format } from 'date-fns';
 
 import {
@@ -25,9 +22,11 @@ import {
 	detailSectionTitle,
 	renderedContent,
 	tagsLinkColor,
-} from './WorkDescriptions.css';
+} from './styles.css';
 import type { RenderResult } from 'astro:content';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
+import type { Work } from '../../../../../context/work/definitions';
+import { workTypeColorMap } from '../../../../../context/work/styles.css';
 
 interface Props {
 	rendered: RenderResult;
@@ -49,7 +48,7 @@ const {
 						class={tagsLink}
 						href={`/works?types=${encodeURIComponent(tag)}`}
 						style={assignInlineVars({
-							[tagsLinkColor]: workTypeColorsCSS[tag],
+							[tagsLinkColor]: workTypeColorMap[tag],
 						})}>
 						#{tag}
 					</a>
