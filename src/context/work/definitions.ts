@@ -1,5 +1,5 @@
-import type { ImgTagAttributes } from '../../foundation/utils/ImageUtils';
-import type { EnumLike } from '../../foundation/utils/TypeUtils';
+import type { ImgTagAttributes } from '../../foundation/utils/imageUtils';
+import type { EnumLike } from '../../foundation/utils/typeUtils';
 
 export type Work = {
 	id: string;

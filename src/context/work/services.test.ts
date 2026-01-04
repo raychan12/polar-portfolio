@@ -1,7 +1,7 @@
 import type { UnresolvedImageTransform } from 'astro';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-vi.mock('../../foundation/utils/ImageUtils', () => {
+vi.mock('../../foundation/utils/imageUtils', () => {
 	return {
 		getImageToImgAttrs: vi.fn((img: unknown) => ({ __mocked: 'imgAttrs', img })),
 	};

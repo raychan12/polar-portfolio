@@ -4,7 +4,7 @@ import { defineCollection, z } from 'astro:content';
 import { NOTION_TOKEN, NOTION_WORKS_DATABASE_ID } from 'astro:env/server';
 
 import { WorkContext, WorkType } from './context/work/definitions';
-import { valuesOf } from './foundation/utils/SchemaUtils';
+import { valuesOf } from './foundation/utils/schemaUtils';
 
 const works = defineCollection({
 	loader: notionLoader({

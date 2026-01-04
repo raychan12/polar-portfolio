@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { z } from 'zod';
 
-import { valuesOf } from './SchemaUtils';
+import { valuesOf } from './schemaUtils';
 
 const WorkType = {
 	UIUX: 'uiux',

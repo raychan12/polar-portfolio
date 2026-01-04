@@ -5,7 +5,7 @@ import { useCallback } from 'preact/hooks';
 import { WorkType } from '../../../../../../context/work/definitions';
 import type { TypesFilterQuery } from '../../../../../../context/work/definitions';
 import { workTypeColorMap } from '../../../../../../context/work/styles.css';
-import type { EnumLike } from '../../../../../../foundation/utils/TypeUtils';
+import type { EnumLike } from '../../../../../../foundation/utils/typeUtils';
 
 import { list, button, filterButtonTypeColor } from './styles.css';
 

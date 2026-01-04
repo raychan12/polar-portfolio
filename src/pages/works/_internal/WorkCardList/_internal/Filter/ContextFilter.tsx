@@ -3,7 +3,7 @@ import { useCallback } from 'preact/hooks';
 
 import { WorkContext } from '../../../../../../context/work/definitions';
 import type { ContextFilterQuery } from '../../../../../../context/work/definitions';
-import type { EnumLike } from '../../../../../../foundation/utils/TypeUtils';
+import type { EnumLike } from '../../../../../../foundation/utils/typeUtils';
 
 import { list, button } from './styles.css';
 

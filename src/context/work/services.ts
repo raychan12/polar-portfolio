@@ -1,7 +1,7 @@
 import type { GetImageResult, UnresolvedImageTransform } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 
-import { getImageToImgAttrs } from '../../foundation/utils/ImageUtils';
+import { getImageToImgAttrs } from '../../foundation/utils/imageUtils';
 
 import {
 	WorkContext,
