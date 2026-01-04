@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import type { FunctionComponent, MouseEventHandler } from 'preact';
 import { useCallback, useState } from 'preact/hooks';
 
-import type { ThumbnailGallery as ThumbnailGalleryType } from '../definitions';
+import type { ThumbnailGallery as ThumbnailGalleryType } from '../../../../../context/work/definitions';
 
 import { currentImage, mainImage, root, selectorListElement, selectorImage, selectorList } from './styles.css';
 

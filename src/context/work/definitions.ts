@@ -47,3 +47,13 @@ export type FilterQuery = {
 	context: ContextFilterQuery;
 	types: TypesFilterQuery;
 };
+
+export type ThumbnailGallery = {
+	work: Work;
+	visualImageAttrs: VisualImageAttrs[];
+};
+
+export type VisualImageAttrs = {
+	mainImage: ImgTagAttributes;
+	selectorImage: ImgTagAttributes;
+};

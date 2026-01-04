@@ -3,7 +3,15 @@ import type { CollectionEntry } from 'astro:content';
 
 import { getImageToImgAttrs } from '../../foundation/utils/ImageUtils';
 
-import { WorkContext, WorkType, type Work, type WorkCard, type FilterQuery } from './definitions';
+import {
+	WorkContext,
+	WorkType,
+	type Work,
+	type WorkCard,
+	type FilterQuery,
+	type ThumbnailGallery,
+	type VisualImageAttrs,
+} from './definitions';
 
 export const filterQueryToSearchParam = (query: FilterQuery): URLSearchParams => {
 	return new URLSearchParams({
@@ -172,4 +180,38 @@ export const sortWorksInDisplayOrder = (works: Work[]): Work[] => {
 
 		return rightOrder - leftOrder;
 	});
+};
+
+export const processImageForThumbnailGallery = async ({
+	work,
+	processor,
+}: {
+	work: Work;
+	processor: (opts: UnresolvedImageTransform) => Promise<GetImageResult>;
+}): Promise<ThumbnailGallery> => {
+	const visualImageAttrs = await Promise.all(
+		work.visualImageUrl.map(
+			async (img) =>
+				({
+					mainImage: getImageToImgAttrs(
+						await processor({
+							src: img,
+							width: 320,
+							height: 320,
+							densities: [1, 2],
+						}),
+					),
+					selectorImage: getImageToImgAttrs(
+						await processor({
+							src: img,
+							width: 80,
+							height: 80,
+							densities: [1, 2],
+						}),
+					),
+				}) satisfies VisualImageAttrs,
+		),
+	);
+
+	return { work, visualImageAttrs };
 };

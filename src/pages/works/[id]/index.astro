@@ -1,18 +1,17 @@
 ---
 import { fileToUrl } from '@chlorinec-pkgs/notion-astro-loader';
 import type { GetStaticPaths } from 'astro';
-
-import type { Work } from '../../../context/work/definitions';
-
+import { getImage } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
-import { convertCollectionToWork } from '../../../context/work/services';
 import type { RenderResult } from 'astro:content';
+
+import { convertCollectionToWork, processImageForThumbnailGallery } from '../../../context/work/services';
+import type { Work } from '../../../context/work/definitions';
 import PageTitle from '../../../foundation/components/PageTitle/PageTitle.astro';
 import CommonLayout from '../../../foundation/layouts/CommonLayout/CommonLayout.astro';
 import PageLayout from '../../../foundation/layouts/PageLayout/PageLayout.astro';
 import WorkLayout from '../../../foundation/layouts/WorkLayout/WorkLayout.astro';
 import WorkDescriptions from './_internal/WorkDescriptions/WorkDescriptions.astro';
-import { processImageForThumbnailGallery } from './_internal/services';
 import { ThumbnailGallery } from './_internal/ThumbnailGallery/ThumbnailGallery';
 import BackButton from './_internal/BackButton/BackButton.astro';
 
@@ -49,7 +48,7 @@ interface Props {
 
 const { rendered, work } = Astro.props;
 
-const galleryProps = await processImageForThumbnailGallery(work);
+const galleryProps = await processImageForThumbnailGallery({ work, processor: getImage });
 ---
 
 <CommonLayout>
