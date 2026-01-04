@@ -24,7 +24,7 @@ describe('work services', () => {
 		vi.clearAllMocks();
 	});
 
-	describe('filterQueryToSearchParam / parseFilterQuery', () => {
+	describe('filterQueryToSearchParam', () => {
 		it('filterQueryToSearchParam: context が null/undefined のときは空文字、types が空のときも空文字', () => {
 			const params = filterQueryToSearchParam({ context: null, types: [] });
 			expect(params.get('context')).toBe('');
@@ -39,7 +39,9 @@ describe('work services', () => {
 			expect(params.get('context')).toBe('commission');
 			expect(params.get('types')).toBe('graphic sosaku');
 		});
+	});
 
+	describe('parseFilterQuery', () => {
 		it('parseFilterQuery: context が不正値なら null', () => {
 			const params = new URLSearchParams({ context: 'invalid', types: '' });
 			const q = parseFilterQuery(params);
