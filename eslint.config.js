@@ -124,6 +124,17 @@ export default [
 			radix: 'error',
 			'require-unicode-regexp': 'error',
 			'symbol-description': 'error',
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: ['**/factories', '**/fixtures'],
+							message: 'factories / fixtures は test ファイル以外では import できません',
+						},
+					],
+				},
+			],
 		},
 	},
 	{
@@ -181,6 +192,12 @@ export default [
 				// import-x が astro:assets 等を解決できなくてエラーを吐くのでこうしています
 				{ ignore: ['^astro:'] },
 			],
+		},
+	},
+	{
+		files: ['**/*.test.ts'],
+		rules: {
+			'no-restricted-imports': 'off',
 		},
 	},
 	prettier,
