@@ -195,7 +195,7 @@ export default [
 		},
 	},
 	{
-		files: ['**/*.test.ts'],
+		files: ['**/*.test.ts', '**/fixtures.ts', '**/factories.ts'],
 		rules: {
 			'no-restricted-imports': 'off',
 		},
