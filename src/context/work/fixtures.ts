@@ -1,8 +1,8 @@
-import { createSampleWork } from './factories';
-import type { Work } from './types';
+import type { Work } from './definitions';
+import { createWork } from './factories';
 
 export const createWorkWithPortraitFixture = (): Work =>
-	createSampleWork({
+	createWork({
 		visualImageUrl: [
 			`https://picsum.photos/id/100/480/640`,
 			`https://picsum.photos/id/101/480/640`,
@@ -13,18 +13,18 @@ export const createWorkWithPortraitFixture = (): Work =>
 	});
 
 export const createWorkWithInlineLogoFixture = (): Work =>
-	createSampleWork({
+	createWork({
 		logoPosition: 'inline',
 		logoUrl: `https://picsum.photos/id/100/320/80`,
 	});
 
 export const createWorkWithPeriodFixture = (): Work =>
-	createSampleWork({
+	createWork({
 		date: { period: { from: new Date('2024-01-01'), to: new Date('2024-03-31') } },
 	});
 
 export const createWorkWithLongTextFixture = (): Work =>
-	createSampleWork({
+	createWork({
 		description: `説明文`.repeat(30),
 		assigning: `担当箇所`.repeat(30),
 	});

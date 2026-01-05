@@ -1,4 +1,4 @@
-import type { Work } from './types';
+import type { Work } from './definitions';
 
 const baseSampleWork: Work = {
 	id: 'work',
@@ -25,6 +25,6 @@ const baseSampleWork: Work = {
 /**
  * landscape, logo at left, instant date
  */
-export const createSampleWork = (original: Partial<Work> = {}): Work => {
+export const createWork = (original: Partial<Work> = {}): Work => {
 	return { ...baseSampleWork, ...original };
 };

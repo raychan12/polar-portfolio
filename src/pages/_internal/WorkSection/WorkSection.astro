@@ -1,0 +1,53 @@
+---
+import { fileToUrl } from '@chlorinec-pkgs/notion-astro-loader';
+import { getImage } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+import Heading from '../Heading/Heading.astro';
+import {
+	convertCollectionToWork,
+	processImageForWorkCard,
+	sortWorksInDisplayOrder,
+} from '../../../context/work/services';
+import { WorkCard } from '../../../context/work/components/WorkCard/WorkCard';
+import LinkButton from '../../../foundation/components/LinkButton/LinkButton.astro';
+
+import { root, worksList, work, linkButton } from './styles.css';
+
+const worksCollectionEntries = await getCollection('works');
+const works = sortWorksInDisplayOrder(
+	worksCollectionEntries.map((work) => {
+		const {
+			['ロゴ画像']: logoImages,
+			['サムネイル画像']: thumbnailImages,
+			...propsWithoutImages
+		} = work.data.properties;
+		const logoImageFile = logoImages.files.at(0);
+		if (logoImageFile == null) {
+			throw new Error(`Expected to have at least one logo image for work '${propsWithoutImages.Slug}'`);
+		}
+		const logoUrl = fileToUrl(logoImageFile);
+		const visualImageUrl = thumbnailImages.files.map((file) => fileToUrl(file));
+
+		return convertCollectionToWork({ propsWithoutImages, logoUrl, visualImageUrl });
+	}),
+);
+const pickedUpWorks = works.filter((work) => work.pickUp);
+const workCardProps = await Promise.all(
+	pickedUpWorks.map((work) => processImageForWorkCard({ work, processor: getImage })),
+);
+---
+
+<section class={root}>
+	<Heading>works</Heading>
+	<ul class={worksList}>
+		{
+			workCardProps.map((workCardProps) => (
+				<li class={work}>
+					<WorkCard {...workCardProps} />
+				</li>
+			))
+		}
+	</ul>
+	<LinkButton class={linkButton} href="/works">see all</LinkButton>
+</section>

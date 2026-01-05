@@ -14,6 +14,9 @@ export default defineConfig({
 	site: 'https://ijus.art',
 	vite: {
 		plugins: [vanillaExtractPlugin()],
+		//optimizeDeps: {
+		//	exclude: ["@chlorinec-pkgs/notion-astro-loader"],
+		//},
 	},
 	image: {
 		responsiveStyles: true,
@@ -54,7 +57,12 @@ export default defineConfig({
 			},
 		],
 	},
-	integrations: [icon(), preact()],
+	integrations: [
+		icon({
+			iconDir: 'src/foundation/icons',
+		}),
+		preact(),
+	],
 	env: {
 		schema: {
 			NOTION_TOKEN: envField.string({
