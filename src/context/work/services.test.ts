@@ -13,7 +13,6 @@ import {
 	parseFilterQuery,
 	checkWorkMatch,
 	processImageForWorkCard,
-	convertCollectionToWork,
 	getTopThumbnailUrl,
 	sortWorksInDisplayOrder,
 	processImageForThumbnailGallery,
@@ -146,72 +145,6 @@ describe('work services', () => {
 
 			const sorted = sortWorksInDisplayOrder([w1, w2, w3]);
 			expect(sorted.map((w) => w.id)).toEqual(['zzz', 'mmm', 'aaa']);
-		});
-	});
-
-	describe('convertCollectionToWork', () => {
-		it('end が無い場合は instant になる', () => {
-			const propsWithoutImages = {
-				Slug: 'slug-1',
-				掲載順: 7,
-				概要: 'desc',
-				ロゴタイトル: 'alt',
-				日付: { start: new Date('2025-01-01'), end: null },
-				作品タイプ: ['graphic'],
-				制作形態: 'commission',
-				担当部分: 'assign',
-				ロゴ配置: 'left',
-				リンク: ['https://example.com'],
-				トップページで表示: true,
-			};
-
-			const w = convertCollectionToWork({
-				propsWithoutImages: propsWithoutImages as never,
-				logoUrl: 'logo.png',
-				visualImageUrl: ['v1.png', 'v2.png'],
-			});
-
-			expect(w).toMatchObject({
-				id: 'slug-1',
-				displayOrder: 7,
-				visualImageUrl: ['v1.png', 'v2.png'],
-				logoUrl: 'logo.png',
-				description: 'desc',
-				logoAlt: 'alt',
-				types: ['graphic'],
-				context: 'commission',
-				assigning: 'assign',
-				logoPosition: 'left',
-				links: ['https://example.com'],
-				pickUp: true,
-			});
-			expect(w.date).toEqual({ instant: new Date('2025-01-01') });
-		});
-
-		it('end がある場合は period になる', () => {
-			const propsWithoutImages = {
-				Slug: 'slug-2',
-				掲載順: null,
-				概要: 'desc2',
-				ロゴタイトル: 'alt2',
-				日付: { start: new Date('2025-01-01'), end: new Date('2025-02-01') },
-				作品タイプ: ['uiux'],
-				制作形態: 'personal',
-				担当部分: 'assign2',
-				ロゴ配置: 'inline',
-				リンク: [],
-				トップページで表示: false,
-			};
-
-			const w = convertCollectionToWork({
-				propsWithoutImages: propsWithoutImages as never,
-				logoUrl: 'logo2.png',
-				visualImageUrl: ['v.png'],
-			});
-
-			expect(w.date).toEqual({
-				period: { from: new Date('2025-01-01'), to: new Date('2025-02-01') },
-			});
 		});
 	});
 
