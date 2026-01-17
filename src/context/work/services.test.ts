@@ -93,7 +93,7 @@ describe('work services', () => {
 			expect(ok).toBe(true);
 		});
 
-		it('query.types があり、work.types と 1つしか重なりがなければ false', () => {
+		it('query.types があり、work.types と部分的な重なりがあれば false', () => {
 			const work = createWork({ types: ['graphic', 'sosaku'] });
 			const ok = checkWorkMatch(work, { context: 'commission', types: ['uiux', 'graphic'] });
 			expect(ok).toBe(false);
