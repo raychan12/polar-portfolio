@@ -30,7 +30,7 @@ export const parseFilterQuery = (params: URLSearchParams): FilterQuery => {
 export const checkWorkMatch = (work: Work, query: FilterQuery) => {
 	return (
 		(query.context == null || query.context === work.context) &&
-		(query.types.length === 0 || query.types.some((type) => work.types.includes(type)))
+		(query.types.length === 0 || query.types.every((type) => work.types.includes(type)))
 	);
 };
 
