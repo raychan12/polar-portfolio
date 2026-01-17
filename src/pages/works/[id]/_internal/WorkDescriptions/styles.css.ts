@@ -170,7 +170,7 @@ globalStyle(`${renderedContent} :where(li)`, {
 });
 
 globalStyle(`${renderedContent} :where(p:empty)`, {
-	height: 'calc(1em * 1.5)',
+	height: 'calc(1em * 2)',
 });
 
 globalStyle(`${renderedContent} .color-blue`, {
