@@ -112,61 +112,65 @@ export const renderedContent = style({
 // FIXME: Markdown コンテンツが入る div 以下のスタイリングのために globalStyle を
 //        使っているけど、もう少しいいやり方がありそう
 
-globalStyle(`${renderedContent} h1`, {
+globalStyle(`${renderedContent} :where(h1)`, {
 	fontSize: '1.75em',
 	lineHeight: '200%',
 	marginBlock: '1em 0.5em',
 });
 
-globalStyle(`${renderedContent} h2`, {
+globalStyle(`${renderedContent} :where(h2)`, {
 	fontSize: '1.5em',
 	lineHeight: '200%',
 	marginBlock: '1em 0.5em',
 });
 
-globalStyle(`${renderedContent} h3`, {
+globalStyle(`${renderedContent} :where(h3)`, {
 	fontSize: '1.3em',
 	lineHeight: '200%',
 	marginBlock: '1em 0.5em',
 });
 
-globalStyle(`${renderedContent} b`, {
+globalStyle(`${renderedContent} :where(b)`, {
 	fontWeight: 600,
 });
 
-globalStyle(`${renderedContent} i`, {
+globalStyle(`${renderedContent} :where(i)`, {
 	fontStyle: 'italic',
 });
 
-globalStyle(`${renderedContent} u`, {
+globalStyle(`${renderedContent} :where(u)`, {
 	textDecoration: 'underline',
 });
 
-globalStyle(`${renderedContent} s`, {
+globalStyle(`${renderedContent} :where(s)`, {
 	textDecoration: 'line-through',
 });
 
-globalStyle(`${renderedContent} code`, {
+globalStyle(`${renderedContent} :where(code)`, {
 	fontFamily: 'monospace',
 });
 
-globalStyle(`${renderedContent} a`, {
+globalStyle(`${renderedContent} :where(a)`, {
 	textDecoration: 'underline',
 	color: vars.color.accent.alpha,
 });
 
-globalStyle(`${renderedContent} ul`, {
+globalStyle(`${renderedContent} :where(ul)`, {
 	marginLeft: '1.5em',
 	listStyle: 'disc',
 });
 
-globalStyle(`${renderedContent} ol`, {
+globalStyle(`${renderedContent} :where(ol)`, {
 	marginLeft: '1.5em',
 	listStyle: 'decimal',
 });
 
-globalStyle(`${renderedContent} li`, {
+globalStyle(`${renderedContent} :where(li)`, {
 	paddingLeft: '0.5em',
+});
+
+globalStyle(`${renderedContent} :where(p:empty)`, {
+	height: 'calc(1em * 2)',
 });
 
 globalStyle(`${renderedContent} .color-blue`, {
