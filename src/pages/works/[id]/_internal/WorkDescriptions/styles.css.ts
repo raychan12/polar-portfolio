@@ -169,13 +169,8 @@ globalStyle(`${renderedContent} :where(li)`, {
 	paddingLeft: '0.5em',
 });
 
-globalStyle(`${renderedContent} :where(p)`, {
-	minHeight: '1em',
-});
-
 globalStyle(`${renderedContent} :where(p:empty)`, {
-	marginTop: '0.5em',
-	marginBottom: '0.5em',
+	height: 'calc(1em * 1.5)',
 });
 
 globalStyle(`${renderedContent} .color-blue`, {
