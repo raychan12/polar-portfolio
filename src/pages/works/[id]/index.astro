@@ -1,11 +1,11 @@
 ---
-import { fileToUrl } from '@chlorinec-pkgs/notion-astro-loader';
 import type { GetStaticPaths } from 'astro';
 import { getImage } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import type { RenderResult } from 'astro:content';
 
-import { convertCollectionToWork, processImageForThumbnailGallery } from '../../../context/work/services';
+import { processImageForThumbnailGallery } from '../../../context/work/services';
+import { getManyWork } from '../../../context/work/repository';
 import type { Work } from '../../../context/work/definitions';
 import PageTitle from '../../../foundation/components/PageTitle/PageTitle.astro';
 import CommonLayout from '../../../foundation/layouts/CommonLayout/CommonLayout.astro';
@@ -16,37 +16,31 @@ import { ThumbnailGallery } from './_internal/ThumbnailGallery/ThumbnailGallery'
 import BackButton from './_internal/BackButton/BackButton.astro';
 
 export const getStaticPaths = (async () => {
-	const worksCollectionEntries = await getCollection('works');
-	return await Promise.all(
-		worksCollectionEntries.map(async (entry) => {
-			const {
-				['ロゴ画像']: logoImages,
-				['サムネイル画像']: thumbnailImages,
-				...propsWithoutImages
-			} = entry.data.properties;
-			const logoImageFile = logoImages.files.at(0);
-			if (logoImageFile == null) {
-				throw new Error(`Expected to have at least one logo image for work '${propsWithoutImages.Slug}'`);
-			}
-			const logoUrl = fileToUrl(logoImageFile);
-			const visualImageUrl = thumbnailImages.files.map((file) => fileToUrl(file));
+	const works = await getManyWork();
+	const worksCollection = await getCollection('works');
+	const worksCollectionMap = new Map(worksCollection.map((work) => [work.data.properties.Slug, work]));
 
-			const work = convertCollectionToWork({ propsWithoutImages, logoUrl, visualImageUrl });
+	return await Promise.all(
+		works.map(async (work) => {
+			const collection = worksCollectionMap.get(work.id);
+			if (collection == null) {
+				throw new Error(`Work collection not found: ${work.id}`);
+			}
 
 			return {
 				params: { id: work.id },
-				props: { rendered: await render(entry), work },
+				props: { work, rendered: await render(collection) },
 			};
 		}),
 	);
 }) satisfies GetStaticPaths;
 
 interface Props {
-	rendered: RenderResult;
 	work: Work;
+	rendered: RenderResult;
 }
 
-const { rendered, work } = Astro.props;
+const { work, rendered } = Astro.props;
 
 const galleryProps = await processImageForThumbnailGallery({ work, processor: getImage });
 ---

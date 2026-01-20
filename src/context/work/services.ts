@@ -1,5 +1,4 @@
 import type { GetImageResult, UnresolvedImageTransform } from 'astro';
-import type { CollectionEntry } from 'astro:content';
 
 import { getImageToImgAttrs } from '../../foundation/utils/imageUtils';
 
@@ -108,38 +107,6 @@ export const processImageForWorkCard = async ({
 		work,
 		visualImageAttrs: getImageToImgAttrs(visualImage),
 		logoImageAttrs: getImageToImgAttrs(logoImage),
-	};
-};
-
-// TODO: @re-taro repository 層を作成し、そこでこの DTO 変換は吸収する
-export const convertCollectionToWork = ({
-	propsWithoutImages,
-	logoUrl,
-	visualImageUrl,
-}: {
-	propsWithoutImages: Omit<CollectionEntry<'works'>['data']['properties'], 'ロゴ画像' | 'サムネイル画像'>;
-	logoUrl: string;
-	visualImageUrl: string[];
-}): Work => {
-	const id = propsWithoutImages['Slug'];
-
-	return {
-		id,
-		displayOrder: propsWithoutImages['掲載順'],
-		visualImageUrl,
-		logoUrl,
-		description: propsWithoutImages['概要'],
-		logoAlt: propsWithoutImages['ロゴタイトル'],
-		date:
-			propsWithoutImages['日付'].end != null ?
-				{ period: { from: propsWithoutImages['日付'].start, to: propsWithoutImages['日付'].end } }
-			:	{ instant: propsWithoutImages['日付'].start },
-		types: propsWithoutImages['作品タイプ'],
-		context: propsWithoutImages['制作形態'],
-		assigning: propsWithoutImages['担当部分'],
-		logoPosition: propsWithoutImages['ロゴ配置'],
-		links: propsWithoutImages['リンク'],
-		pickUp: propsWithoutImages['トップページで表示'],
 	};
 };
 
