@@ -115,6 +115,7 @@ export const logoLeft = style({
 });
 
 export const logoInline = style({
+	maxWidth: '360px',
 	width: '100%',
 	height: '100%',
 	objectFit: 'contain',
