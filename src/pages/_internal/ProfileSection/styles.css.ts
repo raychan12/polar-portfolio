@@ -81,6 +81,9 @@ export const linksList = style({
 });
 
 export const link = style({
+	display: 'flex',
+	alignItems: 'center',
+	gap: '8px',
 	color: vars.color.brand.primary,
 	borderBottom: `2px solid transparent`,
 	transition: '150ms border-bottom-color',
