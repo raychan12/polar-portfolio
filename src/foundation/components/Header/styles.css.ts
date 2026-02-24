@@ -16,6 +16,9 @@ export const root = style({
 });
 
 export const link = style({
+	display: 'flex',
+	alignItems: 'center',
+	height: '36px',
 	fontFamily: vars.font.enSerif,
 	fontSize: '1.5em',
 	fontWeight: 600,
