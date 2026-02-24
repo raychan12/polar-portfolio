@@ -11,6 +11,7 @@ export const root = style({
 export const content = style({
 	display: 'flex',
 	flexDirection: 'column',
+	alignItems: 'flex-start',
 	gap: '40px',
 	'@media': {
 		[BreakPoints.SP]: {
@@ -80,6 +81,9 @@ export const linksList = style({
 });
 
 export const link = style({
+	display: 'flex',
+	alignItems: 'center',
+	gap: '8px',
 	color: vars.color.brand.primary,
 	borderBottom: `2px solid transparent`,
 	transition: '150ms border-bottom-color',
