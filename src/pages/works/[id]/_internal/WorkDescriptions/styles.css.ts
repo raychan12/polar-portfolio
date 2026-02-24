@@ -48,7 +48,7 @@ export const logoInline = style({
 	maxHeight: '200px',
 	'@media': {
 		[BreakPoints.TABLET]: {
-			maxWidth: '60%',
+			maxWidth: '70%',
 		},
 	},
 });
