@@ -11,6 +11,7 @@ export const root = style({
 export const content = style({
 	display: 'flex',
 	flexDirection: 'column',
+	alignItems: 'flex-start',
 	gap: '40px',
 	'@media': {
 		[BreakPoints.SP]: {
