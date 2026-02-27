@@ -42,9 +42,9 @@ export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 		[query, handleQueryUpdate],
 	);
 
-	const filteredWork = useMemo(() => workCards.filter((work) => checkWorkMatch(work.work, query)), [query, workCards]);
-	const visibleWork = useMemo(() => filteredWork.slice(0, visibleCount), [filteredWork, visibleCount]);
-	const hasMore = useMemo(() => visibleCount < filteredWork.length, [visibleCount, filteredWork]);
+	const filteredWorks = useMemo(() => workCards.filter((work) => checkWorkMatch(work.work, query)), [query, workCards]);
+	const visibleWorks = useMemo(() => filteredWorks.slice(0, visibleCount), [filteredWorks, visibleCount]);
+	const hasMore = useMemo(() => visibleCount < filteredWorks.length, [visibleCount, filteredWorks]);
 
 	const handleSeeMoreClick = useCallback(() => {
 		setVisibleCount((current) => current + PAGE_SIZE);
@@ -57,7 +57,7 @@ export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 				<ContextFilter currentContext={query.context} onContextUpdate={handleContextQueryUpdate} />
 			</div>
 			<ul className={workList}>
-				{visibleWork.map((work) => (
+				{visibleWorks.map((work) => (
 					<li key={work.work.id}>
 						<WorkCard {...work} />
 					</li>
