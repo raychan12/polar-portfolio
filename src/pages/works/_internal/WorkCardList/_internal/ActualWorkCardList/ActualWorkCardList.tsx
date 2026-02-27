@@ -12,7 +12,7 @@ import { parseFilterQuery, filterQueryToSearchParam, checkWorkMatch } from '../.
 import { ContextFilter } from '../Filter/ContextFilter';
 import { TypesFilter } from '../Filter/TypesFilter';
 
-import { filter, root, workList } from './styles.css';
+import { filter, root, seeMoreButton, workList } from './styles.css';
 
 type Props = {
 	workCards: WorkCardType[];
@@ -64,7 +64,7 @@ export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 				))}
 			</ul>
 			{hasMore ?
-				<button type="button" onClick={handleSeeMoreClick}>
+				<button type="button" className={seeMoreButton} onClick={handleSeeMoreClick}>
 					see more
 				</button>
 			:	null}
