@@ -1,0 +1,31 @@
+---
+import { getImage } from 'astro:assets';
+
+import Heading from '../Heading/Heading.astro';
+import { processImageForWorkCard } from '../../../context/work/services';
+import { WorkCard } from '../../../context/work/components/WorkCard/WorkCard';
+import LinkButton from '../../../foundation/components/LinkButton/LinkButton.astro';
+
+import { root, worksList, work, linkButton } from './styles.css';
+import { getManyWork } from '../../../context/work/repository';
+
+const works = await getManyWork();
+const pickedUpWorks = works.filter((work) => work.pickUp);
+const workCardProps = await Promise.all(
+	pickedUpWorks.map((work) => processImageForWorkCard({ work, processor: getImage })),
+);
+---
+
+<section class={root}>
+	<Heading>works</Heading>
+	<ul class={worksList}>
+		{
+			workCardProps.map((workCardProps) => (
+				<li class={work}>
+					<WorkCard {...workCardProps} />
+				</li>
+			))
+		}
+	</ul>
+	<LinkButton class={linkButton} href="/works">see all</LinkButton>
+</section>

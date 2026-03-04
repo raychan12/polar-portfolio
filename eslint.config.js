@@ -36,7 +36,7 @@ export default [
 	...astro.configs.recommended,
 	...astro.configs['jsx-a11y-strict'],
 	{
-		files: ['**/*.{js,ts,tsx}'],
+		files: ['**/*.{js,ts,tsx}', '**/*.astro/*.ts'],
 		languageOptions: {
 			parser: tseslint.parser,
 			ecmaVersion: 'latest',
@@ -124,6 +124,17 @@ export default [
 			radix: 'error',
 			'require-unicode-regexp': 'error',
 			'symbol-description': 'error',
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: ['**/factories', '**/fixtures'],
+							message: 'factories / fixtures は test ファイル以外では import できません',
+						},
+					],
+				},
+			],
 		},
 	},
 	{
@@ -181,6 +192,12 @@ export default [
 				// import-x が astro:assets 等を解決できなくてエラーを吐くのでこうしています
 				{ ignore: ['^astro:'] },
 			],
+		},
+	},
+	{
+		files: ['**/*.test.ts', '**/fixtures.ts', '**/factories.ts'],
+		rules: {
+			'no-restricted-imports': 'off',
 		},
 	},
 	prettier,

@@ -3,7 +3,8 @@ import { propertySchema, transformedPropertySchema } from '@chlorinec-pkgs/notio
 import { defineCollection, z } from 'astro:content';
 import { NOTION_TOKEN, NOTION_WORKS_DATABASE_ID } from 'astro:env/server';
 
-import { WorkContext, WorkType } from './context/work/types';
+import { WorkContext, WorkType } from './context/work/definitions';
+import { valuesOf } from './foundation/utils/schemaUtils';
 
 const works = defineCollection({
 	loader: notionLoader({
@@ -13,15 +14,16 @@ const works = defineCollection({
 	schema: notionPageSchema({
 		properties: z.object({
 			Slug: transformedPropertySchema.rich_text,
-			掲載順: transformedPropertySchema.number.transform((order, ctx) => {
-				if (order == null) {
-					ctx.addIssue({ code: 'custom', message: '日付が設定されていません' });
-					return z.NEVER;
-				}
+			掲載順: transformedPropertySchema.number.transform((order) => {
+				// TODO: @re-taro null の場合の扱いを確認後修正する
+				// if (order == null) {
+				// 	ctx.addIssue({ code: 'custom', message: '掲載順が設定されていません' });
+				// 	return z.NEVER;
+				// }
 				return order;
 			}),
-			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(WorkType))),
-			制作形態: transformedPropertySchema.select.pipe(z.enum(WorkContext)),
+			作品タイプ: transformedPropertySchema.multi_select.pipe(z.array(z.enum(valuesOf(WorkType)))),
+			制作形態: transformedPropertySchema.select.pipe(z.enum(valuesOf(WorkContext))),
 			サムネイル画像: propertySchema.files.refine((file) => file.files.length > 0, {
 				message: 'サムネイル画像は 1 枚以上設定する必要があります',
 			}),

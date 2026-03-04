@@ -1,24 +1,22 @@
 ---
-import CommonLayout from '../../layout/CommonLayout.astro';
-import PageTitle from '../../components/PageTitle.astro';
-import PageLayout from '../../layout/PageLayout.astro';
+import { getImage } from 'astro:assets';
 
-import { Content } from './_internal/page/Content';
+import PageTitle from '../../foundation/components/PageTitle/PageTitle.astro';
+import CommonLayout from '../../foundation/layouts/CommonLayout/CommonLayout.astro';
+import PageLayout from '../../foundation/layouts/PageLayout/PageLayout.astro';
+import { processImageForWorkCard } from '../../context/work/services';
 
-import { collectionToWork, sortWorksInDisplayOrder } from '../../context/work/services';
-import { getCollection } from 'astro:content';
-import { processImageForWorkCard } from '../../features/work/services';
-import type { WorkCardProps } from '../../features/work/components/WorkCard';
+import { WorkCardList } from './_internal/WorkCardList/WorkCardList';
+import { getManyWork } from '../../context/work/repository';
 
-const worksCollectionEntries = await getCollection('works');
-const works = sortWorksInDisplayOrder(worksCollectionEntries.map((work) => collectionToWork(work)));
+const works = await getManyWork();
 
-const workCardProps: WorkCardProps[] = await Promise.all(works.map((work) => processImageForWorkCard(work)));
+const workCards = await Promise.all(works.map((work) => processImageForWorkCard({ work, processor: getImage })));
 ---
 
 <CommonLayout>
 	<PageTitle title="works" />
 	<PageLayout>
-		<Content client:load {workCardProps} />
+		<WorkCardList client:load workCards={workCards} />
 	</PageLayout>
 </CommonLayout>

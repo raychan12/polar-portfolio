@@ -1,0 +1,52 @@
+---
+import { copyright, linksList, link, footer, identify, logos, ljusLogo, circleLogo } from './styles.css';
+import { CONTACT_FORM } from '../../constants/link';
+import Ljus from '../../../assets/ljus.svg';
+import Circle from '../../../assets/circle.svg';
+
+type LinkTo = { pathname: string; href?: never } | { pathname?: never; href: string };
+
+type FooterLink = {
+	caption: string;
+	linkTo: LinkTo;
+};
+const footerLinks: FooterLink[] = [
+	{ caption: 'home', linkTo: { pathname: '/' } },
+	{ caption: 'works', linkTo: { pathname: '/works' } },
+	// { caption: "blog", link: { pathname: "/blog" }},
+	// { caption: "fee table", link: { pathname: "/fee" }},
+	{ caption: 'contact', linkTo: { href: CONTACT_FORM } },
+];
+
+const COPYRIGHT_YEAR = 2026;
+---
+
+<footer class={footer}>
+	<nav>
+		<ul class={linksList}>
+			{
+				footerLinks.map(({ linkTo, caption }) => {
+					const outgoingLink = linkTo.href != null;
+					return (
+						<li>
+							<a
+								class={link}
+								href={outgoingLink ? linkTo.href : linkTo.pathname}
+								target={outgoingLink ? '_blank' : undefined}
+								rel={outgoingLink ? 'noreferrer noopener' : undefined}>
+								{caption}
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</nav>
+	<div class={identify}>
+		<div class={logos}>
+			<img src={Ljus.src} alt="ljus" width={Ljus.width} height={Ljus.height} class={ljusLogo} />
+			<img src={Circle.src} alt="七夕の月光" width={Circle.width} height={Circle.height} class={circleLogo} />
+		</div>
+	</div>
+	<p class={copyright}>{COPYRIGHT_YEAR} raychan All Rights Reserved.</p>
+</footer>
