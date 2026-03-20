@@ -12,17 +12,21 @@ import { parseFilterQuery, filterQueryToSearchParam, checkWorkMatch } from '../.
 import { ContextFilter } from '../Filter/ContextFilter';
 import { TypesFilter } from '../Filter/TypesFilter';
 
-import { filter, root, workList } from './styles.css';
+import { filter, root, seeMoreButton, workList } from './styles.css';
 
 type Props = {
 	workCards: WorkCardType[];
 };
 
+const PAGE_SIZE = 5;
+
 export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 	const [query, setQuery] = useState(parseFilterQuery(new URLSearchParams(window.location.search)));
+	const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
 	const handleQueryUpdate = useCallback((query: FilterQuery) => {
 		setQuery(query);
+		setVisibleCount(PAGE_SIZE);
 		history.replaceState(undefined, '', `/works/?${filterQueryToSearchParam(query).toString()}`);
 	}, []);
 	const handleTypesQueryUpdate = useCallback(
@@ -38,7 +42,13 @@ export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 		[query, handleQueryUpdate],
 	);
 
-	const filteredWork = useMemo(() => workCards.filter((work) => checkWorkMatch(work.work, query)), [query, workCards]);
+	const filteredWorks = useMemo(() => workCards.filter((work) => checkWorkMatch(work.work, query)), [query, workCards]);
+	const visibleWorks = useMemo(() => filteredWorks.slice(0, visibleCount), [filteredWorks, visibleCount]);
+	const hasMore = useMemo(() => visibleCount < filteredWorks.length, [visibleCount, filteredWorks]);
+
+	const handleSeeMoreClick = useCallback(() => {
+		setVisibleCount((current) => current + PAGE_SIZE);
+	}, []);
 
 	return (
 		<div className={root}>
@@ -47,12 +57,17 @@ export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 				<ContextFilter currentContext={query.context} onContextUpdate={handleContextQueryUpdate} />
 			</div>
 			<ul className={workList}>
-				{filteredWork.map((work) => (
+				{visibleWorks.map((work) => (
 					<li key={work.work.id}>
 						<WorkCard {...work} />
 					</li>
 				))}
 			</ul>
+			{hasMore ?
+				<button type="button" className={seeMoreButton} onClick={handleSeeMoreClick}>
+					see more
+				</button>
+			:	null}
 		</div>
 	);
 };
