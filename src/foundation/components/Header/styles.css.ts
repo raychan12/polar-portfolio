@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { BreakPoints, vars } from '../../styles/theme.css';
+import { DeprecatedBreakPoints, vars } from '../../styles/theme.css';
 
 export const root = style({
 	position: 'absolute',
@@ -9,7 +9,7 @@ export const root = style({
 	display: 'flex',
 	color: 'white',
 	'@media': {
-		[BreakPoints.SP]: {
+		[DeprecatedBreakPoints.SP]: {
 			right: 'calc(max(50vw - 600px, 0px) + 40px)',
 		},
 	},

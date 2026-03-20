@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { BreakPoints } from '../../styles/theme.css';
+import { DeprecatedBreakPoints } from '../../styles/theme.css';
 
 export const main = style({
 	flexGrow: 1,
@@ -9,10 +9,10 @@ export const main = style({
 	padding: '60px 32px',
 	marginInline: 'auto',
 	'@media': {
-		[BreakPoints.SP]: {
+		[DeprecatedBreakPoints.SP]: {
 			padding: '120px 60px',
 		},
-		[BreakPoints.PC]: {
+		[DeprecatedBreakPoints.PC]: {
 			padding: '120px',
 		},
 	},

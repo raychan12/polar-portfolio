@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { BreakPoints, vars } from '../../../foundation/styles/theme.css';
+import { DeprecatedBreakPoints, vars } from '../../../foundation/styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -14,7 +14,7 @@ export const content = style({
 	alignItems: 'flex-start',
 	gap: '40px',
 	'@media': {
-		[BreakPoints.SP]: {
+		[DeprecatedBreakPoints.SP]: {
 			flexDirection: 'row',
 		},
 	},
@@ -71,7 +71,7 @@ export const linksList = style({
 	gap: '16px',
 	marginTop: '32px',
 	'@media': {
-		[BreakPoints.SP]: {
+		[DeprecatedBreakPoints.SP]: {
 			flexDirection: 'row',
 			alignItems: 'start',
 			gap: '32px',
