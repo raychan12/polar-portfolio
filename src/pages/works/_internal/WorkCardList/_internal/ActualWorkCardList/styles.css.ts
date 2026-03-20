@@ -40,3 +40,7 @@ export const seeMoreButton = style({
 		},
 	},
 });
+
+export const noWorksText = style({
+	marginTop: '64px',
+});

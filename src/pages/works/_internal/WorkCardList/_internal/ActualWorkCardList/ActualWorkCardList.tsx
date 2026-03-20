@@ -12,7 +12,7 @@ import { parseFilterQuery, filterQueryToSearchParam, checkWorkMatch } from '../.
 import { ContextFilter } from '../Filter/ContextFilter';
 import { TypesFilter } from '../Filter/TypesFilter';
 
-import { filter, root, seeMoreButton, workList } from './styles.css';
+import { filter, noWorksText, root, seeMoreButton, workList } from './styles.css';
 
 type Props = {
 	workCards: WorkCardType[];
@@ -56,18 +56,22 @@ export const ActualWorkCardList: FunctionComponent<Props> = ({ workCards }) => {
 				<TypesFilter currentTypes={query.types} onTypesUpdate={handleTypesQueryUpdate} />
 				<ContextFilter currentContext={query.context} onContextUpdate={handleContextQueryUpdate} />
 			</div>
-			<ul className={workList}>
-				{visibleWorks.map((work) => (
-					<li key={work.work.id}>
-						<WorkCard {...work} />
-					</li>
-				))}
-			</ul>
-			{hasMore ?
-				<button type="button" className={seeMoreButton} onClick={handleSeeMoreClick}>
-					see more
-				</button>
-			:	null}
+			{filteredWorks.length > 0 ?
+				<>
+					<ul className={workList}>
+						{visibleWorks.map((work) => (
+							<li key={work.work.id}>
+								<WorkCard {...work} />
+							</li>
+						))}
+					</ul>
+					{hasMore ?
+						<button type="button" className={seeMoreButton} onClick={handleSeeMoreClick}>
+							see more
+						</button>
+					:	null}
+				</>
+			:	<p className={noWorksText}>選択中の条件に一致する実績はありません。</p>}
 		</div>
 	);
 };
