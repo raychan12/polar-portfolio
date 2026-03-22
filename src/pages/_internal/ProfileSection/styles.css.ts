@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { DeprecatedBreakPoints, vars } from '../../../foundation/styles/theme.css';
+import { BreakPoints, vars } from '../../../foundation/styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -14,7 +14,7 @@ export const content = style({
 	alignItems: 'flex-start',
 	gap: '40px',
 	'@media': {
-		[DeprecatedBreakPoints.SP]: {
+		[BreakPoints.MIN_720]: {
 			flexDirection: 'row',
 		},
 	},
@@ -32,7 +32,7 @@ export const name = style({
 });
 
 export const bio = style({
-	font: vars.text.jp.description,
+	fontSize: '0.875em',
 	fontWeight: 400,
 	lineHeight: '200%',
 	marginTop: '16px',
@@ -71,7 +71,7 @@ export const linksList = style({
 	gap: '16px',
 	marginTop: '32px',
 	'@media': {
-		[DeprecatedBreakPoints.SP]: {
+		[BreakPoints.MIN_720]: {
 			flexDirection: 'row',
 			alignItems: 'start',
 			gap: '32px',
