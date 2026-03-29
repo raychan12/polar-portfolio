@@ -41,7 +41,7 @@ export const linksList = style({
 
 export const link = style({
 	fontFamily: vars.font.en,
-	fontSize: '0.875em',
+	fontSize: '14px',
 	fontWeight: 300,
 });
 
@@ -87,7 +87,8 @@ export const circleLogo = style({
 
 export const copyright = style({
 	gridArea: 'copyright',
-	font: vars.text.en.exception,
+	fontWeight: 500,
+	fontSize: '14px',
 	width: '100%',
 	textAlign: 'end',
 });

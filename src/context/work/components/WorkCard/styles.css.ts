@@ -154,14 +154,16 @@ export const titleSection = style({
 });
 
 export const descriptionText = style({
-	font: vars.text.jp.description,
+	fontWeight: 300,
+	fontSize: '16px',
 });
 
 export const tagsList = style({
 	gridArea: 'tags',
 	pointerEvents: 'none',
 	display: 'none',
-	font: vars.text.en.caption,
+	fontWeight: 300,
+	fontSize: '14px',
 	'@media': {
 		[DeprecatedBreakPoints.SP]: {
 			display: 'flex',
@@ -192,11 +194,13 @@ export const metaSection = style({
 });
 
 export const dateText = style({
-	font: vars.text.en.exception,
+	fontWeight: 500,
+	fontSize: '14px',
 	color: vars.color.text.secondary,
 });
 
 export const assigningText = style({
-	font: vars.text.jp.description,
+	fontWeight: 300,
+	fontSize: '16px',
 	lineHeight: '200%',
 });

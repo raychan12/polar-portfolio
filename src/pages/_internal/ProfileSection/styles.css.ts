@@ -26,13 +26,13 @@ export const avatar = style({
 
 export const name = style({
 	fontFamily: vars.font.jpMincho,
-	fontSize: '1.25em',
+	fontSize: '20px',
 	fontWeight: 400,
 	WebkitTextStroke: `1px ${vars.color.text.primary}`,
 });
 
 export const bio = style({
-	fontSize: '0.875em',
+	fontSize: '14px',
 	fontWeight: 400,
 	lineHeight: '200%',
 	marginTop: '16px',
