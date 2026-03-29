@@ -1,6 +1,6 @@
 import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css';
 
-import { BreakPoints, vars } from '../../../../../foundation/styles/theme.css';
+import { DeprecatedBreakPoints, vars } from '../../../../../foundation/styles/theme.css';
 
 export const root = style({
 	display: 'flex',
@@ -47,7 +47,7 @@ export const logoInline = style({
 	maxWidth: '350px',
 	maxHeight: '200px',
 	'@media': {
-		[BreakPoints.TABLET]: {
+		[DeprecatedBreakPoints.TABLET]: {
 			maxWidth: '70%',
 		},
 	},

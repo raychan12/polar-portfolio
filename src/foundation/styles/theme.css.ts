@@ -72,8 +72,14 @@ export const vars = createGlobalTheme(':root', {
 	},
 } as const);
 
-export const BreakPoints = {
+export const DeprecatedBreakPoints = {
 	SP: 'screen and (min-width: 640px)',
 	TABLET: 'screen and (min-width: 744px)',
 	PC: 'screen and (min-width: 1000px)',
+} as const;
+
+export const BreakPoints = {
+	MIN_720: 'screen and (min-width: 720px)',
+	MIN_1000: 'screen and (min-width: 1000px)',
+	MIN_1200: 'screen and (min-width: 1200px)',
 } as const;

@@ -3,6 +3,20 @@ import { style } from '@vanilla-extract/css';
 import { BreakPoints, vars } from '../../styles/theme.css';
 
 export const footer = style({
+	background: vars.color.brand.primary,
+	padding: '32px 32px 24px',
+	color: vars.color.text.tertiary,
+	'@media': {
+		[BreakPoints.MIN_720]: {
+			padding: '42px 64px',
+		},
+		[BreakPoints.MIN_1000]: {
+			padding: '42px 120px',
+		},
+	},
+});
+
+export const container = style({
 	display: 'grid',
 	gridTemplateRows: 'auto auto',
 	gridTemplateColumns: 'auto auto',
@@ -10,23 +24,10 @@ export const footer = style({
 		"link logo"
 		"copyright copyright"
 	`,
-	background: vars.color.brand.primary,
-	padding: '24px 48px',
-	color: vars.color.text.tertiary,
 	gap: '12px',
-	'@media': {
-		[BreakPoints.TABLET]: {
-			padding: '40px 120px',
-		},
-	},
-});
-
-export const container = style({
-	display: 'flex',
-	alignItems: 'stretch',
-	justifyContent: 'space-between',
-	maxWidth: '1200px',
-	marginInline: 'auto',
+	width: '100%',
+	maxWidth: '960px',
+	margin: '0 auto',
 });
 
 export const linksList = style({
@@ -54,20 +55,19 @@ export const identify = style({
 
 export const logos = style({
 	display: 'flex',
-	gap: '16px',
 	alignItems: 'center',
 	'@media': {
-		[BreakPoints.TABLET]: {
+		[BreakPoints.MIN_720]: {
 			gap: '40px',
 		},
 	},
 });
 
 export const ljusLogo = style({
-	width: '60px',
-	height: '60px',
+	width: '73px',
+	height: '73px',
 	'@media': {
-		[BreakPoints.TABLET]: {
+		[BreakPoints.MIN_720]: {
 			width: '120px',
 			height: '120px',
 		},
@@ -75,12 +75,12 @@ export const ljusLogo = style({
 });
 
 export const circleLogo = style({
-	width: '95px',
-	height: '35.5px',
+	width: '130px',
+	height: '48px',
 	'@media': {
-		[BreakPoints.TABLET]: {
-			width: '190px',
-			height: '71px',
+		[BreakPoints.MIN_720]: {
+			width: '188px',
+			height: '69px',
 		},
 	},
 });
