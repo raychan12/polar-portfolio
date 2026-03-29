@@ -24,7 +24,7 @@ export const tagsLinkColor = createVar();
 
 export const tagsLink = style({
 	fontWeight: 300,
-	fontSize: '1rem',
+	fontSize: '16px',
 	color: fallbackVar(tagsLinkColor, vars.color.text.secondary),
 	textDecoration: 'underline',
 });
@@ -37,7 +37,7 @@ export const subSection = style({
 
 export const descriptionText = style({
 	fontWeight: 300,
-	fontSize: '1rem',
+	fontSize: '16px',
 });
 
 export const logoInline = style({
@@ -57,13 +57,13 @@ export const logoInline = style({
 
 export const dateText = style({
 	fontWeight: 500,
-	fontSize: '0.875rem',
+	fontSize: '14px',
 	color: vars.color.text.secondary,
 });
 
 export const assigningText = style({
 	fontWeight: 300,
-	fontSize: '1rem',
+	fontSize: '16px',
 	lineHeight: '200%',
 });
 
@@ -89,7 +89,7 @@ export const externalLink = style({
 	display: 'flex',
 	gap: '8px',
 	fontWeight: 300,
-	fontSize: '0.875rem',
+	fontSize: '14px',
 	selectors: {
 		'&:not(:last-child)::after': {
 			display: 'block',
@@ -106,7 +106,7 @@ export const detailSection = style({
 
 export const detailSectionTitle = style({
 	fontWeight: 700,
-	fontSize: '0.875rem',
+	fontSize: '14px',
 	color: vars.color.brand.primary,
 });
 
@@ -119,21 +119,21 @@ export const renderedContent = style({
 //        使っているけど、もう少しいいやり方がありそう
 
 globalStyle(`${renderedContent} :where(h1)`, {
-	fontSize: '1.75em',
+	fontSize: '28px',
 	lineHeight: '200%',
-	marginBlock: '1em 0.5em',
+	marginBlock: '16px 8px',
 });
 
 globalStyle(`${renderedContent} :where(h2)`, {
-	fontSize: '1.5em',
+	fontSize: '24px',
 	lineHeight: '200%',
-	marginBlock: '1em 0.5em',
+	marginBlock: '16px 8px',
 });
 
 globalStyle(`${renderedContent} :where(h3)`, {
-	fontSize: '1.3em',
+	fontSize: '20.8px',
 	lineHeight: '200%',
-	marginBlock: '1em 0.5em',
+	marginBlock: '16px 8px',
 });
 
 globalStyle(`${renderedContent} :where(b)`, {
@@ -162,17 +162,17 @@ globalStyle(`${renderedContent} :where(a)`, {
 });
 
 globalStyle(`${renderedContent} :where(ul)`, {
-	marginLeft: '1.5em',
+	marginLeft: '24px',
 	listStyle: 'disc',
 });
 
 globalStyle(`${renderedContent} :where(ol)`, {
-	marginLeft: '1.5em',
+	marginLeft: '24px',
 	listStyle: 'decimal',
 });
 
 globalStyle(`${renderedContent} :where(li)`, {
-	paddingLeft: '0.5em',
+	paddingLeft: '24px',
 });
 
 globalStyle(`${renderedContent} :where(p:empty)`, {

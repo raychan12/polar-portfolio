@@ -5,5 +5,5 @@ export const backButton = style({
 	alignItems: 'center',
 	gap: '8px',
 	fontWeight: 300,
-	fontSize: '1rem',
+	fontSize: '16px',
 });

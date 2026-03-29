@@ -20,7 +20,7 @@ export const link = style({
 	alignItems: 'center',
 	height: '36px',
 	fontFamily: vars.font.enSerif,
-	fontSize: '1.5em',
+	fontSize: '24px',
 	fontWeight: 600,
 	paddingInline: '10px',
 	selectors: {

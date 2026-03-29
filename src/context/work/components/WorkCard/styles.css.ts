@@ -155,7 +155,7 @@ export const titleSection = style({
 
 export const descriptionText = style({
 	fontWeight: 300,
-	fontSize: '1rem',
+	fontSize: '16px',
 });
 
 export const tagsList = style({
@@ -163,7 +163,7 @@ export const tagsList = style({
 	pointerEvents: 'none',
 	display: 'none',
 	fontWeight: 300,
-	fontSize: '0.875rem',
+	fontSize: '14px',
 	'@media': {
 		[DeprecatedBreakPoints.SP]: {
 			display: 'flex',
@@ -195,12 +195,12 @@ export const metaSection = style({
 
 export const dateText = style({
 	fontWeight: 500,
-	fontSize: '0.875rem',
+	fontSize: '14px',
 	color: vars.color.text.secondary,
 });
 
 export const assigningText = style({
 	fontWeight: 300,
-	fontSize: '1rem',
+	fontSize: '16px',
 	lineHeight: '200%',
 });
