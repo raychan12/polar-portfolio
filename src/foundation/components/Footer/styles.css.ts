@@ -87,7 +87,8 @@ export const circleLogo = style({
 
 export const copyright = style({
 	gridArea: 'copyright',
-	font: vars.text.en.exception,
+	fontWeight: 500,
+	fontSize: '0.875rem',
 	width: '100%',
 	textAlign: 'end',
 });

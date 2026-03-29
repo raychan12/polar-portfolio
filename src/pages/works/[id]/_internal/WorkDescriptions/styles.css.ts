@@ -23,7 +23,8 @@ export const tagsList = style({
 export const tagsLinkColor = createVar();
 
 export const tagsLink = style({
-	font: vars.text.en.description,
+	fontWeight: 300,
+	fontSize: '1rem',
 	color: fallbackVar(tagsLinkColor, vars.color.text.secondary),
 	textDecoration: 'underline',
 });
@@ -35,7 +36,8 @@ export const subSection = style({
 });
 
 export const descriptionText = style({
-	font: vars.text.jp.description,
+	fontWeight: 300,
+	fontSize: '1rem',
 });
 
 export const logoInline = style({
@@ -54,12 +56,14 @@ export const logoInline = style({
 });
 
 export const dateText = style({
-	font: vars.text.en.exception,
+	fontWeight: 500,
+	fontSize: '0.875rem',
 	color: vars.color.text.secondary,
 });
 
 export const assigningText = style({
-	font: vars.text.jp.description,
+	fontWeight: 300,
+	fontSize: '1rem',
 	lineHeight: '200%',
 });
 
@@ -84,7 +88,8 @@ export const externalLinkIcon = style({
 export const externalLink = style({
 	display: 'flex',
 	gap: '8px',
-	font: vars.text.en.caption,
+	fontWeight: 300,
+	fontSize: '0.875rem',
 	selectors: {
 		'&:not(:last-child)::after': {
 			display: 'block',
@@ -100,7 +105,8 @@ export const detailSection = style({
 });
 
 export const detailSectionTitle = style({
-	font: vars.text.en.sectionTitle,
+	fontWeight: 700,
+	fontSize: '0.875rem',
 	color: vars.color.brand.primary,
 });
 
